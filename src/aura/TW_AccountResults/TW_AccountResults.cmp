@@ -1,0 +1,50 @@
+<!--
+ - Created by BRITENET on 12.06.2019.
+ -->
+
+<aura:component description="TW_AccountResults">
+    <aura:attribute name="items" type="Account[]"/>
+    <aura:handler event="c:TW_SendAccountToResult" action="{!c.handleAccountFromSearch}"/>
+    <aura:handler event="c:TW_ClearAccountResultList" action="{!c.clearResultList}"/>
+
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <span>{!$Label.c.TW_Result_list}</span>
+                    </h2>
+                </div>
+            </header>
+        </div>
+        <aura:if isTrue="{!not(empty(v.items))}">
+            <div class="slds-card__body slds-card__body_inner">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate"
+                                 title="{!$Label.c.TW_Account_Name}">{!$Label.c.TW_Account_Name}</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate"
+                                 title="{!$Label.c.TW_Account_Number}">{!$Label.c.TW_Account_Number}</div>
+                        </th>
+                        <th class="" scope="col">
+                            <div class="slds-truncate"
+                                 title="{!$Label.c.TW_Account_Country}">{!$Label.c.TW_Account_Country}</div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <aura:iteration items="{!v.items}" var="item">
+                        <c:TW_SingleAccountResult item="{!item}"/>
+                    </aura:iteration>
+                    </tbody>
+                </table>
+            </div>
+        </aura:if>
+    </article>
+</aura:component>

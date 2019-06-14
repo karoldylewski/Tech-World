@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>R2G_Car_Add_New_Car_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car add new car button</shortDescription>
+        <value>Add new car</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Cancel_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car cancel button</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Car_Text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car car text</shortDescription>
+        <value>Car</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Confirm_Deletion</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car delete confirmation text</shortDescription>
+        <value>Are you sure to delete?</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Copy_To_Clipboard_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car Copy button text</shortDescription>
+        <value>Copy</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Delete_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car delete button</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Delete_Photo_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car delete photo button</shortDescription>
+        <value>Remove photo</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Details</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car details header</shortDescription>
+        <value>Details</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Edit_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car edit button</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Info</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car Info text</shortDescription>
+        <value>Info</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Information</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car basic info header</shortDescription>
+        <value>Basic Info</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_New_Car_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car SLDS New car button</shortDescription>
+        <value>New Car</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_New_Contact_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car SLDS New contact button</shortDescription>
+        <value>New Contact</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_No_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car No button text</shortDescription>
+        <value>No</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_PDF_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car generate pdf button text</shortDescription>
+        <value>PDF</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rent_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rent button</shortDescription>
+        <value>Rent</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rent_FN</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rent modal fn</shortDescription>
+        <value>First Name</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rent_LN</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rent modal ln</shortDescription>
+        <value>Last Name</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rent_Minus</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rent periods minus</shortDescription>
+        <value>−</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rent_Periods</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rent periods select</shortDescription>
+        <value>Periods:</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rent_Plus</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rent periods plus</shortDescription>
+        <value>+</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rent_Select</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rent select outputlink</shortDescription>
+        <value>Select</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rental</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rental header</shortDescription>
+        <value>Rental</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rental_Items</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rentals items header</shortDescription>
+        <value>Rental Items</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rental_SD_Invalid</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rent dialog start date later than end date</shortDescription>
+        <value>Start date later than end date in position:</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rentals</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rentals header</shortDescription>
+        <value>Rentals</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Save_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car save button</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Send_Email_Address</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car send emial header text</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Send_Email_Body</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car send email body text</shortDescription>
+        <value>Body</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Send_Email_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car send emial button text</shortDescription>
+        <value>Send Email</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Send_Email_Header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car send emial header text</shortDescription>
+        <value>Send email to</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Send_Email_Send</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car send email send button</shortDescription>
+        <value>Send</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Send_Email_Subject</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car send email subject text</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Success</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car Success text</shortDescription>
+        <value>Success_</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Upload_Photo_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car upload photo button</shortDescription>
+        <value>Add new photo</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_VIN_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car car vin label</shortDescription>
+        <value>VIN</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Yes_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car Yes button text</shortDescription>
+        <value>Yes, do it!</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Contact_ED</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Contact facet start date SD</shortDescription>
+        <value>ED</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Contact_SD</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Contact facet start date SD</shortDescription>
+        <value>SD</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Import_All</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car select all button</shortDescription>
+        <value>Select All</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Import_Fail_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car fail label</shortDescription>
+        <value>Fail</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Import_Import_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car import button</shortDescription>
+        <value>Import</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Import_None</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car deselect alll button</shortDescription>
+        <value>Deselect All</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Import_Process_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car process button</shortDescription>
+        <value>Process</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Import_Result_Header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car process button</shortDescription>
+        <value>Cars for import</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Import_Revert_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car revert button</shortDescription>
+        <value>Revert</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Import_To_Import</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car to import column header</shortDescription>
+        <value>To import</value>
+    </labels>
+    <labels>
+        <fullName>R2G_PDF_Rental_number</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car pdf header</shortDescription>
+        <value>Rental Number:</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Action_Edit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search label for edit in action column</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Action_Header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search label for action column</shortDescription>
+        <value>Action</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Action_View</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search label for view in action column</shortDescription>
+        <value>View</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Brand_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search label for brand input field</shortDescription>
+        <value>Brand</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_CSV_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search export to csv button</shortDescription>
+        <value>CSV</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Clear_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search Clear button</shortDescription>
+        <value>Clear</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Country_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search label for country input field</shortDescription>
+        <value>Country</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Country_c</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search api name of car.Coutry</shortDescription>
+        <value>Country__c</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Dialog_Header_For_Text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search Dialog For Text</shortDescription>
+        <value>For</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Facet_Name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search query result table facet Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Fullname_c</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search api name of car.fullname</shortDescription>
+        <value>Fullname__c</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search header text</shortDescription>
+        <value>Search form</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Model_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search label for model input field</shortDescription>
+        <value>Model</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_No_Records</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search info text for no records found</shortDescription>
+        <value>No records found</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Order_asc</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search asc value for query search</shortDescription>
+        <value>ASC</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Order_desc</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search desc value for query search</shortDescription>
+        <value>DESC</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Pagination_Next</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search query result next page</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Pagination_Previous</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search query result previous page</shortDescription>
+        <value>Previous</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Reg_No</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search label for registration number input field</shortDescription>
+        <value>Registration Number</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Search_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search Search button</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_XLS_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search export to xls button</shortDescription>
+        <value>XLS</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Year_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search label for year input field</shortDescription>
+        <value>Year</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Year_c</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search api name of car.year</shortDescription>
+        <value>Year__c</value>
+    </labels>
+    <labels>
+        <fullName>R2G_SecondOrg</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Custom setting name for second org</shortDescription>
+        <value>KarDyl2</value>
+    </labels>
+    <labels>
+        <fullName>TW_Account_Country</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Account Country</shortDescription>
+        <value>Country</value>
+    </labels>
+    <labels>
+        <fullName>TW_Account_Name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Account Name</shortDescription>
+        <value>Account Name</value>
+    </labels>
+    <labels>
+        <fullName>TW_Account_Number</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Account Number</shortDescription>
+        <value>Account Number</value>
+    </labels>
+    <labels>
+        <fullName>TW_Accounts</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Accounts</shortDescription>
+        <value>Accounts</value>
+    </labels>
+    <labels>
+        <fullName>TW_Clear</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Clear</shortDescription>
+        <value>Clear</value>
+    </labels>
+    <labels>
+        <fullName>TW_Delete</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Delete</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>TW_Details</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Details</shortDescription>
+        <value>Details</value>
+    </labels>
+    <labels>
+        <fullName>TW_Divisions</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Divisions</shortDescription>
+        <value>Divisions</value>
+    </labels>
+    <labels>
+        <fullName>TW_Edit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Edit</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>TW_Map</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Map</shortDescription>
+        <value>Map</value>
+    </labels>
+    <labels>
+        <fullName>TW_New</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text New</shortDescription>
+        <value>New</value>
+    </labels>
+    <labels>
+        <fullName>TW_Phone</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Phone</shortDescription>
+        <value>Phone</value>
+    </labels>
+    <labels>
+        <fullName>TW_Result_list</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Result List</shortDescription>
+        <value>Result list</value>
+    </labels>
+    <labels>
+        <fullName>TW_Search</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Search</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>TW_Billing_Address</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Billing Address</shortDescription>
+        <value>Billing Address</value>
+    </labels>
+    <labels>
+        <fullName>TW_No_of_Emp</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Number of Employees</shortDescription>
+        <value>Number of Employees</value>
+    </labels>
+    <labels>
+        <fullName>TW_Site</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Website</shortDescription>
+        <value>Website</value>
+    </labels>
+    <labels>
+        <fullName>TW_Delete_Confirm</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text delete confirmation</shortDescription>
+        <value>Are you sure to delete?</value>
+    </labels>
+    <labels>
+        <fullName>TW_Delete_Record</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text delte Record</shortDescription>
+        <value>Delete Record </value>
+    </labels>
+    <labels>
+        <fullName>TW_Cancel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,7 @@
+<!--
+ - Created by BRITENET on 13.06.2019.
+ -->
+<aura:event type="APPLICATION" description="TW_UpdateAccountInList">
+    <aura:attribute name="account" type="Account"/>
+</aura:event>
+

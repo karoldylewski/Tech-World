@@ -1,0 +1,36 @@
+<!--
+ - Created by BRITENET on 14.06.2019.
+ -->
+
+<aura:component description="TW_EditPanel">
+    <aura:attribute name="item" type="Account"/>
+    <lightning:recordViewForm recordId="{!v.item.Id}" objectApiName="Account">
+        <div class="slds-grid">
+            <div class="slds-col slds-size_6-of-12 slds-p-right_x-small slds-p-bottom_medium">
+                <div class="slds-p-vertical_small slds-border_bottom">
+                    <lightning:inputField fieldName="Name"/>
+                </div>
+                <div class="slds-p-vertical_small slds-border_bottom">
+                    <lightning:inputField fieldName="Website"/>
+                </div>
+                <div class="slds-p-vertical_small slds-border_bottom">
+                    <lightning:outputField fieldName="AccountNumber"/>
+                </div>
+                <div class="slds-p-vertical_small slds-border_bottom">
+                    <lightning:outputField fieldName="AnnualRevenue"/>
+                </div>
+            </div>
+            <div class="slds-col slds-size_6-of-12 slds-p-left_x-small slds-p-bottom_medium">
+                <div class="slds-p-vertical_small slds-border_bottom">
+                    <lightning:outputField fieldName="Phone"/>
+                </div>
+                <div class="slds-p-vertical_small slds-border_bottom">
+                    <lightning:outputField fieldName="NumberOfEmployees"/>
+                </div>
+                <div class="slds-p-vertical_small slds-border_bottom">
+                    <lightning:outputField fieldName="BillingAddress"/>
+                </div>
+            </div>
+        </div>
+    </lightning:recordViewForm>
+</aura:component>
