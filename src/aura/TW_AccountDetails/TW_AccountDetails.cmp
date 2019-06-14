@@ -20,113 +20,121 @@
     <aura:attribute name="isOpen" type="boolean" default="false"/>
     <aura:attribute name="isEditOpen" type="boolean" default="false"/>
 
-
-    <c:TW_Modal showHeader="true" showFooter="true" showCloseButton="true" aura:id="selectPropertiesModal">
+    <c:TW_Modal showHeader="true" showFooter="false" showCloseButton="true" aura:id="editRecordModal">
         <aura:set attribute="header">
-            <lightning:layout verticalAlign="center">
-                <lightning:layoutItem class="slds-m-right--small">
-                    <lightning:icon iconName="standard:account" size="small" class="modal-header_icon"/>
-                </lightning:layoutItem>
-                <lightning:layoutItem>
-                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
-                        {!$Label.c.TW_Edit} <span class="slds-m-left_x-small">{!v.item.Name}</span></h2>
-                </lightning:layoutItem>
-            </lightning:layout>
+            <h2 class="slds-text-heading_medium slds-hyphenate">
+                {!$Label.c.TW_Edit} <span class="slds-m-left_x-small">{!v.item.Name}</span></h2>
         </aura:set>
         <aura:set attribute="content">
-            <lightning:layout multipleRows="true" verticalAlign="center">
-                <lightning:layoutItem size="12">
-                    <lightning:recordEditForm recordId="{!v.item.Id}" objectApiName="Account"
-                                              onsuccess="{!c.savedItem}">
-                        <lightning:messages/>
-                        <lightning:outputField fieldName="AccountId"/>
-                        <lightning:inputField fieldName="Name"/>
-                        <lightning:inputField fieldName="Website"/>
-                        <lightning:inputField fieldName="AccountNumber"/>
-                        <lightning:inputField fieldName="AnnualRevenue"/>
-                        <lightning:inputField fieldName="Phone"/>
-                        <lightning:inputField fieldName="NumberOfEmployees"/>
-                        <lightning:inputField fieldName="BillingAddress"/>
-                        <div class="slds-m-top_x-small">
-                            <lightning:button variant="neutral"
-                                              label="{!$Label.c.TW_Cancel}"
-                                              onclick="{! c.closeEditRecordModel }"/>
-                            <lightning:button variant="brand"
-                                              type="submit"
-                                              label="{!$Label.c.TW_Edit}"
-                                              onclick="{! c.closeEditRecordModel }"/>
-                        </div>
-                    </lightning:recordEditForm>
-                </lightning:layoutItem>
-            </lightning:layout>
+            <lightning:recordEditForm recordId="{!v.item.Id}" objectApiName="Account"
+                                      onsuccess="{!c.savedItem}">
+                <lightning:messages/>
+                <lightning:outputField fieldName="AccountId"/>
+                <lightning:inputField fieldName="Name"/>
+                <lightning:inputField fieldName="Website"/>
+                <lightning:inputField fieldName="AccountNumber"/>
+                <lightning:inputField fieldName="AnnualRevenue"/>
+                <lightning:inputField fieldName="Phone"/>
+                <lightning:inputField fieldName="NumberOfEmployees"/>
+                <lightning:inputField fieldName="BillingAddress"/>
+                <div class="slds-clearfix">
+                    <div class="slds-m-top_small slds-float_right">
+                        <lightning:button variant="neutral"
+                                          label="{!$Label.c.TW_Cancel}"
+                                          onclick="{! c.closeEditRecordModel }"/>
+                        <lightning:button variant="brand"
+                                          type="submit"
+                                          label="{!$Label.c.TW_Save}"
+                                          onclick="{! c.closeEditRecordModel }"/>
+                    </div>
+                </div>
+            </lightning:recordEditForm>
         </aura:set>
     </c:TW_Modal>
 
+    <c:TW_Modal showHeader="true" showFooter="true" showCloseButton="true" aura:id="deleteRecordModal">
+        <aura:set attribute="header">
+            <h2 class="slds-text-heading_medium slds-hyphenate">{!$Label.c.TW_Delete}
+                <span class="slds-m-left_x-small">{!v.item.Name}</span></h2>
+        </aura:set>
+        <aura:set attribute="content">
+            <div class="slds-align_absolute-center">{!$Label.c.TW_Delete_Confirm}</div>
+        </aura:set>
+        <aura:set attribute="footer">
+            <lightning:button variant="neutral"
+                              label="{!$Label.c.TW_Cancel}"
+                              onclick="{! c.closeDeleteRecordModel }"/>
+            <lightning:button variant="brand"
+                              label="{!$Label.c.TW_Delete}"
+                              onclick="{! c.deleteRecord }"/>
+        </aura:set>
+    </c:TW_Modal>
 
-    <aura:renderIf isTrue="{!v.isEditOpen}">
-        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
-                 aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
-            <div class="slds-modal__container">
-                <header class="slds-modal__header">
-                    <lightning:buttonIcon iconName="utility:close"
-                                          onclick="{! c.closeEditRecordModel }"
-                                          alternativeText="close"
-                                          variant="bare-inverse"
-                                          class="slds-modal__close"/>
-                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
-                        {!$Label.c.TW_Edit} <span class="slds-m-left_x-small">{!v.item.Name}</span></h2>
-                </header>
-                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
-                    <div class="slds-align_absolute-center">
-                        <!--                        <force:recordEdit aura:id="edit" recordId="{!v.item.Id}" />-->
-                    </div>
-                </div>
-                <!--                <footer class="slds-modal__footer">-->
-                <!--                    <div class="slds-align_absolute-center">-->
-                <!--                        <lightning:button variant="neutral"-->
-                <!--                                          label="{!$Label.c.TW_Cancel}"-->
-                <!--                                          onclick="{! c.closeEditRecordModel }"/>-->
-                <!--                        <lightning:button variant="brand"-->
-                <!--                                          label="{!$Label.c.TW_Edit}"-->
-                <!--                                          onclick="{! c.editRecord }"/>-->
-                <!--                    </div>-->
-                <!--                </footer>-->
-            </div>
-        </section>
-        <div class="slds-backdrop slds-backdrop_open"></div>
-    </aura:renderIf>
+    <!--    <aura:renderIf isTrue="{!v.isEditOpen}">-->
+    <!--        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"-->
+    <!--                 aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">-->
+    <!--            <div class="slds-modal__container">-->
+    <!--                <header class="slds-modal__header">-->
+    <!--                    <lightning:buttonIcon iconName="utility:close"-->
+    <!--                                          onclick="{! c.closeEditRecordModel }"-->
+    <!--                                          alternativeText="close"-->
+    <!--                                          variant="bare-inverse"-->
+    <!--                                          class="slds-modal__close"/>-->
+    <!--                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">-->
+    <!--                        {!$Label.c.TW_Edit} <span class="slds-m-left_x-small">{!v.item.Name}</span></h2>-->
+    <!--                </header>-->
+    <!--                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">-->
+    <!--                    <div class="slds-align_absolute-center">-->
+    <!--                        &lt;!&ndash;                        <force:recordEdit aura:id="edit" recordId="{!v.item.Id}" />&ndash;&gt;-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--                &lt;!&ndash;                <footer class="slds-modal__footer">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    <div class="slds-align_absolute-center">&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <lightning:button variant="neutral"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                          label="{!$Label.c.TW_Cancel}"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                          onclick="{! c.closeEditRecordModel }"/>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                        <lightning:button variant="brand"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                          label="{!$Label.c.TW_Edit}"&ndash;&gt;-->
+    <!--                &lt;!&ndash;                                          onclick="{! c.editRecord }"/>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                    </div>&ndash;&gt;-->
+    <!--                &lt;!&ndash;                </footer>&ndash;&gt;-->
+    <!--            </div>-->
+    <!--        </section>-->
+    <!--        <div class="slds-backdrop slds-backdrop_open"></div>-->
+    <!--    </aura:renderIf>-->
 
 
-    <aura:if isTrue="{!v.isOpen}">
-        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
-                 aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
-            <div class="slds-modal__container">
-                <header class="slds-modal__header">
-                    <lightning:buttonIcon iconName="utility:close"
-                                          onclick="{! c.closeDeleteRecordModel }"
-                                          alternativeText="close"
-                                          variant="bare-inverse"
-                                          class="slds-modal__close"/>
-                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
-                    {!$Label.c.TW_Delete_Record} <span class="slds-m-left_x-small">{!v.item.Name}</span></h2>
-                </header>
-                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
-                    <div class="slds-align_absolute-center">{!$Label.c.TW_Delete_Confirm}</div>
-                </div>
-                <footer class="slds-modal__footer">
-                    <div class="slds-align_absolute-center">
-                        <lightning:button variant="neutral"
-                                          label="{!$Label.c.TW_Cancel}"
-                                          onclick="{! c.closeDeleteRecordModel }"/>
-                        <lightning:button variant="brand"
-                                          label="{!$Label.c.TW_Delete}"
-                                          onclick="{! c.deleteRecord }"/>
-                    </div>
-                </footer>
-            </div>
-        </section>
-        <div class="slds-backdrop slds-backdrop_open"></div>
-    </aura:if>
+    <!--    <aura:if isTrue="{!v.isOpen}">-->
+    <!--        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"-->
+    <!--                 aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">-->
+    <!--            <div class="slds-modal__container">-->
+    <!--                <header class="slds-modal__header">-->
+    <!--                    <lightning:buttonIcon iconName="utility:close"-->
+    <!--                                          onclick="{! c.closeDeleteRecordModel }"-->
+    <!--                                          alternativeText="close"-->
+    <!--                                          variant="bare-inverse"-->
+    <!--                                          class="slds-modal__close"/>-->
+    <!--                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">-->
+    <!--                    {!$Label.c.TW_Delete} <span class="slds-m-left_x-small">{!v.item.Name}</span></h2>-->
+    <!--                </header>-->
+    <!--                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">-->
+    <!--                    <div class="slds-align_absolute-center">{!$Label.c.TW_Delete_Confirm}</div>-->
+    <!--                </div>-->
+    <!--                <footer class="slds-modal__footer">-->
+    <!--                    <div class="slds-align_absolute-center">-->
+    <!--                        <lightning:button variant="neutral"-->
+    <!--                                          label="{!$Label.c.TW_Cancel}"-->
+    <!--                                          onclick="{! c.closeDeleteRecordModel }"/>-->
+    <!--                        <lightning:button variant="brand"-->
+    <!--                                          label="{!$Label.c.TW_Delete}"-->
+    <!--                                          onclick="{! c.deleteRecord }"/>-->
+    <!--                    </div>-->
+    <!--                </footer>-->
+    <!--            </div>-->
+    <!--        </section>-->
+    <!--        <div class="slds-backdrop slds-backdrop_open"></div>-->
+    <!--    </aura:if>-->
+
     <lightning:navigation aura:id="navId"/>
     <article class="slds-card">
         <div class="slds-card__header slds-grid">

@@ -7,12 +7,11 @@
     },
 
     navigationToEditRecord : function(component, event, helper) {
-       //helper.openEditRecordModal(component);
-        component.find('selectPropertiesModal').openModal();
+        component.find('editRecordModal').openModal();
     },
 
     navigationToDeleteRecord : function(component, event, helper) {
-        component.set("v.isOpen", true);
+        component.find('deleteRecordModal').openModal();
     },
 
     clearResultList : function(component,event,helper){
@@ -20,34 +19,24 @@
     },
 
     closeDeleteRecordModel: function(component, event, helper) {
-       component.set("v.isOpen", false);
+       component.find('deleteRecordModal').closeModal();
     },
 
     closeEditRecordModel: function(component, event, helper) {
-       component.find('selectPropertiesModal').closeModal();
+       component.find('editRecordModal').closeModal();
     },
 
     deleteRecord: function(component, event, helper) {
        helper.deleteRecord(component,event);
+       component.find('deleteRecordModal').closeModal();
     },
 
     editRecord : function(component, event, helper) {
          helper.saveRecord(component,event);
-         component.find('selectPropertiesModal').closeModal();
+         component.find('editRecordModal').closeModal();
     },
 
     savedItem : function(component, event, helper) {
-        var payload = event.getParams().response;
-        let item = component.get('v.item');
-        let obj = payload.fields;
-        for (let key in obj) {
-            item[key] = obj[key].value;
-        }
-        component.set("v.item", item);
-        var sendAccountToResult = $A.get("e.c:TW_RecordEdited");
-        sendAccountToResult.setParams({
-             "account": component.get('v.item'),
-        });
-        sendAccountToResult.fire();
+        helper.updateDisplayInfo(component,event);
     },
 })

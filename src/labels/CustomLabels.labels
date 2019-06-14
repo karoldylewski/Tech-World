@@ -638,10 +638,17 @@
         <value>Delete Record </value>
     </labels>
     <labels>
-        <fullName>TW_Cancel</fullName>
+    <fullName>TW_Cancel</fullName>
+    <language>en_US</language>
+    <protected>true</protected>
+    <shortDescription>Text cancel</shortDescription>
+    <value>Cancel</value>
+</labels>
+    <labels>
+        <fullName>TW_Save</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>Text cancel</shortDescription>
-        <value>Cancel</value>
+        <shortDescription>Text Save</shortDescription>
+        <value>Save</value>
     </labels>
 </CustomLabels>
