@@ -15,5 +15,12 @@
         }
         let trow = document.getElementById("tableRow" + accNumber);
         trow.className += " selected";
+    },
+
+    updateAccount : function (component,event){
+        let eventObject = event.getParam('account');
+        if (component.get('v.item.Id') == eventObject.Id){
+            component.set("v.item", eventObject);
+        }
     }
 })

@@ -7,11 +7,10 @@
     <aura:handler event="c:TW_SendAccountToDetailsPanel" action="{!c.handleAccountDisplay}"/>
     <aura:handler event="c:TW_ClearAccountResultList" action="{!c.clearResultList}"/>
     <aura:handler event="c:TW_ClearDetailsPanel" action="{!c.clearResultList}"/>
-
     <aura:registerEvent name="saveSuccess" type="force:recordSaveSuccess"></aura:registerEvent>
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.savedItem}"></aura:handler>
-
     <aura:attribute name="recordError" type="String" access="private"/>
+
     <force:recordData aura:id="recordHandler"
                       recordId="{!v.item.Id}"
                       fields="Id"
@@ -77,7 +76,7 @@
                 </div>
                 <div class="slds-media__body">
                     <h2 class="slds-card__header-title">
-                        <span>Details</span>
+                        <span>{!$Label.c.TW_Details}</span>
                     </h2>
                 </div>
                 <aura:if isTrue="{!v.item != null}">

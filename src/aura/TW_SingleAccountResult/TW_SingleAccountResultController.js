@@ -6,9 +6,6 @@
         helper.selectRow(component,event);
     },
     updateAccount  : function(component,event,helper){
-        let eventObject = event.getParam('account');
-        if (component.get('v.item.Id') == eventObject.Id){
-            component.set("v.item", eventObject);
-        }
+        helper.updateAccount(component,event);
     }
 })

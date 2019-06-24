@@ -52,7 +52,6 @@ public with sharing class TW_AccountHandler {
     }
 
     public static TW_OperatonResult updateAccount(Account acc){
-        System.debug('update start');
         List<Account> accList = new List<Account>();
         accList.add(acc);
         Database.SaveResult[] urList= TW_AccountHandler.updateRecordList(accList);
