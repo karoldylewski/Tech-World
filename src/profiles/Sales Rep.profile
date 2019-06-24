@@ -2,13 +2,8 @@
 <Profile xmlns="http://soap.sforce.com/2006/04/metadata">
     <applicationVisibilities>
         <application>TechWorld</application>
-        <default>false</default>
+        <default>true</default>
         <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
-        <application>standard__AppLauncher</application>
-        <default>false</default>
-        <visible>false</visible>
     </applicationVisibilities>
     <custom>true</custom>
     <userLicense>Salesforce</userLicense>
@@ -123,6 +118,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewDataAssessment</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewDataLeakageEvents</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
