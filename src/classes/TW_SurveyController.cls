@@ -13,31 +13,6 @@ global class TW_SurveyController {
         canSubmit = TW_SurveyHandler.checkIfSurveyAvailable(surveyId);
     }
 
-//    public Boolean checkIfAvailable() {
-//        if (surveyId.length() != 15 && surveyId.length() != 18) {
-//            return false;
-//        } else {
-//            TW_Survey__c surv = TW_SurveyHandler.getSurveyObject(surveyId);
-//            if (surv != null){
-//                return true;
-//            }
-//            return false;
-//        }
-//    }
-
-//    public TW_Survey__c getSurveyObject(String passedId){
-//        List<TW_Survey__c> sList = [SELECT Id,Interested__c,Satisfied__c
-//        FROM TW_Survey__c
-//        WHERE Id = :passedId
-//        LIMIT 1];
-//        if (sList.isEmpty()){
-//            return null;
-//        }else if (sList[0].Interested__c == null){
-//            return sList[0];
-//        }
-//        return null;
-//    }
-
     public List<SelectOption> getInterestedOptions() {
         List<SelectOption> options = new List<SelectOption>();
         options.add(new SelectOption('Yes', 'Yes'));
@@ -63,10 +38,6 @@ global class TW_SurveyController {
     public PageReference submit() {
         String interest = ApexPages.currentPage().getParameters().get('interestSelected');
         String satisfied = ApexPages.currentPage().getParameters().get('satisfactionSelected');
-//        TW_Survey__c surv = TW_SurveyHandler.getSurveyObject(surveyId);
-//        surv.Interested__c = interest;
-//        surv.Satisfied__c = Integer.valueOf(satisfied);
-//        update surv;
         TW_SurveyHandler.submitSurvey(interest,satisfied,surveyId);
         return new PageReference('/TW_Survey?id=thankyou');
     }

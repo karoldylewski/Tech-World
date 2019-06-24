@@ -19,4 +19,8 @@ public with sharing class TW_EmailHelper {
         return manager;
     }
 
+    public static String getInstanceUrl(){
+        return System.URL.getSalesforceBaseUrl().toExternalForm();
+    }
+
 }

@@ -21,6 +21,7 @@ public with sharing class TW_SurveyHandler {
         TW_Survey__c surv = TW_SurveyHandler.getSurveyObject(surveyId);
         surv.Interested__c = interest;
         surv.Satisfied__c = Integer.valueOf(satisfied);
+        surv.Datetime_completed__c = system.now();
         update surv;
     }
 
