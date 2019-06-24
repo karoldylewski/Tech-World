@@ -3,7 +3,7 @@
  */
 ({
         jsLoaded: function(component, event, helper) {
-              helper.initiateMap(component);
+            helper.initiateMap(component);
         },
 
         accsLoaded: function(component, event, helper){

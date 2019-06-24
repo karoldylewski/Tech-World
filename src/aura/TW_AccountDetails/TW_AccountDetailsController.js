@@ -32,8 +32,8 @@
     },
 
     editRecord : function(component, event, helper) {
-         helper.saveRecord(component,event);
-         component.find('editRecordModal').closeModal();
+       helper.saveRecord(component,event);
+       component.find('editRecordModal').closeModal();
     },
 
     savedItem : function(component, event, helper) {
