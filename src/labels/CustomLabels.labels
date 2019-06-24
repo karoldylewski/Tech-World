@@ -1029,4 +1029,88 @@
         <shortDescription>Text question 2</shortDescription>
         <value>Rate your satisfaction</value>
     </labels>
+    <labels>
+        <fullName>TW_TechWorld_Company</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text public site header</shortDescription>
+        <value>TechWorld Company</value>
+    </labels>
+    <labels>
+        <fullName>TW_Thank_you</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Thank you</shortDescription>
+        <value>Thank you</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_Company_team</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world team</shortDescription>
+        <value>TechWorld Company team</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_Contact_form</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form</shortDescription>
+        <value>TechWorld Contact Form</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_Contact_form_desc</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form</shortDescription>
+        <value>Contact us if you are interested in cooperation</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_form_order_info</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form order info</shortDescription>
+        <value>What would you like to order?</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_form_fn</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form fn</shortDescription>
+        <value>Your First Name</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_form_ln</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form ln</shortDescription>
+        <value>Your last Name</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_form_email</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form email</shortDescription>
+        <value>Your Email Address</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_form_phone</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form phone</shortDescription>
+        <value>Your Phone Number</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_form_company</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form company</shortDescription>
+        <value>Your Company</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_form_submit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form submit</shortDescription>
+        <value>Submit</value>
+    </labels>
 </CustomLabels>

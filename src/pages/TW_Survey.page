@@ -2,28 +2,18 @@
  - Created by BRITENET on 14.06.2019.
  -->
 
-<apex:page showHeader="false" id="TW_Survey" controller="TW_SurveyController">
-
-
+<apex:page showHeader="false" id="TW_Survey" controller="TW_SurveyController" cache="false">
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"/>
+    <apex:stylesheet value="{!URLFOR($Resource.leadform)}"/>
     <apex:slds/>
-
     <body>
-
-    <!-- REQUIRED SLDS WRAPPER -->
     <div class="slds">
-
-        <!-- PAGE HEADER -->
         <div class="slds-page-header" role="banner">
-
-            <!-- LAYOUT GRID -->
             <div class="slds-grid">
-
-                <!-- GRID COL -->
                 <div class="slds-col">
                     <div class="slds-align_absolute-center">
-                        <h4>Take a survey</h4>
+                        <span style="font-size:21px;">{!$Label.TW_TechWorld_Company}</span>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -31,68 +21,105 @@
             <div class="slds-align_absolute-center">
                 <div>
                     <fieldset class="slds-form-element">
-
                         <div class="slds-form-element__control">
                             <div class="slds-align_absolute-center">
                                 <div class="slds">
                                     <apex:form>
-                                        <div class="slds-form-element__control">
+                                        <apex:outputPanel rendered="{!canSubmit}">
+                                            <div class="slds-form-element__control">
+                                                <fieldset class="slds-form-element">
+                                                    <div class="slds-align_absolute-center slds-m-top_small">
+                                                        <legend class="slds-form-element__legend slds-form-element__label">{!$Label.TW_Survey_Question1}</legend>
+                                                    </div>
+                                                    <div class="slds-form-element__control">
+                                                        <div class="slds-align_absolute-center">
+                                                            <div class="slds-radio_button-group">
+                                                                <apex:repeat value="{!interestedOptions}" var="color">
+                                                                    <span class="slds-button slds-radio_button">
+                                                                        <input type="radio" id="color-{!color.value}"
+                                                                               name="interestSelected"
+                                                                               value="{!color.value}"/>
+                                                                        <label class="slds-radio_button__label"
+                                                                               for="color-{!color.value}"
+                                                                               onclick="document.getElementById(this.htmlFor).checked=true;">
+                                                                          <span class="slds-radio--faux">{!color.label}</span>
+                                                                        </label>
+                                                                    </span>
+                                                                </apex:repeat>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
                                             <fieldset class="slds-form-element">
                                                 <div class="slds-align_absolute-center slds-m-top_small">
-                                                    <legend class="slds-form-element__legend slds-form-element__label">{!$Label.TW_Survey_Question1}</legend>
+                                                    <legend class="slds-form-element__legend slds-form-element__label">{!$Label.TW_Survey_Question2}</legend>
                                                 </div>
                                                 <div class="slds-form-element__control">
                                                     <div class="slds-align_absolute-center">
                                                         <div class="slds-radio_button-group">
-                                                            <apex:repeat value="{!interestedOptions}" var="color">
-                                                    <span class="slds-button slds-radio_button">
-                                                    <input type="radio" id="color-{!color.value}"
-                                                           name="interestSelected" value="{!color.value}"/>
-                                                    <label class="slds-radio_button__label" for="color-{!color.value}"
-                                                           onclick="document.getElementById(this.htmlFor).checked=true;">
-                                                    <span class="slds-radio--faux"></span>
-                                                    <span class="slds-form-element__label">{!color.label}</span>
-                                                    </label>
-                                                    </span>
+                                                            <apex:repeat value="{!satisfactionOptions}" var="color">
+                                                                <span class="slds-button slds-radio_button">
+                                                                <input type="radio" id="sat-{!color.value}"
+                                                                       name="satisfactionSelected"
+                                                                       value="{!color.value}"/>
+                                                                    <label class="slds-radio_button__label"
+                                                                           for="sat-{!color.value}"
+                                                                           onclick="document.getElementById(this.htmlFor).checked=true;">
+                                                                        <span class="slds-radio--faux">{!color.label}</span>
+                                                                        <div class="slds-m-horizontal_x-small">
+                                                                        </div>
+                                                                    </label>
+                                                                </span>
                                                             </apex:repeat>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </fieldset>
-                                        </div>
-                                        <fieldset class="slds-form-element">
-                                            <div class="slds-align_absolute-center slds-m-top_small">
-                                                <legend class="slds-form-element__legend slds-form-element__label">{!$Label.TW_Survey_Question2}</legend>
+                                            <div class="slds-align_absolute-center">
+                                                <apex:commandButton
+                                                        styleClass="slds-button slds-button_brand slds-m-top_large"
+                                                        value="{!$Label.TW_TechWorld_form_submit}" action="{!submit}"/>
                                             </div>
-                                            <div class="slds-form-element__control">
-                                                <div class="slds-align_absolute-center">
-                                                    <div class="slds-radio_button-group">
-                                                        <apex:repeat value="{!satisfactionOptions}" var="color">
-                                                    <span class="slds-button slds-radio_button">
-                                                    <input type="radio" id="sat-{!color.value}"
-                                                           name="satisfactionSelected" value="{!color.value}"/>
-                                                    <label class="slds-radio_button__label" for="sat-{!color.value}"
-                                                           onclick="document.getElementById(this.htmlFor).checked=true;">
-<!--                                                    <span class="slds-radio&#45;&#45;faux"></span>-->
-                                                        <div class="slds-m-horizontal_x-small">
-                                                    <span class="slds-form-element__label">{!color.label}</span>
-                                                        </div>
-                                                    </label>
-                                                    </span>
-                                                        </apex:repeat>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                        <div class="slds-align_absolute-center">
-                                            <apex:commandButton styleClass="slds-button slds-button_brand slds-m-top_large"
-                                                                value="Submit" action="{!submit}"/>
-                                        </div>
+                                        </apex:outputPanel>
                                     </apex:form>
                                 </div>
                             </div>
                         </div>
                     </fieldset>
+                    <apex:outputPanel rendered="{!!canSubmit && !formSubmitted}">
+                        <div class="container">
+                            <form id="contact" action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
+                                  method="POST">
+                                <input type="hidden" name="oid" value="00D2p000000QSJt"/>
+                                <input type="hidden" name="retURL"
+                                       value="http://random-cars-developer-edition.eu26.force.com/?id=thankyou"/>
+                                <h3>{!$Label.TW_TechWorld_Contact_form}</h3>
+                                <h4>{!$Label.TW_TechWorld_Contact_form_desc} </h4>
+                                <input placeholder="{!$Label.TW_TechWorld_form_fn}" id="first_name" maxlength="40" name="first_name" size="20" type="text" required="true"/>
+                                <input placeholder="{!$Label.TW_TechWorld_form_ln}" id="last_name" maxlength="80" name="last_name" size="20" type="text" required="true"/>
+                                <input placeholder="{!$Label.TW_TechWorld_form_email}" id="email" maxlength="80" name="email" size="20" type="email" required="true"/>
+                                <input placeholder="{!$Label.TW_TechWorld_form_phone}" id="phone" maxlength="80" name="phone" size="20" type="tel"/>
+                                <input placeholder="{!$Label.TW_TechWorld_form_company}" id="company" maxlength="40" name="company" size="20" type="text" required="true"/>
+                                <input placeholder="{!$Label.TW_TechWorld_form_order_info}" id="title" maxlength="40" name="title" size="20" type="text" required="true"/>
+                                <button name="submit" type="submit" id="contact-submit">{!$Label.TW_TechWorld_form_submit}</button>
+                            </form>
+                        </div>
+                    </apex:outputPanel>
+<!--                    <apex:outputPanel rendered="{!!formSubmitted}">-->
+<!--                    </apex:outputPanel>-->
+                    <apex:outputPanel rendered="{!formSubmitted}">
+                        <div class="slds-align_absolute-center slds-m-top_xx-large">
+                            <div class="slds-grid slds-grid_vertical">
+                                <div class="slds-col slds-align_absolute-center">
+                                    <span class="slds-text-heading_large"> {!$Label.TW_Thank_you}</span>
+                                </div>
+                                <div class="slds-col">
+                                    <span> {!$Label.TW_TechWorld_Company_team}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </apex:outputPanel>
                 </div>
             </div>
         </div>
