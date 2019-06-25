@@ -11,7 +11,7 @@ public with sharing class TW_PostToChatter {
 
         for (Lead eachLead : givenLeads) {
             TW_ChatterHelper.feedItem feedItem = new TW_ChatterHelper.feedItem();
-            feedItem.addMention(eachLead.CreatedBy.Id);
+            feedItem.addMention(eachLead.OwnerId);
             feedItem.addMessage('ChatterNewLead',eachLead.Title);
             feedItem.addLink(eachLead.Id,eachLead.Title);
             ConnectApi.FeedElement feedElement = ConnectApi.ChatterFeeds.postFeedElement(Network.getNetworkId(), feedItem.buildFeedItem(groupId));
