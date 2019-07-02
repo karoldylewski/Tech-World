@@ -1,0 +1,21 @@
+/**
+ * Created by BRITENET on 14.06.2019.
+ */
+.THIS {
+}
+
+.THIS.slds-backdrop_open{
+    z-index: 9006;
+}
+
+.THIS.slds-modal{
+    z-index: 9007;
+}
+
+.THIS .slds-modal__footer{
+    border-radius: 0;
+}
+
+.THIS .slds-modal__header{
+    border-radius: 0;
+}

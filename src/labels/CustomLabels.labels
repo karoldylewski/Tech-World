@@ -1,0 +1,1130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>LABS_SF_AddQuestion</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Add Question</shortDescription>
+        <value>Add Question</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Anonymous</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Anonymous</shortDescription>
+        <value>Anonymous</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Answer_as</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Answer as</shortDescription>
+        <value>Answer as</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Cancel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Chatter</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Chatter</shortDescription>
+        <value>Chatter</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Chatter_Link</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Chatter Link</shortDescription>
+        <value>Chatter Link</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Community</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Community</shortDescription>
+        <value>Community</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Edit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Edit</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Email_Link_Anonymous</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Link, Anonymous</shortDescription>
+        <value>Email Link, Anonymous</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Email_Link_w_Contact_Case_Merge</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Link w/ Contact &amp; Case Merge</shortDescription>
+        <value>Email Link w/ Contact &amp; Case Merge</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Email_Link_w_Contact_Merge</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Email Link w/ Contact Merge</shortDescription>
+        <value>Email Link w/ Contact Merge</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_External_Please_Create_Site</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>For external facing surveys, please create a site first.  You may still create i</shortDescription>
+        <value>For external facing surveys, please create a site first.  You may still create internal surveys without creating a site.</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_For_community_assistance_with_Survey_Force</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>For community assistance with Survey Force</shortDescription>
+        <value>For community assistance with Survey Force</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Getting_Help</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Getting Help</shortDescription>
+        <value>Getting Help</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_HeaderAndThankYou</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Header and Thank You</shortDescription>
+        <value>Header, Thank You &amp; CSS</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Installation_Guide</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Installation Guide</shortDescription>
+        <value>Installation Guide</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Learn_More</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Learn More</shortDescription>
+        <value>Learn More</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_MakeANewSurvey</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Make A New Survey</shortDescription>
+        <value>Make A New Survey</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_MakeNewSurvey</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Make New Survey</shortDescription>
+        <value>Make New Survey</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Make_a_Sample_Survey</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Make a Sample Survey</shortDescription>
+        <value>Make a Sample Survey</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Next_Steps</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Next Steps</shortDescription>
+        <value>Next Steps</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_PleaseEnterTheList</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Please enter the list</shortDescription>
+        <value>Please enter the list of answers/responses in the field below. Each value should be separated by a new line.</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Question</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Question</shortDescription>
+        <value>Question</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Required</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Required</shortDescription>
+        <value>required</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_RequiredQuestion</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Required Question</shortDescription>
+        <value>Required Question</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Resources</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Resources</shortDescription>
+        <value>Resources</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Results</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Results</shortDescription>
+        <value>Results</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_SELECTTYPE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>--SELECT--</shortDescription>
+        <value>--SELECT--</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Salesforce_Answers</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Salesforce Answers</shortDescription>
+        <value>Salesforce Answers</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Save</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_SaveOrder</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Save Order</shortDescription>
+        <value>Save Order</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_SelectQuestionType</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select Question Type</shortDescription>
+        <value>Select Question Type</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Share</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Share</shortDescription>
+        <value>Share</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Share_My_Survey</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Share My Survey</shortDescription>
+        <value>Share My Survey</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Sharing_Options</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Sharing Options</shortDescription>
+        <value>Sharing Options</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_SubmitSurvey</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Submit Survey</shortDescription>
+        <value>Submit Survey</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_SurveyForceIsOpenSource</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SurveyForceIsOpenSource</shortDescription>
+        <value>Survey Force is Open Source software.  We welcome your issue reports, ideas, documentation, code tweaks and all other participation.</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Survey_Force_is_unsupported</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Survey Force is unsupported</shortDescription>
+        <value>Survey Force is unsupported.</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Survey_Force_on_Github</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Survey Force on Github</shortDescription>
+        <value>Survey Force on Github</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Survey_Submitted_Thank_you</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Your survey has been submitted. Thank you for taking our survey.</shortDescription>
+        <value>Your survey has been submitted. Thank you for taking our survey.</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_To_submit_ideas_or_issues</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>To submit ideas or issues</shortDescription>
+        <value>To submit ideas or issues</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_User_Guide</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>User Guide</shortDescription>
+        <value>User Guide</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_View_Results_In_New_Window</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>View Results In New Window</shortDescription>
+        <value>View Results In New Window</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_View_Sample_Survey</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>View Sample Survey</shortDescription>
+        <value>View Sample Survey</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Welcome_to_Survey_Force</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Welcome to Survey Force</shortDescription>
+        <value>Welcome to Survey Force</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_X1_Create_a_sample_survey</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>1. Create a sample survey by clicking the button below.</shortDescription>
+        <value>1. Create a sample survey by clicking the button below.</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_X2_External_Setup_Site</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>2. Set up a site if you would like to have external-facing surveys.</shortDescription>
+        <value>2. Set up a site if you would like to have external-facing surveys.</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_X3_Start_creating_your_first_survey</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>3. Start creating your first survey.</shortDescription>
+        <value>3. Start creating your first survey.</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_You_have_already_taken_this_survey</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>You have already taken this survey!</shortDescription>
+        <value>You have already taken this survey!</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_Your_next_few_steps_are_easy</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Your next few steps are easy.</shortDescription>
+        <value>Your next few steps are easy.</value>
+    </labels>
+    <labels>
+        <fullName>LABS_SF_please_visit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>please visit</shortDescription>
+        <value>please visit</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Add_New_Car_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car add new car button</shortDescription>
+        <value>Add new car</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Cancel_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car cancel button</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Car_Text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car car text</shortDescription>
+        <value>Car</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Confirm_Deletion</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car delete confirmation text</shortDescription>
+        <value>Are you sure to delete?</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Copy_To_Clipboard_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car Copy button text</shortDescription>
+        <value>Copy</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Delete_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car delete button</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Delete_Photo_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car delete photo button</shortDescription>
+        <value>Remove photo</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Details</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car details header</shortDescription>
+        <value>Details</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Edit_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car edit button</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Info</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car Info text</shortDescription>
+        <value>Info</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Information</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car basic info header</shortDescription>
+        <value>Basic Info</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_New_Car_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car SLDS New car button</shortDescription>
+        <value>New Car</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_New_Contact_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car SLDS New contact button</shortDescription>
+        <value>New Contact</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_No_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car No button text</shortDescription>
+        <value>No</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_PDF_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car generate pdf button text</shortDescription>
+        <value>PDF</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rent_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rent button</shortDescription>
+        <value>Rent</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rent_FN</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rent modal fn</shortDescription>
+        <value>First Name</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rent_LN</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rent modal ln</shortDescription>
+        <value>Last Name</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rent_Minus</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rent periods minus</shortDescription>
+        <value>−</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rent_Periods</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rent periods select</shortDescription>
+        <value>Periods:</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rent_Plus</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rent periods plus</shortDescription>
+        <value>+</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rent_Select</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rent select outputlink</shortDescription>
+        <value>Select</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rental</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rental header</shortDescription>
+        <value>Rental</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rental_Items</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rentals items header</shortDescription>
+        <value>Rental Items</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rental_SD_Invalid</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rent dialog start date later than end date</shortDescription>
+        <value>Start date later than end date in position:</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Rentals</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car rentals header</shortDescription>
+        <value>Rentals</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Save_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car save button</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Send_Email_Address</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car send emial header text</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Send_Email_Body</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car send email body text</shortDescription>
+        <value>Body</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Send_Email_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car send emial button text</shortDescription>
+        <value>Send Email</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Send_Email_Header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car send emial header text</shortDescription>
+        <value>Send email to</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Send_Email_Send</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car send email send button</shortDescription>
+        <value>Send</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Send_Email_Subject</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car send email subject text</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Success</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car Success text</shortDescription>
+        <value>Success_</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Upload_Photo_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car upload photo button</shortDescription>
+        <value>Add new photo</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_VIN_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car car vin label</shortDescription>
+        <value>VIN</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Car_Yes_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car Yes button text</shortDescription>
+        <value>Yes, do it!</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Contact_ED</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Contact facet start date SD</shortDescription>
+        <value>ED</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Contact_SD</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Contact facet start date SD</shortDescription>
+        <value>SD</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Import_All</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car select all button</shortDescription>
+        <value>Select All</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Import_Fail_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car fail label</shortDescription>
+        <value>Fail</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Import_Import_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car import button</shortDescription>
+        <value>Import</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Import_None</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car deselect alll button</shortDescription>
+        <value>Deselect All</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Import_Process_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car process button</shortDescription>
+        <value>Process</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Import_Result_Header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car process button</shortDescription>
+        <value>Cars for import</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Import_Revert_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car revert button</shortDescription>
+        <value>Revert</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Import_To_Import</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car to import column header</shortDescription>
+        <value>To import</value>
+    </labels>
+    <labels>
+        <fullName>R2G_PDF_Rental_number</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Car pdf header</shortDescription>
+        <value>Rental Number:</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Action_Edit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search label for edit in action column</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Action_Header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search label for action column</shortDescription>
+        <value>Action</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Action_View</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search label for view in action column</shortDescription>
+        <value>View</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Brand_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search label for brand input field</shortDescription>
+        <value>Brand</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_CSV_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search export to csv button</shortDescription>
+        <value>CSV</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Clear_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search Clear button</shortDescription>
+        <value>Clear</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Country_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search label for country input field</shortDescription>
+        <value>Country</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Country_c</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search api name of car.Coutry</shortDescription>
+        <value>Country__c</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Dialog_Header_For_Text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search Dialog For Text</shortDescription>
+        <value>For</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Facet_Name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search query result table facet Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Fullname_c</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search api name of car.fullname</shortDescription>
+        <value>Fullname__c</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search header text</shortDescription>
+        <value>Search form</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Model_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search label for model input field</shortDescription>
+        <value>Model</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_No_Records</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search info text for no records found</shortDescription>
+        <value>No records found</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Order_asc</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search asc value for query search</shortDescription>
+        <value>ASC</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Order_desc</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search desc value for query search</shortDescription>
+        <value>DESC</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Pagination_Next</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search query result next page</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Pagination_Previous</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search query result previous page</shortDescription>
+        <value>Previous</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Reg_No</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search label for registration number input field</shortDescription>
+        <value>Registration Number</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Search_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search Search button</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_XLS_Button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search export to xls button</shortDescription>
+        <value>XLS</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Year_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search label for year input field</shortDescription>
+        <value>Year</value>
+    </labels>
+    <labels>
+        <fullName>R2G_Search_Year_c</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>R2G_Search api name of car.year</shortDescription>
+        <value>Year__c</value>
+    </labels>
+    <labels>
+        <fullName>R2G_SecondOrg</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Custom setting name for second org</shortDescription>
+        <value>KarDyl2</value>
+    </labels>
+    <labels>
+        <fullName>TW_Account_Country</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Account Country</shortDescription>
+        <value>Country</value>
+    </labels>
+    <labels>
+        <fullName>TW_Account_Name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Account Name</shortDescription>
+        <value>Account Name</value>
+    </labels>
+    <labels>
+        <fullName>TW_Account_Number</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Account Number</shortDescription>
+        <value>Account Number</value>
+    </labels>
+    <labels>
+        <fullName>TW_Accounts</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Accounts</shortDescription>
+        <value>Accounts</value>
+    </labels>
+    <labels>
+        <fullName>TW_Billing_Address</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Billing Address</shortDescription>
+        <value>Billing Address</value>
+    </labels>
+    <labels>
+        <fullName>TW_Cancel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>TW_Clear</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Clear</shortDescription>
+        <value>Clear</value>
+    </labels>
+    <labels>
+        <fullName>TW_Delete</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Delete</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>TW_Delete_Confirm</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text delete confirmation</shortDescription>
+        <value>Are you sure to delete?</value>
+    </labels>
+    <labels>
+        <fullName>TW_Delete_Record</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text delte Record</shortDescription>
+        <value>Delete Record</value>
+    </labels>
+    <labels>
+        <fullName>TW_Details</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Details</shortDescription>
+        <value>Details</value>
+    </labels>
+    <labels>
+        <fullName>TW_Divisions</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Divisions</shortDescription>
+        <value>Divisions</value>
+    </labels>
+    <labels>
+        <fullName>TW_Edit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Edit</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>TW_Map</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Map</shortDescription>
+        <value>Map</value>
+    </labels>
+    <labels>
+        <fullName>TW_Map_Click</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text map clicked</shortDescription>
+        <value>You clicked the map at</value>
+    </labels>
+    <labels>
+        <fullName>TW_New</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text New</shortDescription>
+        <value>New</value>
+    </labels>
+    <labels>
+        <fullName>TW_No_of_Emp</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Number of Employees</shortDescription>
+        <value>Number of Employees</value>
+    </labels>
+    <labels>
+        <fullName>TW_Phone</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Phone</shortDescription>
+        <value>Phone</value>
+    </labels>
+    <labels>
+        <fullName>TW_Result_list</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Result List</shortDescription>
+        <value>Result list</value>
+    </labels>
+    <labels>
+        <fullName>TW_Save</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>TW_Search</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Search</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>TW_Site</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Website</shortDescription>
+        <value>Website</value>
+    </labels>
+    <labels>
+        <fullName>TW_Submit_Survey</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Submit survey</shortDescription>
+        <value>Submit Survey</value>
+    </labels>
+    <labels>
+        <fullName>TW_Survey_Question1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text question 1</shortDescription>
+        <value>Are you interested in cooperation with us?</value>
+    </labels>
+    <labels>
+        <fullName>TW_Survey_Question2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text question 2</shortDescription>
+        <value>Rate your satisfaction</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_Company</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text public site header</shortDescription>
+        <value>TechWorld Company</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_Company_team</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world team</shortDescription>
+        <value>TechWorld Company team</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_Contact_form</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form</shortDescription>
+        <value>TechWorld Contact Form</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_Contact_form_desc</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form</shortDescription>
+        <value>Contact us if you are interested in cooperation</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_form_company</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form company</shortDescription>
+        <value>Your Company</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_form_email</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form email</shortDescription>
+        <value>Your Email Address</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_form_fn</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form fn</shortDescription>
+        <value>Your First Name</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_form_ln</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form ln</shortDescription>
+        <value>Your last Name</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_form_order_info</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form order info</shortDescription>
+        <value>What would you like to order?</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_form_phone</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form phone</shortDescription>
+        <value>Your Phone Number</value>
+    </labels>
+    <labels>
+        <fullName>TW_TechWorld_form_submit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text tech world Contact Form submit</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>TW_Thank_you</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Thank you</shortDescription>
+        <value>Thank you</value>
+    </labels>
+    <labels>
+        <fullName>TW_Apex_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Thank you</shortDescription>
+        <value>Error on loading data from server</value>
+    </labels>
+</CustomLabels>
