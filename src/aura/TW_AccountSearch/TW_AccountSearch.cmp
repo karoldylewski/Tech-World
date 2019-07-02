@@ -9,7 +9,7 @@
                                                                   'BillingStreet':''
                                                                 }"/>
     <lightning:navigation aura:id="navId"/>
-    <aura:handler event="c:TW_RecordDeleted" action="{!c.searchAccounts}"/>
+    <aura:handler event="c:TW_AccountRecordDeleted" action="{!c.searchAccounts}"/>
 
     <article class="slds-card">
         <div class="slds-card__header slds-grid">

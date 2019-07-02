@@ -4,8 +4,8 @@
 
 <aura:component description="TW_AccountDetails" controller="TW_AccountSearchController">
     <aura:attribute name="item" type="Account"/>
-    <aura:handler event="c:TW_SendAccountToDetailsPanel" action="{!c.handleAccountDisplay}"/>
-    <aura:handler event="c:TW_ClearAccountResultList" action="{!c.clearResultList}"/>
+    <aura:handler event="c:TW_AccountSendToDetailsPanel" action="{!c.handleAccountDisplay}"/>
+    <aura:handler event="c:TW_AccountClearResultList" action="{!c.clearResultList}"/>
     <aura:handler event="c:TW_ClearDetailsPanel" action="{!c.clearResultList}"/>
     <aura:registerEvent name="saveSuccess" type="force:recordSaveSuccess"></aura:registerEvent>
     <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.savedItem}"></aura:handler>

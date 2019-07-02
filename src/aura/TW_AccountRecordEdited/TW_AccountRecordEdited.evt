@@ -1,0 +1,7 @@
+<!--
+ - Created by BRITENET on 25.06.2019.
+ -->
+
+<aura:event type="APPLICATION" description="TW_AccountRecordEdited">
+    <aura:attribute name="account" type="Account"/>
+</aura:event>

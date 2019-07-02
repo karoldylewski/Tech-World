@@ -22,8 +22,17 @@
         action.setCallback(this, function(response) {
             let state = response.getState();
             if (state === "SUCCESS") {
-                let sendAccountToResult = $A.get("e.c:TW_RecordDeleted");
+                let sendAccountToResult = $A.get("e.c:TW_AccountRecordDeleted");
                 sendAccountToResult.fire();
+            }else{
+                let toastParams = {
+                   title: "Error",
+                    message: $A.get('$Label.c.TW_Apex_Error'),
+                    type: "error"
+                 };
+                 let toastEvent = $A.get("e.force:showToast");
+                 toastEvent.setParams(toastParams);
+                 toastEvent.fire();
             }
         });
         $A.enqueueAction(action);
@@ -42,7 +51,7 @@
             item[key] = obj[key].value;
         }
         component.set("v.item", item);
-        let sendAccountToResult = $A.get("e.c:TW_RecordEdited");
+        let sendAccountToResult = $A.get("e.c:TW_AccountRecordEdited");
         sendAccountToResult.setParams({
             "account": component.get('v.item'),
         });

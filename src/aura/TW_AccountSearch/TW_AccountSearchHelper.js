@@ -8,13 +8,22 @@
         action.setCallback(this, function(response) {
             let state = response.getState();
             if (state === "SUCCESS") {
-                let sendAccountToResult = $A.get("e.c:TW_SendAccountToResult");
+                let sendAccountToResult = $A.get("e.c:TW_AccountSendToResult");
                 sendAccountToResult.setParams({
                     "accountList": response.getReturnValue(),
                 });
                 sendAccountToResult.fire();
                 let clearDetails = $A.get("e.c:TW_ClearDetailsPanel");
                 clearDetails.fire();
+            }else{
+                let toastParams = {
+                    title: "Error",
+                    message: $A.get('$Label.c.TW_Apex_Error'),
+                    type: "error"
+                };
+                let toastEvent = $A.get("e.force:showToast");
+                toastEvent.setParams(toastParams);
+                toastEvent.fire();
             }
         });
         $A.enqueueAction(action);
@@ -24,7 +33,7 @@
         component.set("v.searchedItem.Name", '');
         component.set("v.searchedItem.AccountNumber", '');
         component.set("v.searchedItem.BillingCountry", '');
-        let clearAccountResult = $A.get("e.c:TW_ClearAccountResultList");
+        let clearAccountResult = $A.get("e.c:TW_AccountClearResultList");
         clearAccountResult.fire();
 
     },

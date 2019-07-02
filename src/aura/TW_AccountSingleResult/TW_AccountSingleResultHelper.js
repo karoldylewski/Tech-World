@@ -1,9 +1,9 @@
 /**
- * Created by BRITENET on 24.06.2019.
+ * Created by BRITENET on 25.06.2019.
  */
 ({
     selectRow: function(component, event) {
-        let sendAccountToDetailsPanel = $A.get("e.c:TW_SendAccountToDetailsPanel");
+        let sendAccountToDetailsPanel = $A.get("e.c:TW_AccountSendToDetailsPanel");
         sendAccountToDetailsPanel.setParams({
             "account": component.get('v.item'),
         });

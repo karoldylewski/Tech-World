@@ -4,8 +4,8 @@
 
 <aura:component description="TW_AccountResults">
     <aura:attribute name="items" type="Account[]"/>
-    <aura:handler event="c:TW_SendAccountToResult" action="{!c.handleAccountFromSearch}"/>
-    <aura:handler event="c:TW_ClearAccountResultList" action="{!c.clearResultList}"/>
+    <aura:handler event="c:TW_AccountSendToResult" action="{!c.handleAccountFromSearch}"/>
+    <aura:handler event="c:TW_AccountClearResultList" action="{!c.clearResultList}"/>
 
     <article class="slds-card">
         <div class="slds-card__header slds-grid">
@@ -40,7 +40,7 @@
                     </thead>
                     <tbody>
                     <aura:iteration items="{!v.items}" var="item">
-                        <c:TW_SingleAccountResult item="{!item}"/>
+                        <c:TW_AccountSingleResult item="{!item}"/>
                     </aura:iteration>
                     </tbody>
                 </table>

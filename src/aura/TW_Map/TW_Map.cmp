@@ -8,9 +8,9 @@
     <ltng:require styles="/resource/leaflet/leaflet.css"
                   scripts="/resource/leaflet/leaflet.js"
                   afterScriptsLoaded="{!c.jsLoaded}" />
-    <aura:handler event="c:TW_SendAccountToResult" action="{!c.accsLoaded}"/>
-    <aura:handler event="c:TW_SendAccountToDetailsPanel" action="{!c.singleAccLoaded}"/>
-    <aura:handler event="c:TW_ClearAccountResultList" action="{!c.clearResultList}"/>
+    <aura:handler event="c:TW_AccountSendToResult" action="{!c.accsLoaded}"/>
+    <aura:handler event="c:TW_AccountSendToDetailsPanel" action="{!c.singleAccLoaded}"/>
+    <aura:handler event="c:TW_AccountClearResultList" action="{!c.clearResultList}"/>
 
     <article class="slds-card slds-theme_shade">
         <div class="slds-card__header slds-grid">

@@ -1120,4 +1120,11 @@
         <shortDescription>Text Thank you</shortDescription>
         <value>Thank you</value>
     </labels>
+    <labels>
+        <fullName>TW_Apex_Error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Text Thank you</shortDescription>
+        <value>Error on loading data from server</value>
+    </labels>
 </CustomLabels>
