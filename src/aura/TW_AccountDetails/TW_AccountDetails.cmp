@@ -1,0 +1,131 @@
+<!--
+ - Created by BRITENET on 12.06.2019.
+ -->
+
+<aura:component description="TW_AccountDetails" controller="TW_AccountSearchController">
+    <aura:attribute name="item" type="Account"/>
+    <aura:handler event="c:TW_AccountSendToDetailsPanel" action="{!c.handleAccountDisplay}"/>
+    <aura:handler event="c:TW_AccountClearResultList" action="{!c.clearResultList}"/>
+    <aura:handler event="c:TW_ClearDetailsPanel" action="{!c.clearResultList}"/>
+    <aura:registerEvent name="saveSuccess" type="force:recordSaveSuccess"></aura:registerEvent>
+    <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.savedItem}"></aura:handler>
+    <aura:attribute name="recordError" type="String" access="private"/>
+
+    <force:recordData aura:id="recordHandler"
+                      recordId="{!v.item.Id}"
+                      fields="Id"
+                      targetError="{!v.recordError}"
+                      recordUpdated="{!c.handleRecordUpdated}"/>
+    <aura:attribute name="isOpen" type="boolean" default="false"/>
+    <aura:attribute name="isEditOpen" type="boolean" default="false"/>
+
+    <c:TW_Modal showHeader="true" showFooter="false" showCloseButton="true" aura:id="editRecordModal">
+        <aura:set attribute="header">
+            <h2 class="slds-text-heading_medium slds-hyphenate">
+                {!$Label.c.TW_Edit} <span class="slds-m-left_x-small">{!v.item.Name}</span></h2>
+        </aura:set>
+        <aura:set attribute="content">
+            <lightning:recordEditForm recordId="{!v.item.Id}" objectApiName="Account"
+                                      onsuccess="{!c.savedItem}">
+                <lightning:messages/>
+                <lightning:outputField fieldName="AccountId"/>
+                <lightning:inputField fieldName="Name"/>
+                <lightning:inputField fieldName="Website"/>
+                <lightning:inputField fieldName="AccountNumber"/>
+                <lightning:inputField fieldName="AnnualRevenue"/>
+                <lightning:inputField fieldName="Phone"/>
+                <lightning:inputField fieldName="NumberOfEmployees"/>
+                <lightning:inputField fieldName="BillingAddress"/>
+                <div class="slds-clearfix">
+                    <div class="slds-m-top_small slds-float_right">
+                        <lightning:button variant="neutral"
+                                          label="{!$Label.c.TW_Cancel}"
+                                          onclick="{! c.closeEditRecordModel }"/>
+                        <lightning:button variant="brand"
+                                          type="submit"
+                                          label="{!$Label.c.TW_Save}"
+                                          onclick="{! c.closeEditRecordModel }"/>
+                    </div>
+                </div>
+            </lightning:recordEditForm>
+        </aura:set>
+    </c:TW_Modal>
+
+    <c:TW_Modal showHeader="true" showFooter="true" showCloseButton="true" aura:id="deleteRecordModal">
+        <aura:set attribute="header">
+            <h2 class="slds-text-heading_medium slds-hyphenate">{!$Label.c.TW_Delete}
+                <span class="slds-m-left_x-small">{!v.item.Name}</span></h2>
+        </aura:set>
+        <aura:set attribute="content">
+            <div class="slds-align_absolute-center">{!$Label.c.TW_Delete_Confirm}</div>
+        </aura:set>
+        <aura:set attribute="footer">
+            <lightning:button variant="neutral"
+                              label="{!$Label.c.TW_Cancel}"
+                              onclick="{! c.closeDeleteRecordModel }"/>
+            <lightning:button variant="brand"
+                              label="{!$Label.c.TW_Delete}"
+                              onclick="{! c.deleteRecord }"/>
+        </aura:set>
+    </c:TW_Modal>
+    <lightning:navigation aura:id="navId"/>
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <span>{!$Label.c.TW_Details}</span>
+                    </h2>
+                </div>
+                <aura:if isTrue="{!v.item != null}">
+                    <div class="slds-no-flex">
+                        <ul class="slds-button-group-row">
+                            <li class="slds-button-group-item">
+                                <lightning:button label="{!$Label.c.TW_Edit}" onclick="{!c.navigationToEditRecord}"/>
+                            </li>
+                            <li class="slds-button-group-item">
+                                <lightning:button label="{!$Label.c.TW_Delete}" title="{!$Label.c.TW_Delete}"
+                                                  onclick="{! c.navigationToDeleteRecord }"/>
+                            </li>
+                        </ul>
+                    </div>
+                </aura:if>
+            </header>
+        </div>
+        <aura:if isTrue="{!v.item != null}">
+            <div class="slds-p-horizontal_small">
+                <lightning:recordViewForm recordId="{!v.item.Id}" objectApiName="Account">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_6-of-12 slds-p-right_x-small slds-p-bottom_medium">
+                            <div class="slds-p-vertical_small slds-border_bottom">
+                                <lightning:outputField fieldName="Name"/>
+                            </div>
+                            <div class="slds-p-vertical_small slds-border_bottom">
+                                <lightning:outputField fieldName="Website"/>
+                            </div>
+                            <div class="slds-p-vertical_small slds-border_bottom">
+                                <lightning:outputField fieldName="AccountNumber"/>
+                            </div>
+                            <div class="slds-p-vertical_small slds-border_bottom">
+                                <lightning:outputField fieldName="AnnualRevenue"/>
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_6-of-12 slds-p-left_x-small slds-p-bottom_medium">
+                            <div class="slds-p-vertical_small slds-border_bottom">
+                                <lightning:outputField fieldName="Phone"/>
+                            </div>
+                            <div class="slds-p-vertical_small slds-border_bottom">
+                                <lightning:outputField fieldName="NumberOfEmployees"/>
+                            </div>
+                            <div class="slds-p-vertical_small slds-border_bottom">
+                                <lightning:outputField fieldName="BillingAddress"/>
+                            </div>
+                        </div>
+                    </div>
+                </lightning:recordViewForm>
+            </div>
+        </aura:if>
+    </article>
+</aura:component>

@@ -1,0 +1,5 @@
+<!--
+ - Created by BRITENET on 25.06.2019.
+ -->
+<aura:event type="APPLICATION" description="TW_AccountClearResultList">
+</aura:event>

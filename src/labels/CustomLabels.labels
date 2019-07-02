@@ -1037,13 +1037,6 @@
         <value>TechWorld Company</value>
     </labels>
     <labels>
-        <fullName>TW_Thank_you</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Text Thank you</shortDescription>
-        <value>Thank you</value>
-    </labels>
-    <labels>
         <fullName>TW_TechWorld_Company_team</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -1065,11 +1058,6 @@
         <value>Contact us if you are interested in cooperation</value>
     </labels>
     <labels>
-        <fullName>TW_TechWorld_form_order_info</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Text tech world Contact Form order info</shortDescription>
-        <value>What would you like to order?</value>
     </labels>
     <labels>
         <fullName>TW_TechWorld_form_fn</fullName>
@@ -1086,11 +1074,6 @@
         <value>Your last Name</value>
     </labels>
     <labels>
-        <fullName>TW_TechWorld_form_email</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Text tech world Contact Form email</shortDescription>
-        <value>Your Email Address</value>
     </labels>
     <labels>
         <fullName>TW_TechWorld_form_phone</fullName>
@@ -1098,19 +1081,5 @@
         <protected>true</protected>
         <shortDescription>Text tech world Contact Form phone</shortDescription>
         <value>Your Phone Number</value>
-    </labels>
-    <labels>
-        <fullName>TW_TechWorld_form_company</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Text tech world Contact Form company</shortDescription>
-        <value>Your Company</value>
-    </labels>
-    <labels>
-        <fullName>TW_TechWorld_form_submit</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Text tech world Contact Form submit</shortDescription>
-        <value>Submit</value>
     </labels>
 </CustomLabels>
