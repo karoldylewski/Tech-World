@@ -6,6 +6,7 @@
                 implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
                 access="global">
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:TW_ProductSelected" action="{!c.loadProductDetails}"/>
     <aura:attribute name="ProductId" type="String"/>
 
     <div class="slds-box" style="margin-left:250px; margin-right:250px; background-color:white;">

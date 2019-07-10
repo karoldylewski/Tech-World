@@ -3,6 +3,6 @@
  */
 ({
     getProductDetails: function(component, event, helper){
-        console.log('get product details');
+
     }
 })
