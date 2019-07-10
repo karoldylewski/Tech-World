@@ -3,7 +3,7 @@
  */
 ({
     loadProductDetails: function(component, event, helper){
-//        helper.getProductDetails(component,event);
-          console.log('event captured');
+        helper.getProductDetails(component,event);
+//          console.log('event captured');
     }
 })

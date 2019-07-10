@@ -5,10 +5,17 @@
     displayDetails : function(component){
         let productId = component.get("v.item.product.Id");
         let productName = component.get("v.item.product.Name");
+        let productNameConvertedToUrl = productName.replace(/\s+/g, '-').toLowerCase();
+        let productItemObject = component.get("v.item");
         let urlEvent = $A.get("e.force:navigateToURL");
         urlEvent.setParams({
-        	"url": "/product/"+productId+"/"+productName
+        	"url": "/product/"+productId+"/"+productNameConvertedToUrl
         });
         urlEvent.fire();
+        let productSelectedEvent = $A.get("e.c:TW_ProductSelected");
+        productSelectedEvent.setParams({
+            productObject : productItemObject
+        })
+        productSelectedEvent.fire();
     }
 })

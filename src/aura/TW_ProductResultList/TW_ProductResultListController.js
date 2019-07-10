@@ -7,4 +7,3 @@
         helper.getProducts(component);
       }
 })
-

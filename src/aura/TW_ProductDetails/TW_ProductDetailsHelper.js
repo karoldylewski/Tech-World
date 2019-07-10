@@ -3,7 +3,7 @@
  */
 ({
     getProductDetails: function(component, event){
-//       let productObject = event.getParam("productObject");
-//       console.log('Incming param from eventL '+JSON.stringify(productObject));
+       let productObject = event.getParam("productObject");
+       component.set("v.item",productObject);
     }
 })
