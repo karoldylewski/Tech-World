@@ -161,6 +161,17 @@
                     </div>
                 </div>
             </div>
+            <div class="slds-col prod-body">
+                <h2 class="slds-card__header-title reviews-header">
+                    <div class="slds-text-heading_large slds-border_bottom">
+                    {!$Label.c.TW_reviews}
+                    </div>
+                </h2>
+            </div>
+            <div class="slds-col prod-body">
+
+            </div>
+
         </div>
     </div>
 </aura:component>

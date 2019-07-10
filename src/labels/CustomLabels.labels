@@ -1178,4 +1178,12 @@
         <shortDescription>go to cart text</shortDescription>
         <value>Go to cart</value>
     </labels>
+
+    <labels>
+        <fullName>TW_reviews</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>reviews text</shortDescription>
+        <value>Reviews</value>
+    </labels>
 </CustomLabels>
