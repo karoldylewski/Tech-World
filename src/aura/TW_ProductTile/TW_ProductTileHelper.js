@@ -5,16 +5,16 @@
     displayDetails : function(component){
         let productId = component.get("v.item.product.Id");
         let productName = component.get("v.item.product.Nd");
+        let productItemObject = component.get("v.item");
         let urlEvent = $A.get("e.force:navigateToURL");
         urlEvent.setParams({
         	"url": "/product/"+productId+"/"+productName
         });
         urlEvent.fire();
-        let sendCarObjectEvent = $A.get("e.c:TW_ProductSelected");
-        sendCarObjectEvent.setParams({
-            "productObject" : component.get("v.item")
+        let productSelectedEvent = $A.get("e.c:TW_ProductSelected");
+        productSelectedEvent.setParams({
+            productObject : productItemObject
         })
-        sendCarObjectEvent.fire();
-        console.log('sent all events');
+        productSelectedEvent.fire();
     }
 })

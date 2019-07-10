@@ -3,7 +3,7 @@
  -->
 
 <aura:component description="TW_ProductTile">
-    <aura:registerEvent name="ProductSelectedEvent" type="c:TW_ProductSelected"/>
+    <aura:registerEvent name="productSelectedEvent" type="c:TW_ProductSelected"/>
     <aura:attribute name="prefixURL" type="String" default="/sfc/servlet.shepherd/version/download/"/>
     <aura:attribute name="item" type="Object"/>
     <aura:attribute name="orgUrl" type="String"/>
