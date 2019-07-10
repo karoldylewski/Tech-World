@@ -1,7 +1,0 @@
-<!--
- - Created by BRITENET on 10.07.2019.
- -->
-
-<aura:event type="APPLICATION" description="TW_ProductSelected">
-    <aura:attribute name="productObject" type="Object"/>
-</aura:event>
