@@ -12,7 +12,6 @@
             let state = response.getState();
             if (component.isValid() && state === 'SUCCESS') {
                 let searchingResult = response.getReturnValue();
-                console.log('LOG FROM TW_ProductResultListHelper .Incoming list: '+JSON.stringify(response.getReturnValue()))
                 component.set("v.items", searchingResult.products);
                 component.set("v.orgUrl", searchingResult.orgBaseUrl);
             } else {
@@ -21,8 +20,6 @@
         });
         $A.enqueueAction(action);
     },
-
-
 
     showErrorToast: function(component) {
         let toastEvent = $A.get("e.force:showToast");

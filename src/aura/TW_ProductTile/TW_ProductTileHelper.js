@@ -7,6 +7,7 @@
         let productName = component.get("v.item.product.Name");
         let productNameConvertedToUrl = productName.replace(/\s+/g, '-').toLowerCase();
         let productItemObject = component.get("v.item");
+        let orgBaseUrl = component.get("v.orgUrl");
         let urlEvent = $A.get("e.force:navigateToURL");
         urlEvent.setParams({
         	"url": "/product/"+productId+"/"+productNameConvertedToUrl
@@ -14,7 +15,8 @@
         urlEvent.fire();
         let productSelectedEvent = $A.get("e.c:TW_ProductSelected");
         productSelectedEvent.setParams({
-            productObject : productItemObject
+            productObject : productItemObject,
+            orgUrl : orgBaseUrl
         })
         productSelectedEvent.fire();
     }
