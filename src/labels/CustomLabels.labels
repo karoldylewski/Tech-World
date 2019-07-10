@@ -1186,4 +1186,11 @@
         <shortDescription>reviews text</shortDescription>
         <value>Reviews</value>
     </labels>
+    <labels>
+        <fullName>TW_Desc</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>desc text</shortDescription>
+        <value>Description: </value>
+    </labels>
 </CustomLabels>

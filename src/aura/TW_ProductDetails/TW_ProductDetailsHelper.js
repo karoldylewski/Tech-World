@@ -14,6 +14,7 @@
                 let responseItem = response.getReturnValue();
                 component.set("v.orgUrl", responseItem.orgId);
                 component.set("v.item", responseItem);
+                console.log(JSON.stringify(responseItem));
             } else {
                 let toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({

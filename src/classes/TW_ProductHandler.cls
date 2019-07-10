@@ -36,6 +36,7 @@ public with sharing class TW_ProductHandler {
                         Product2.Cellular__c,
                         Product2.Screen_size__c,
                         Product2.ImageId__c,
+                        Product2.Description__c,
                         UnitPrice
                 FROM PricebookEntry
                 WHERE Product2.RecordType.DeveloperName = 'TW_Product'
