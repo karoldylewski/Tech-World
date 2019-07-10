@@ -5,7 +5,6 @@
 <aura:component description="TW_ProductDetails"
                 implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
                 access="global">
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:handler event="c:TW_ProductSelected" action="{!c.loadProductDetails}"/>
     <aura:attribute name="ProductId" type="String"/>
 
