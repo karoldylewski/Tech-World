@@ -9,7 +9,7 @@
     <aura:handler event="c:TW_ProductSelected" action="{!c.loadProductDetails}"/>
     <aura:attribute name="ProductId" type="String"/>
 
-    <div class="slds-box" style="margin-left:250px; margin-right:250px; background-color:white;">
+    <div class="slds-box">
 
         <div class="slds-grid slds-grid_vertical">
             <h2 class="slds-card__header-title slds-align_absolute-center">
