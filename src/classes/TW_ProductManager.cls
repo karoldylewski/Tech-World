@@ -5,9 +5,9 @@
 public with sharing class TW_ProductManager {
 
     @AuraEnabled
-    public static List<TW_ProductWrapper> getProductList() {
-        List<TW_ProductWrapper> wrapList = TW_ProductService.getProductList();
-        return wrapList;
+    public static TW_Utils.TW_ProductList getProductList(List<String> parameters) {
+        TW_Utils.TW_ProductList searchedProducts = TW_ProductService.getProductList(parameters);
+        return searchedProducts;
     }
 
 }

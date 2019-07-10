@@ -1057,8 +1057,7 @@
         <shortDescription>Text tech world Contact Form</shortDescription>
         <value>Contact us if you are interested in cooperation</value>
     </labels>
-    <labels>
-    </labels>
+
     <labels>
         <fullName>TW_TechWorld_form_fn</fullName>
         <language>en_US</language>
@@ -1073,13 +1072,26 @@
         <shortDescription>Text tech world Contact Form ln</shortDescription>
         <value>Your last Name</value>
     </labels>
-    <labels>
-    </labels>
+
     <labels>
         <fullName>TW_TechWorld_form_phone</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Text tech world Contact Form phone</shortDescription>
         <value>Your Phone Number</value>
+    </labels>
+    <labels>
+        <fullName>TW_Price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>price text</shortDescription>
+        <value>Price:</value>
+    </labels>
+    <labels>
+        <fullName>TW_New_Price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>Sale:</value>
     </labels>
 </CustomLabels>

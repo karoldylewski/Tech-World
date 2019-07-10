@@ -1,0 +1,26 @@
+<!--
+ - Created by BRITENET on 09.07.2019.
+ -->
+
+<aura:component description="TW_ProductDetails"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global">
+    <aura:attribute name="ProductId" type="String"/>
+    <div class="slds-box" style="margin-left:250px; margin-right:250px; background-color:white;">
+
+        <div class="slds-grid slds-grid_vertical">
+            <h2 class="slds-card__header-title slds-align_absolute-center">
+                <div class="slds-text-heading_large slds-border_bottom" style="font-weight:700;">
+                    Product Details id: {!v.ProductId}
+                </div>
+            </h2>
+            <div class="slds-col" style="margin-top:15px; margin-bottom:15px;">
+            </div>
+            <div class="slds-col slds-size_1-of-1">
+
+            </div>
+
+
+        </div>
+    </div>
+</aura:component>
