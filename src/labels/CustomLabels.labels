@@ -1057,8 +1057,7 @@
         <shortDescription>Text tech world Contact Form</shortDescription>
         <value>Contact us if you are interested in cooperation</value>
     </labels>
-    <labels>
-    </labels>
+
     <labels>
         <fullName>TW_TechWorld_form_fn</fullName>
         <language>en_US</language>
@@ -1073,13 +1072,125 @@
         <shortDescription>Text tech world Contact Form ln</shortDescription>
         <value>Your last Name</value>
     </labels>
-    <labels>
-    </labels>
+
     <labels>
         <fullName>TW_TechWorld_form_phone</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Text tech world Contact Form phone</shortDescription>
         <value>Your Phone Number</value>
+    </labels>
+    <labels>
+        <fullName>TW_Price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>price text</shortDescription>
+        <value>Price:</value>
+    </labels>
+    <labels>
+        <fullName>TW_New_Price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>Sale:</value>
+    </labels>
+    <labels>
+        <fullName>TW_Battery_capacity</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>battery text</shortDescription>
+        <value>Battery capacity:</value>
+    </labels>
+    <labels>
+        <fullName>TW_Camera</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Camera text</shortDescription>
+        <value>Camera:</value>
+    </labels>
+    <labels>
+        <fullName>TW_RAM</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>RAM text</shortDescription>
+        <value>RAM:</value>
+    </labels>
+    <labels>
+        <fullName>TW_Screen_size</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Screen size text</shortDescription>
+        <value>Screen size:</value>
+    </labels>
+    <labels>
+        <fullName>TW_Cellular</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cellular text</shortDescription>
+        <value>Cellular:</value>
+    </labels>
+    <labels>
+        <fullName>TW_mAh</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>mAh text</shortDescription>
+        <value>mAh</value>
+    </labels>
+    <labels>
+        <fullName>TW_inch</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>inch text</shortDescription>
+        <value>inches</value>
+    </labels>
+    <labels>
+        <fullName>TW_mpx</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>mpx text</shortDescription>
+        <value>mpx</value>
+    </labels>
+    <labels>
+        <fullName>TW_gb</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>gb text</shortDescription>
+        <value>GB</value>
+    </labels>
+    <labels>
+        <fullName>TW_Sale</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>New Price:</value>
+    </labels>
+    <labels>
+        <fullName>TW_add_to_cart</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>add to cart text</shortDescription>
+        <value>Add to cart</value>
+    </labels>
+    <labels>
+        <fullName>TW_go_to_cart</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>go to cart text</shortDescription>
+        <value>Go to cart</value>
+    </labels>
+
+    <labels>
+        <fullName>TW_reviews</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>reviews text</shortDescription>
+        <value>Reviews</value>
+    </labels>
+    <labels>
+        <fullName>TW_Desc</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>desc text</shortDescription>
+        <value>Description: </value>
     </labels>
 </CustomLabels>
