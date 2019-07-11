@@ -37,45 +37,4 @@ public with sharing class TW_Utils {
         }
     }
 
-    public static Map<String,Integer> segregateIdsToArrays(List<String> parameters){
-        Map<String,Integer> itemMap = new Map<String,Integer>();
-        for (String str : parameters){
-            Integer currentNumber = itemMap.get(str);
-            if (currentNumber == null){
-                itemMap.put(str,1);
-            }else{
-                currentNumber +=1;
-                itemMap.put(str,currentNumber);
-            }
-        }
-        return itemMap;
-    }
-
-    public static List<String> getUniqueIdsFromMap(Map<String,Integer> parameters){
-        Set<String> idSet = new Set<String>();
-        for (String key : parameters.keySet()){
-            idSet.add(key);
-        }
-        List<String> idList = new List<String>(idSet);
-        return idList;
-    }
-
-    public static List<Id> convertStringToId(List<String> parameters){
-        List<Id> returnIdList = new List<Id>();
-        System.debug('Starting conversion from string to ID');
-        for (String param : parameters){
-            System.debug('Trying to convert string:'+param+'to id');
-            Id recordId = Id.valueOf(param);
-            returnIdList.add(recordId);
-        }
-        return returnIdList;
-    }
-//
-//    public static generateQueryPartForSoql(List<String> parameters){
-//        String result;
-//        for (String param : parameters){
-//            result = 'Parent2.Id = '+param;
-//        }
-//
-//    }
 }

@@ -68,13 +68,12 @@ public with sharing class TW_ProductHandler {
         return resultList;
     }
 
-    public static List<AggregateResult> getPricebookEntriesForOrder(List<String> itemId) {
-        List<AggregateResult> resultList = [
-                SELECT MIN(UnitPrice), Product2.Id
+    public static List<PricebookEntry> getPricebookEntriesForOrder(List<String> itemId) {
+        List<PricebookEntry> resultList = [
+                SELECT Product2.Id,UnitPrice, Pricebook2Id
                 FROM PricebookEntry
                 WHERE Product2.Id IN : itemId
-                GROUP BY Product2.Id
-
+                ORDER BY Product2.Id, UnitPrice DESC
         ];
         return resultList;
     }
