@@ -21,7 +21,7 @@ public with sharing class TW_ProductService {
         List<Id> idsToSearch = TW_Utils.convertStringToId(idList);
         List<PricebookEntry> pricebookEntries = TW_ProductHandler.getPricebookEntriesForMultipleId(idList);
         List<TW_Utils.TW_ProductWrapper> wrapList = addItemsToWrappers(pricebookEntries);
-        for (TW_Utils.TW_ProductWrapper singleProduct : wrapList){
+        for (TW_Utils.TW_ProductWrapper singleProduct : wrapList) {
             Integer itemCount = sortedIds.get(singleProduct.product.Id);
             singleProduct.count = itemCount;
         }
@@ -29,6 +29,42 @@ public with sharing class TW_ProductService {
         TW_Utils.TW_ProductList products = new TW_Utils.TW_ProductList(orgBaseUrl, wrapList);
         return products;
     }
+
+    public static Boolean addProductsToOrder(List<String> productIds) {
+        Map<String, Integer> sortedIds = TW_Utils.segregateIdsToArrays(productIds);
+        List<String> idList = TW_Utils.getUniqueIdsFromMap(sortedIds);
+        List<PricebookEntry> pricebookEntries = TW_ProductHandler.getPricebookEntriesForMultipleId(idList);
+        System.debug('Pricebook entries:'+pricebookEntries);
+//        Order newOrder = createOrderForUser();
+//        for(String productId : productIds){
+//            OrderItem newOrderItem =createOrderItem(newOrder.Id,productId);
+//        }
+        return true;
+    }
+
+    private static OrderItem createOrderItem(String orderId, String productId){
+        OrderItem item = new OrderItem();
+        item.OrderId = orderId;
+        item.Product2Id = productId;
+        try{
+            insert item;
+        }catch (Exception e){
+            System.debug('Error: '+e.getMessage());
+        }
+        return item;
+    }
+
+
+    private static Order createOrderForUser() {
+        Order ord = new Order();
+        ord.AccountId = TW_AccountHandler.getCommunityCustomerAccountIdByEmail();
+        ord.EndDate = Date.today().addDays(30);
+        ord.Status = 'Draft';
+        ord.EffectiveDate = Date.today();
+        String OrderId = TW_OrderHandler.createOrder(ord);
+        return ord;
+    }
+
 
     private static List< TW_Utils.TW_ProductWrapper> addItemsToWrappers(List<PricebookEntry> entries) {
         List<TW_Utils.TW_ProductWrapper> wrapList = new List<TW_Utils.TW_ProductWrapper>();

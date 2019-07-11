@@ -67,4 +67,15 @@ public with sharing class TW_ProductHandler {
         System.debug('Result for multiple ids: '+resultList.size());
         return resultList;
     }
+
+    public static List<AggregateResult> getPricebookEntriesForOrder(List<String> itemId) {
+        List<AggregateResult> resultList = [
+                SELECT MIN(UnitPrice), Product2.Id
+                FROM PricebookEntry
+                WHERE Product2.Id IN : itemId
+                GROUP BY Product2.Id
+
+        ];
+        return resultList;
+    }
 }
