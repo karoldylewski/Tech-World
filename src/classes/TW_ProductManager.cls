@@ -22,4 +22,10 @@ public with sharing class TW_ProductManager {
         return item;
     }
 
+    @AuraEnabled
+    public static Boolean placeOrder(List<String> productsId) {
+//        TW_Utils.TW_ProductList item = TW_ProductService.getProductDetailsForMultipleId(productsId);
+        return true;
+    }
+
 }

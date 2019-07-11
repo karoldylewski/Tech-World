@@ -7,7 +7,7 @@
     },
 
     orderItems: function(component, event, helper) {
-        console.log('Order items from cart');
+        helper.onOrderItems(component);
     },
     deleteItems: function(component, event, helper) {
         helper.onDeleteAllItems(component);
