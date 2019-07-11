@@ -12,8 +12,13 @@ public with sharing class TW_ProductManager {
 
     @AuraEnabled
     public static TW_Utils.TW_ProductWrapper getProductDetails(String productId) {
-        System.debug('inside apex method;');
         TW_Utils.TW_ProductWrapper item = TW_ProductService.getProductDetails(productId);
+        return item;
+    }
+
+    @AuraEnabled
+    public static TW_Utils.TW_ProductList getMultipleProductDetails(List<String> productsId) {
+        TW_Utils.TW_ProductList item = TW_ProductService.getProductDetailsForMultipleId(productsId);
         return item;
     }
 

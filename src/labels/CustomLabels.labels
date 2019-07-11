@@ -1193,4 +1193,60 @@
         <shortDescription>desc text</shortDescription>
         <value>Description: </value>
     </labels>
+    <labels>
+        <fullName>TW_Quantity</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>quantity text</shortDescription>
+        <value>Quantity: </value>
+    </labels>
+    <labels>
+        <fullName>TW_Total_price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>total price text</shortDescription>
+        <value>Total Price: </value>
+    </labels>
+    <labels>
+        <fullName>TW_Your_cart</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Your cart text</shortDescription>
+        <value>Your cart </value>
+    </labels>
+    <labels>
+        <fullName>TW_cart_total_value</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Your cart total value: text</shortDescription>
+        <value>Your cart total value: </value>
+    </labels>
+    <labels>
+        <fullName>TW_make_order</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>make an order text</shortDescription>
+        <value>Order items from my cart </value>
+    </labels>
+    <labels>
+        <fullName>TW_delete_cart</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Remove all items text</shortDescription>
+        <value>Remove all items </value>
+    </labels>
+    <labels>
+        <fullName>TW_cart_empty</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Your cart is empty text</shortDescription>
+        <value>Your cart is empty </value>
+    </labels>
+    <labels>
+        <fullName>TW_Go_to_prod_details</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Your cart is empty text</shortDescription>
+        <value>Go to product details </value>
+    </labels>
 </CustomLabels>

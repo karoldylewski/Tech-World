@@ -45,4 +45,26 @@ public with sharing class TW_ProductHandler {
         ];
         return resultList;
     }
+
+    public static List<PricebookEntry> getPricebookEntriesForMultipleId(List<String> itemId) {
+        List<PricebookEntry> resultList = [
+                SELECT Product2.RecordType.DeveloperName,
+                        Product2.Id,
+                        Product2.Name,
+                        Product2.Camera__c,
+                        Product2.RAM__c,
+                        Product2.Battery_capacity__c,
+                        Product2.Cellular__c,
+                        Product2.Screen_size__c,
+                        Product2.ImageId__c,
+                        Product2.Description__c,
+                        UnitPrice
+                FROM PricebookEntry
+                WHERE Product2.Id IN : itemId
+                ORDER BY Product2.Id, UnitPrice DESC
+        ];
+        System.debug('parameters for soql: '+itemId);
+        System.debug('Result for multiple ids: '+resultList.size());
+        return resultList;
+    }
 }

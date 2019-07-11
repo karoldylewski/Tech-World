@@ -7,7 +7,7 @@
     },
 
     addToCart: function(component, event, helper){
-        console.log('add item to cart');
+        helper.onAddToCart(component);
     },
 
     goToCart: function(component, event, helper){

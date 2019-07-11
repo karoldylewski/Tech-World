@@ -1,7 +1,3 @@
-/**
- * Created by BRITENET on 09.07.2019.
- */
-
 public with sharing class TW_ProductService {
 
     public static TW_Utils.TW_ProductList getProductList(List<String> parameters) {
@@ -17,6 +13,21 @@ public with sharing class TW_ProductService {
         List<TW_Utils.TW_ProductWrapper> wrapList = addItemsToWrappers(pricebookEntries);
         wrapList[0].orgId = getOrgBaseUrl();
         return wrapList[0];
+    }
+
+    public static TW_Utils.TW_ProductList getProductDetailsForMultipleId(List<String> productIds) {
+        Map<String, Integer> sortedIds = TW_Utils.segregateIdsToArrays(productIds);
+        List<String> idList = TW_Utils.getUniqueIdsFromMap(sortedIds);
+        List<Id> idsToSearch = TW_Utils.convertStringToId(idList);
+        List<PricebookEntry> pricebookEntries = TW_ProductHandler.getPricebookEntriesForMultipleId(idList);
+        List<TW_Utils.TW_ProductWrapper> wrapList = addItemsToWrappers(pricebookEntries);
+        for (TW_Utils.TW_ProductWrapper singleProduct : wrapList){
+            Integer itemCount = sortedIds.get(singleProduct.product.Id);
+            singleProduct.count = itemCount;
+        }
+        String orgBaseUrl = getOrgBaseUrl();
+        TW_Utils.TW_ProductList products = new TW_Utils.TW_ProductList(orgBaseUrl, wrapList);
+        return products;
     }
 
     private static List< TW_Utils.TW_ProductWrapper> addItemsToWrappers(List<PricebookEntry> entries) {
