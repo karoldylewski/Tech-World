@@ -1,0 +1,60 @@
+<!--
+ - Created by BRITENET on 12.07.2019.
+ -->
+
+<aura:component implements="forceCommunity:themeLayout" access="global" description="TW_ThemeBar">
+    <aura:attribute name="search" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="profileMenu" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="navBar" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="newHeader" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="actionColumn" type="Aura.Component[]"/>
+    <div>
+        <div class="header">
+            <div class="header-top">
+                <div class="container">
+                    <lightning:layout verticalAlign="center">
+                        <lightning:layoutItem size="1">
+                            <div class="logoContainer" onclick="{!c.navigateToHomePage}">
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="5">
+                            <div class="navigation">
+                                <c:TW_NavigationBar/>
+                            </div>
+                        </lightning:layoutItem>
+
+                        <lightning:layoutItem size="3">
+                            <div class="searchRegion">
+                                    {!v.search}
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="2">
+                            <div class="profileMenuRegion">
+                                    {!v.profileMenu}
+                            </div>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem size="1">
+                            <div class="actionColumn">
+                                    <c:TW_CartIcon/>
+                            </div>
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                </div>
+            </div>
+        </div>
+        <lightning:layout>
+            <lightning:layoutItem size="12" class="main-content">
+                <div aura:id="mainContentArea" class="mainContentArea">
+                        {!v.body}
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+        <lightning:layout>
+            <lightning:layoutItem size="12">
+                <div class="footer">
+                        {!v.footer}
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>

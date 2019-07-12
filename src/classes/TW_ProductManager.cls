@@ -24,8 +24,30 @@ public with sharing class TW_ProductManager {
 
     @AuraEnabled
     public static Boolean placeOrder(List<String> productsId) {
-//        TW_Utils.TW_ProductList item = TW_ProductService.getProductDetailsForMultipleId(productsId);
+        Boolean response = TW_ProductService.addProductsToOrder(productsId);
         return true;
+    }
+
+    @AuraEnabled
+    public static List<Order> getUserOrders() {
+        List<Order> orderItems = TW_ProductService.getUserOrders();
+        return orderItems;
+    }
+
+    @AuraEnabled
+    public static List<OrderItem> getOrderItems(String orderId) {
+        List<OrderItem> orderItems = TW_ProductService.getOrderItems(orderId);
+        return orderItems;
+    }
+
+    @AuraEnabled
+    public static List<TW_Product_Review__c> getReviewItems(String productId) {
+        List<TW_Product_Review__c> reviewItems = TW_ProductService.getProductReviews(productId);
+        return reviewItems;
+    }
+    @AuraEnabled
+    public static Boolean checkIfUserCanReview(String productId) {
+        return TW_ProductService.checkIfUserCanReview(productId);
     }
 
 }

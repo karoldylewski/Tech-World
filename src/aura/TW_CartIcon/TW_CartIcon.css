@@ -1,0 +1,20 @@
+/**
+ * Created by BRITENET on 12.07.2019.
+ */
+.THIS .icn svg {
+ fill: darkcyan;
+}
+
+.THIS .icn:hover svg {
+ fill: cyan;
+}
+
+.THIS .cart-badge-value{
+    font-size:14px;
+}
+.THIS .card-badge:hover{
+    background-color: cyan;
+}
+.THIS .cart-body:hover{
+    background-color: cyan;
+}
