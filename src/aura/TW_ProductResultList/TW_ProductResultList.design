@@ -1,0 +1,7 @@
+<!--
+ - Created by BRITENET on 09.07.2019.
+ -->
+
+<design:component>
+    <design:attribute name="searchQuery" label="String to query" description="Searching query." />
+</design:component>

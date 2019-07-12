@@ -1045,6 +1045,41 @@
         <value>Number of Employees</value>
     </labels>
     <labels>
+        <fullName>TW_Order_date</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>order date text</shortDescription>
+        <value>Order date:</value>
+    </labels>
+    <labels>
+        <fullName>TW_Order_details</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Go to order details text</shortDescription>
+        <value>Go to order details</value>
+    </labels>
+    <labels>
+        <fullName>TW_Order_number</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>order date text</shortDescription>
+        <value>Order number:</value>
+    </labels>
+    <labels>
+        <fullName>TW_Order_placed_on</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Order placed on text</shortDescription>
+        <value>Order placed on:</value>
+    </labels>
+    <labels>
+        <fullName>TW_Order_status</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>status text</shortDescription>
+        <value>Status:</value>
+    </labels>
+    <labels>
         <fullName>TW_Phone</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -1064,6 +1099,13 @@
         <protected>true</protected>
         <shortDescription>quantity text</shortDescription>
         <value>Quantity:</value>
+    </labels>
+    <labels>
+        <fullName>TW_Quantitytab</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>quantity text</shortDescription>
+        <value>Quantity</value>
     </labels>
     <labels>
         <fullName>TW_RAM</fullName>
@@ -1227,6 +1269,27 @@
         <value>Total Price:</value>
     </labels>
     <labels>
+        <fullName>TW_Total_pricetab</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>total price text</shortDescription>
+        <value>Total Price</value>
+    </labels>
+    <labels>
+        <fullName>TW_Your_Orders</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>reviews text</shortDescription>
+        <value>Your Orders</value>
+    </labels>
+    <labels>
+        <fullName>TW_Your_Orders_empty</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>reviews text</shortDescription>
+        <value>You do not have any orders yet</value>
+    </labels>
+    <labels>
         <fullName>TW_Your_cart</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -1304,67 +1367,25 @@
         <value>mpx</value>
     </labels>
     <labels>
-        <fullName>TW_reviews</fullName>
+        <fullName>TW_product_name</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>reviews text</shortDescription>
-        <value>Reviews</value>
-    </labels>
-    <labels>
-        <fullName>TW_Your_Orders</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>reviews text</shortDescription>
-        <value>Your Orders</value>
-    </labels>
-    <labels>
-        <fullName>TW_Your_Orders_empty</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>reviews text</shortDescription>
-        <value>You do not have any orders yet</value>
-    </labels>
-    <labels>
-        <fullName>TW_Order_placed_on</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Order placed on text</shortDescription>
-        <value>Order placed on:</value>
-    </labels>
-    <labels>
-        <fullName>TW_Order_status</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>status text</shortDescription>
-        <value>Status:</value>
-    </labels>
-    <labels>
-        <fullName>TW_Order_date</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>order date text</shortDescription>
-        <value>Order date:</value>
-    </labels>
-    <labels>
-        <fullName>TW_Order_number</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>order date text</shortDescription>
-        <value>Order number:</value>
-    </labels>
-    <labels>
-        <fullName>TW_Order_details</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Go to order details text</shortDescription>
-        <value>Go to order details</value>
+        <shortDescription>product name text</shortDescription>
+        <value>Product Name</value>
     </labels>
     <labels>
         <fullName>TW_products_in_order</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Go to order details text</shortDescription>
-        <value>Products in order: </value>
+        <value>Products in order:</value>
+    </labels>
+    <labels>
+        <fullName>TW_reviews</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>reviews text</shortDescription>
+        <value>Reviews</value>
     </labels>
     <labels>
         <fullName>TW_show_order_items</fullName>
@@ -1374,31 +1395,10 @@
         <value>Show order items</value>
     </labels>
     <labels>
-        <fullName>TW_product_name</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>product name text</shortDescription>
-        <value>Product Name</value>
-    </labels>
-    <labels>
-        <fullName>TW_Quantitytab</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>quantity text</shortDescription>
-        <value>Quantity</value>
-    </labels>
-    <labels>
         <fullName>TW_unit_price</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>unit price text</shortDescription>
         <value>Unit price</value>
-    </labels>
-    <labels>
-        <fullName>TW_Total_pricetab</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>total price text</shortDescription>
-        <value>Total Price</value>
     </labels>
 </CustomLabels>
