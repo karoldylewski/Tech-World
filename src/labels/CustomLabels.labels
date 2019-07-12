@@ -1367,6 +1367,13 @@
         <value>mpx</value>
     </labels>
     <labels>
+        <fullName>TW_post_review</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>type review text</shortDescription>
+        <value>Type your review:</value>
+    </labels>
+    <labels>
         <fullName>TW_product_name</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -1379,6 +1386,20 @@
         <protected>true</protected>
         <shortDescription>Go to order details text</shortDescription>
         <value>Products in order:</value>
+    </labels>
+    <labels>
+        <fullName>TW_rate_product</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Rate product text</shortDescription>
+        <value>Rate product:</value>
+    </labels>
+    <labels>
+        <fullName>TW_review_forbidden</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>type review text</shortDescription>
+        <value>You can not comment on this product</value>
     </labels>
     <labels>
         <fullName>TW_reviews</fullName>
