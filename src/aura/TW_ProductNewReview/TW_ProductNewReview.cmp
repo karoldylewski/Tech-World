@@ -8,6 +8,7 @@
                 controller="TW_ProductManager">
     <aura:attribute name="newReview" type="TW_Product_Review__c"/>
     <aura:attribute name="productId" type="String"/>
+    <aura:registerEvent name="reviewAdded" type="c:TW_ReviewAdded"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:handler name="RatingChanged" event="c:TW_RatingChange"
                   action="{!c.ratingChanged}" phase="capture" />
@@ -23,7 +24,7 @@
             {!$Label.c.TW_post_review}
                 <lightning:inputRichText value="{!v.newReview.Content__c}" disabledCategories="FORMAT_FONT"/>
             </lightning:layoutItem>
-            <lightning:layoutItem size="12" padding="around-small">
+            <lightning:layoutItem size="12">
                 {!$Label.c.TW_rate_product}
                 <c:TW_StarRating value="0" readonly="false"/>
             </lightning:layoutItem>

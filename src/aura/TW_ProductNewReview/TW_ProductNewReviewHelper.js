@@ -35,9 +35,8 @@
                     });
                     resultsToast.fire();
                 }
-                helper.onInit(component);
-                //                        var compEvent = component.getEvent("ReviedAdded");
-                //                        compEvent.fire();
+                let compEvent = component.getEvent("reviewAdded");
+                compEvent.fire();
             } else {
                 let toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({

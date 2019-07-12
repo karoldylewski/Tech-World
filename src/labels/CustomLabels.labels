@@ -1415,4 +1415,11 @@
         <shortDescription>type review text</shortDescription>
         <value>Type your review:</value>
     </labels>
+    <labels>
+        <fullName>TW_review_forbidden</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>type review text</shortDescription>
+        <value>You can not comment on this product</value>
+    </labels>
 </CustomLabels>

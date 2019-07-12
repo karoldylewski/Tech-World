@@ -11,8 +11,20 @@ public with sharing class TW_ReviewHandler {
                 WHERE Product__c =: itemId
                 ORDER BY CreatedDate DESC
         ];
-        System.debug('Found: '+resultList.size()+' reviews for product: '+itemId);
         return resultList;
     }
 
+    public static Boolean checkIfUserHasCommented(String itemId, String userId) {
+        List<TW_Product_Review__c> resultList = [
+                SELECT Id
+                FROM TW_Product_Review__c
+                WHERE Product__c =: itemId
+                AND CreatedBy.Id =: userId
+        ];
+        if (resultList.isEmpty()){
+            return false;
+        }else{
+            return true;
+        }
+    }
 }
