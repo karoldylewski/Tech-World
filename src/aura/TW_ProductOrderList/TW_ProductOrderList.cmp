@@ -8,7 +8,6 @@
                 controller="TW_ProductManager">
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:attribute name="items" type="Object[]"/>
-
     <div>
         <div class="slds-grid slds-wrap slds-grid_vertical">
             <h2 class="slds-card__header-title slds-align_absolute-center">
@@ -29,19 +28,7 @@
     </div>
     <div class="slds-grid slds-wrap">
         <aura:iteration items="{!v.items}" var="prod">
-<!--            <c:TW_ProductInCartTile item="{!prod}" orgUrl="{!v.items.orgBaseUrl}"/>-->
             <c:TW_ProductInOrderTile item="{!prod}"/>
         </aura:iteration>
     </div>
-    <aura:if isTrue="{!v.items != null}">
-<!--        <div class="slds-col">-->
-<!--            <div class="slds-align_absolute-center subheader">-->
-<!--                <button class="slds-button slds-button_text-destructive" onclick="{!c.deleteItems}">-->
-<!--                    <span class="btn-cart-text">-->
-<!--                            {!$Label.c.TW_delete_cart}-->
-<!--                    </span>-->
-<!--                </button>-->
-<!--            </div>-->
-<!--        </div>-->
-    </aura:if>
 </aura:component>

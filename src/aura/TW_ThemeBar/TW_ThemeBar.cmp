@@ -5,12 +5,9 @@
 <aura:component implements="forceCommunity:themeLayout" access="global" description="TW_ThemeBar">
     <aura:attribute name="search" type="Aura.Component[]" required="false"/>
     <aura:attribute name="profileMenu" type="Aura.Component[]" required="false"/>
-    <aura:attribute name="Nav" type="Aura.Component[]" required="false"/>
+    <aura:attribute name="navBar" type="Aura.Component[]" required="false"/>
     <aura:attribute name="newHeader" type="Aura.Component[]" required="false"/>
     <aura:attribute name="actionColumn" type="Aura.Component[]"/>
-
-<!--                                        {!v.Nav}-->
-
     <div>
         <div class="header">
             <div class="header-top">
@@ -22,7 +19,7 @@
                         </lightning:layoutItem>
                         <lightning:layoutItem size="5">
                             <div class="navigation">
-                                    {!v.navBar}
+                                <c:TW_NavigationBar/>
                             </div>
                         </lightning:layoutItem>
 
@@ -38,7 +35,7 @@
                         </lightning:layoutItem>
                         <lightning:layoutItem size="1">
                             <div class="actionColumn">
-                                    {!v.actionColumn}
+                                    <c:TW_CartIcon/>
                             </div>
                         </lightning:layoutItem>
                     </lightning:layout>

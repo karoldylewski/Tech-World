@@ -1,12 +1,9 @@
 ({
-
     onSeeDetails: function(component) {
-//        let orderItems = component.get("v.orderItems");
-////        console.log('order items:'+orderItems+'.');
-//        console.log('done.');
-//        if (orderItems != ''){
-//            return;
-//        }
+        let existingItems = component.get("v.orderItems");
+        if (existingItems.length != 0){
+            return;
+        }
         let action = component.get('c.getOrderItems');
         action.setParams({
             orderId: component.get("v.item.Id")
@@ -16,8 +13,6 @@
             if (state === "SUCCESS") {
                 let responseItem = response.getReturnValue();
                 component.set('v.orderItems', responseItem);
-//                console.log('success.');
-                console.log(JSON.stringify(responseItem));
             } else {
                 let toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({

@@ -15,19 +15,16 @@
                 component.set("v.items", searchingResult.products);
                 component.set("v.orgUrl", searchingResult.orgBaseUrl);
             } else {
-                this.showErrorToast(component);
+                console.log(JSON.stringify(response.getReturnValue()));
+                let toastEvent = $A.get("e.force:showToast");
+                toastEvent.setParams({
+                    "title": "Error",
+                    "message": "Could not load products",
+                    type: "error",
+                });
+                toastEvent.fire();
             }
         });
         $A.enqueueAction(action);
     },
-
-    showErrorToast: function(component) {
-        let toastEvent = $A.get("e.force:showToast");
-        toastEvent.setParams({
-            "title": "Error",
-            "message": "Could not load products",
-            type: "error",
-        });
-        toastEvent.fire();
-    }
 })

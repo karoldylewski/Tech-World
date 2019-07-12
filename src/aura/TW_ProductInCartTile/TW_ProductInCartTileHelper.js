@@ -28,6 +28,8 @@
                     }
                     let compEvent = component.getEvent("productRemovedFromCart");
                     compEvent.fire();
+                     let appEvent = $A.get("e.c:TW_ProductAddedToCart");
+                     appEvent.fire();
                     return;
                 }
             }
@@ -46,6 +48,8 @@
         localStorage.setItem('productList', storedKeysArray);
         let compEvent = component.getEvent("productRemovedFromCart");
         compEvent.fire();
+        let appEvent = $A.get("e.c:TW_ProductAddedToCart");
+        appEvent.fire();
     },
 
     onSeeDetails: function(component) {
