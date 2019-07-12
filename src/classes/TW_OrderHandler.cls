@@ -17,9 +17,9 @@ public with sharing class TW_OrderHandler {
         try {
             insert items;
         } catch (Exception e) {
-            return false;
+            return e.getMessage();
         }
-        return true;
+        return null;
     }
 
     public static List<Order> getUserOrders(String userId) {
