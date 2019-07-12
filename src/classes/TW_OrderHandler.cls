@@ -23,7 +23,7 @@ public with sharing class TW_OrderHandler {
     }
 
     public static List<Order> getUserOrders(String userId){
-        List<Order> orders = [SELECT Id,Status,OwnerId,TotalAmount FROM Order WHERE OwnerId =: userId];
+        List<Order> orders = [SELECT Id,Status,OwnerId,TotalAmount,EffectiveDate,OrderNumber FROM Order WHERE OwnerId =: userId];
         return orders;
     }
 
