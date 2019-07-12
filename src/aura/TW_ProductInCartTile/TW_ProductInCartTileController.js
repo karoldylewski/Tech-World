@@ -3,7 +3,7 @@
  */
 ({
     removeItem: function(component, event, helper) {
-         helper.onRemoveItem(component);
+        helper.onRemoveItem(component);
     },
 
     addItem: function(component, event, helper) {

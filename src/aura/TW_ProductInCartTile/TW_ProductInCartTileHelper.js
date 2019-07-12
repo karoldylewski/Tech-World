@@ -30,7 +30,6 @@
                     compEvent.fire();
                     return;
                 }
-
             }
         }
     },
@@ -56,6 +55,5 @@
              "url": "/product/"+productId
        });
        urlEvent.fire();
-
-    }
+    },
 })
