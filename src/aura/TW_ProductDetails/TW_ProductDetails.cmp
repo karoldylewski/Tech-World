@@ -21,14 +21,6 @@
             </h2>
             <div class="slds-col prod-body">
                 <div class="slds-grid slds-wrap">
-                    <!--                    <div class="slds-col slds-size_1-of-1">-->
-                    <!--                        <aura:if isTrue="{!v.item.currentPrice != v.item.originalPrice}">-->
-                    <!--                            <div class="slds-align_absolute-center sale-banner">-->
-                    <!--                                <img src="{!$Resource.TW_SaleBanner}" alt="sale banner not found"/>-->
-                    <!--                            </div>-->
-
-                    <!--                        </aura:if>-->
-                    <!--                    </div>-->
                     <div class="slds-col slds-size_1-of-4">
                         <img src="{!v.orgUrl +v.prefixURL+ v.item.product.ImageId__c}" class="img-container"/>
                     </div>

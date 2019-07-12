@@ -2,5 +2,38 @@
  - Created by BRITENET on 12.07.2019.
  -->
 
-<aura:component description="TW_ProductNewReview">
+<aura:component description="TW_ProductNewReview"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global"
+                controller="TW_ProductManager">
+    <aura:attribute name="newReview" type="MOV_Comment__c"/>
+    <force:recordData aura:id="service"
+                      fields="Id, Content__c, movieId__c, Rating__c"
+                      targetFields="{!v.newReview}"
+                      targetError="{!v.recordError}"
+                      recordUpdated="{!c.onRecordUpdated}"
+    />
+
+    <div class="review-box" style="margin-top:10px;">
+        <lightning:layout multipleRows="true" class="slds-box">
+            <lightning:layoutItem size="12" padding="around-small">
+                Post your review:
+                <lightning:inputRichText value="{!v.newReview.Content__c}" disabledCategories="FORMAT_FONT"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="12" padding="around-small">
+                Rate product:
+                <c:MOV_StarRating value="0" readonly="false"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="12" class="slds-align--absolute-center">
+                <lightning:button variant="brand" iconName="utility:save" label="Post review" onclick="{!c.onSave}"/>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+    <aura:if isTrue="{!not(empty(v.recordError))}">
+        <div class="recordError">
+            <ui:message title="Error" severity="error" closable="true">
+                    {!v.recordError}
+            </ui:message>
+        </div>
+    </aura:if>
 </aura:component>
