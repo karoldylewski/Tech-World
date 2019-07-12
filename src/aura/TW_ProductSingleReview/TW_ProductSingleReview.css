@@ -1,5 +1,23 @@
 /**
  * Created by BRITENET on 12.07.2019.
  */
-.THIS {
-}
+.THIS .slds-comment__content{
+     font-size:12px;
+ }
+
+.THIS .comment-author{
+    height:60px;
+     font-size:16px;
+ }
+.THIS .user-avatar{
+    padding-left:5px;
+    color: darkblue;
+ }
+.THIS .comment-content{
+    padding-left:30px;
+    font-size:15px;
+ }
+.THIS .comment-body{
+    background-color:rgb(240,240,240) !important;
+    color:rgb(240,240,240);
+ }

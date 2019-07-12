@@ -40,4 +40,11 @@ public with sharing class TW_ProductManager {
         return orderItems;
     }
 
+    @AuraEnabled
+    public static List<TW_Product_Review__c> getReviewItems(String productId) {
+        System.debug('In manager. product id: '+productId);
+        List<TW_Product_Review__c> reviewItems = TW_ProductService.getProductReviews(productId);
+        return reviewItems;
+    }
+
 }

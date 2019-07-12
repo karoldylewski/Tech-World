@@ -14,7 +14,7 @@
                 let responseItem = response.getReturnValue();
                 component.set("v.orgUrl", responseItem.orgId);
                 component.set("v.item", responseItem);
-                console.log(JSON.stringify(responseItem));
+                this.loadReviews(component);
             } else {
                 let toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({
@@ -27,6 +27,26 @@
         });
         $A.enqueueAction(action);
     },
+
+        loadReviews: function (component){
+            let itemId = component.get("v.ProductId");
+            let action = component.get('c.getReviewItems');
+            action.setParams({
+                productId: itemId
+            });
+            action.setCallback(this, function(response) {
+                let state = response.getState();
+                if (state === "SUCCESS") {
+                        component.set("v.comments",response.getReturnValue());
+                        console.log('getting reviews for ID: '+itemId);
+                        console.log('reviewd downlaod response from server: '+JSON.stringify(response.getReturnValue()));
+                } else {
+                    console.log('API CALL failed!!' + state);
+                }
+            });
+            $A.enqueueAction(action);
+        },
+
 
      onAddToCart: function(component) {
         let thisProductId = component.get("v.item.product.Id");

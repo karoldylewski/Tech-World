@@ -1401,4 +1401,18 @@
         <shortDescription>unit price text</shortDescription>
         <value>Unit price</value>
     </labels>
+    <labels>
+        <fullName>TW_rate_product</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Rate product text</shortDescription>
+        <value>Rate product:</value>
+    </labels>
+    <labels>
+        <fullName>TW_post_review</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>type review text</shortDescription>
+        <value>Type your review:</value>
+    </labels>
 </CustomLabels>

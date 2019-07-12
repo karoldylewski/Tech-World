@@ -11,6 +11,7 @@
     <aura:attribute name="orgUrl" type="String"/>
     <aura:attribute name="ProductId" type="String"/>
     <aura:attribute name="item" type="Object"/>
+    <aura:attribute name="comments" type="Object[]"/>
 
     <div>
         <div class="slds-grid slds-grid_vertical">
@@ -153,9 +154,9 @@
                 </div>
             </div>
             <div class="slds-col">
-                   <p class="slds-text-heading_medium desc-text">
-                         <ui:outputText value="{!v.item.product.Description__c}"/>
-                   </p>
+                <p class="slds-text-heading_medium desc-text">
+                    <ui:outputText value="{!v.item.product.Description__c}"/>
+                </p>
             </div>
             <div class="slds-col prod-body">
                 <h2 class="slds-card__header-title reviews-header">
@@ -165,9 +166,25 @@
                 </h2>
             </div>
             <div class="slds-col prod-body">
-
+                <c:TW_ProductNewReview productId="{!v.item.product.Id}"/>
             </div>
-
+        </div>
+        <div class="slds-col prod-body">
+            <div class="slds-feed">
+                <ul class="slds-feed__list">
+                    <li class="slds-feed__item">
+                        <div class="slds-feed__item-comments feed-items">
+                            <ul>
+                                <aura:iteration items="{!v.comments}" var="comm">
+                                    <li>
+                                        <c:TW_ProductSingleReview review="{!comm}"/>
+                                    </li>
+                                </aura:iteration>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </aura:component>

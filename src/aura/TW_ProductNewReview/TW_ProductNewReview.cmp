@@ -6,26 +6,29 @@
                 implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
                 access="global"
                 controller="TW_ProductManager">
-    <aura:attribute name="newReview" type="MOV_Comment__c"/>
+    <aura:attribute name="newReview" type="TW_Product_Review__c"/>
+    <aura:attribute name="productId" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="RatingChanged" event="c:TW_RatingChange"
+                  action="{!c.ratingChanged}" phase="capture" />
     <force:recordData aura:id="service"
-                      fields="Id, Content__c, movieId__c, Rating__c"
+                      fields="Id, Content__c, Product__c, Rating__c"
                       targetFields="{!v.newReview}"
                       targetError="{!v.recordError}"
                       recordUpdated="{!c.onRecordUpdated}"
     />
-
-    <div class="review-box" style="margin-top:10px;">
+    <div class="review-box">
         <lightning:layout multipleRows="true" class="slds-box">
-            <lightning:layoutItem size="12" padding="around-small">
-                Post your review:
+            <lightning:layoutItem size="12">
+            {!$Label.c.TW_post_review}
                 <lightning:inputRichText value="{!v.newReview.Content__c}" disabledCategories="FORMAT_FONT"/>
             </lightning:layoutItem>
             <lightning:layoutItem size="12" padding="around-small">
-                Rate product:
-                <c:MOV_StarRating value="0" readonly="false"/>
+                {!$Label.c.TW_rate_product}
+                <c:TW_StarRating value="0" readonly="false"/>
             </lightning:layoutItem>
             <lightning:layoutItem size="12" class="slds-align--absolute-center">
-                <lightning:button variant="brand" iconName="utility:save" label="Post review" onclick="{!c.onSave}"/>
+                <lightning:button variant="brand" iconName="utility:save" label="Post review" onclick="{!c.saveReview}"/>
             </lightning:layoutItem>
         </lightning:layout>
     </div>

@@ -57,4 +57,9 @@ public with sharing class TW_ProductService {
         List<OrderItem> orderItems = TW_OrderHandler.getItemsForOrder(orderId);
         return orderItems;
     }
+
+    public static List<TW_Product_Review__c> getProductReviews(String itemId){
+        List<TW_Product_Review__c> reviews = TW_ReviewHandler.getReviewsForProduct(itemId);
+        return reviews;
+    }
 }

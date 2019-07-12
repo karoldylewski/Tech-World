@@ -3,4 +3,5 @@
  -->
 
 <aura:event type="COMPONENT" description="TW_RatingChange">
+    <aura:attribute name="ratingVal" type="Integer"/>
 </aura:event>
