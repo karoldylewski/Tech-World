@@ -1,6 +1,0 @@
-<!--
- - Created by BRITENET on 11.07.2019.
- -->
-
-<aura:event type="COMPONENT" description="TW_ProductRemoved">
-</aura:event>
