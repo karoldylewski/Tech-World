@@ -2,5 +2,46 @@
  - Created by BRITENET on 11.07.2019.
  -->
 
-<aura:component description="TW_ProductOrderList">
+<aura:component description="TW_ProductOrderList"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global"
+                controller="TW_ProductManager">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="items" type="Object[]"/>
+
+    <div>
+        <div class="slds-grid slds-wrap slds-grid_vertical">
+            <h2 class="slds-card__header-title slds-align_absolute-center">
+                <div class="slds-text-heading_large slds-border_bottom">
+                        {!$Label.c.TW_Your_Orders}
+                </div>
+            </h2>
+            <aura:if isTrue="{!v.items != null}">
+                <aura:set attribute="else">
+                    <div class="slds-align_absolute-center subheader-emtpy">
+                        <div class="slds-text-heading_small">
+                                {!$Label.c.TW_Your_Orders_empty}
+                        </div>
+                    </div>
+                </aura:set>
+            </aura:if>
+        </div>
+    </div>
+    <div class="slds-grid slds-wrap">
+        <aura:iteration items="{!v.items}" var="prod">
+<!--            <c:TW_ProductInCartTile item="{!prod}" orgUrl="{!v.items.orgBaseUrl}"/>-->
+            <c:TW_ProductInOrderTile item="{!prod}"/>
+        </aura:iteration>
+    </div>
+    <aura:if isTrue="{!v.items != null}">
+<!--        <div class="slds-col">-->
+<!--            <div class="slds-align_absolute-center subheader">-->
+<!--                <button class="slds-button slds-button_text-destructive" onclick="{!c.deleteItems}">-->
+<!--                    <span class="btn-cart-text">-->
+<!--                            {!$Label.c.TW_delete_cart}-->
+<!--                    </span>-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </div>-->
+    </aura:if>
 </aura:component>
