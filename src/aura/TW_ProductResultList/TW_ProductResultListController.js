@@ -3,7 +3,6 @@
  */
 ({
       doInit: function(component, event, helper){
-        console.log('Searching for: '+component.get("v.searchQuery"));
         helper.getProducts(component);
       }
 })
