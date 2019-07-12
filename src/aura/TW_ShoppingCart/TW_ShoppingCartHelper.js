@@ -79,7 +79,7 @@
         action.setCallback(this, function(response) {
             let state = response.getState();
             if (state === "SUCCESS") {
-//                this.onDeleteAllItems(component);
+                this.onDeleteAllItems(component);
                 let toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({
                     "title": "Order placed",

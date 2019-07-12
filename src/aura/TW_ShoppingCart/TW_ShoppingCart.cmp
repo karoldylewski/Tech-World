@@ -6,8 +6,6 @@
                 implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
                 access="global"
                 controller="TW_ProductManager">
-    <aura:handler name="productRemovedFromCart" event="c:TW_ProductRemoved"
-                  action="{!c.doInit}" phase="capture"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:attribute name="items" type="Object"/>
     <aura:attribute name="totalValue" type="Integer"/>

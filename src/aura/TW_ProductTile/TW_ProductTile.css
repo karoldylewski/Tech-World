@@ -29,3 +29,10 @@
 .THIS .price-standard{
     padding-top:10px;
 }
+.THIS .btn-add-to-cart{
+    font-size:12px;
+    color: black;
+    padding-left:15px;
+    padding-right:15px;
+    margin:auto;
+}
