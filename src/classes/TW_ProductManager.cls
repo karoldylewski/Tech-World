@@ -6,7 +6,6 @@ public with sharing class TW_ProductManager {
 
     @AuraEnabled
     public static Boolean placeOrder(List<String> productsId) {
-        Boolean response = TW_ProductService.addProductsToOrder(productsId);
-        return true;
+        return TW_ProductService.addProductsToOrder(productsId);
     }
 }
