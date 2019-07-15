@@ -47,3 +47,17 @@
     font-weight:600;
     font-size:13px;
 }
+.THIS .complaint-subject{
+    width:50%;
+}
+
+.THIS .btn-make-complaint{
+    margin-top:20px;
+}
+.THIS .complaint-form{
+    background-color:white;
+    padding:15px;
+    margin-top:10px;
+    margin-right:10px;
+    border: 1px solid black;
+}
