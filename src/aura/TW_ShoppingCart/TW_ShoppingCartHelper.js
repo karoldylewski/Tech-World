@@ -97,6 +97,7 @@
                     type: "error",
                 });
                 toastEvent.fire();
+                console.log(JSON.stringify(response.getResponseValue()));
             }
         });
         $A.enqueueAction(action);

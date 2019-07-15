@@ -17,6 +17,4 @@
          });
          urlEvent.fire();
     }
-
-
 })

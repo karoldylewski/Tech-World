@@ -9,6 +9,7 @@
     orderItems: function(component, event, helper) {
         helper.onOrderItems(component);
     },
+
     deleteItems: function(component, event, helper) {
         helper.onDeleteAllItems(component);
     },
