@@ -6,12 +6,14 @@
                 implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
                 access="global"
                 controller="TW_ProductManager">
-    <aura:registerEvent name="productAddedToCart" type="c:TW_ProductAddedToCart"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="reviewAdded" event="c:TW_ReviewAdded" action="{!c.refreshReviews}" phase="capture"/>
     <aura:attribute name="prefixURL" type="String" default="/sfc/servlet.shepherd/version/download/"/>
     <aura:attribute name="orgUrl" type="String"/>
     <aura:attribute name="ProductId" type="String"/>
     <aura:attribute name="item" type="Object"/>
+    <aura:attribute name="comments" type="Object[]"/>
+    <aura:attribute name="canReview" type="Boolean"/>
 
     <div>
         <div class="slds-grid slds-grid_vertical">
@@ -154,9 +156,9 @@
                 </div>
             </div>
             <div class="slds-col">
-                   <p class="slds-text-heading_medium desc-text">
-                         <ui:outputText value="{!v.item.product.Description__c}"/>
-                   </p>
+                <p class="slds-text-heading_medium desc-text">
+                    <ui:outputText value="{!v.item.product.Description__c}"/>
+                </p>
             </div>
             <div class="slds-col prod-body">
                 <h2 class="slds-card__header-title reviews-header">
@@ -165,10 +167,33 @@
                     </div>
                 </h2>
             </div>
-            <div class="slds-col prod-body">
-
+            <aura:if isTrue="{!v.canReview}">
+                <div class="slds-col prod-body">
+                    <c:TW_ProductNewReview productId="{!v.item.product.Id}"/>
+                </div>
+                <aura:set attribute="else">
+                    <div class="slds-card__header-title slds-align_absolute-center slds-m-top_medium">
+                            {!$Label.c.TW_review_forbidden}
+                    </div>
+                </aura:set>
+            </aura:if>
+        </div>
+        <div class="slds-col prod-body">
+            <div class="slds-feed">
+                <ul class="slds-feed__list">
+                    <li class="slds-feed__item">
+                        <div class="slds-feed__item-comments feed-items">
+                            <ul>
+                                <aura:iteration items="{!v.comments}" var="comm">
+                                    <li>
+                                        <c:TW_ProductSingleReview review="{!comm}"/>
+                                    </li>
+                                </aura:iteration>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
             </div>
-
         </div>
     </div>
 </aura:component>
