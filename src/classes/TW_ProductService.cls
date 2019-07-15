@@ -10,11 +10,7 @@ public with sharing class TW_ProductService {
         Map<String, PricebookEntry> sortedPbs = TW_ProductServiceHelper.segregatePricebookEntriesToArrays(filteredEntries);
         Order newOrder = TW_ProductServiceHelper.createOrderForUser(standardPriceBookId);
         List<OrderItem> orderItems = new List<OrderItem>();
-        for(String productId : idList){
-            PricebookEntry pb = sortedPbs.get(productId);
-            orderItems.add(TW_ProductServiceHelper.prepareOrderItem(newOrder.Id,productId,sortedIds.get(productId),pb.Id,pb.UnitPrice));
-        }
-        Boolean operationResult = TW_OrderHandler.createOrderItems(orderItems);
+        List<OrderItem> orderItems = TW_ProductServiceHelper.creteOrderItemsObjects(sortedIds,idList,newOrder);
         return operationResult;
     }
 }
