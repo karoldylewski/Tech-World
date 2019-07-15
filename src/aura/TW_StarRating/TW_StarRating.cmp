@@ -9,7 +9,6 @@
     <ltng:require styles="{!$Resource.fivestar2 + '/rating.css'}"
                   scripts="{!$Resource.fivestar2 + '/rating.js'}"
                   afterScriptsLoaded="{!c.afterScriptsLoaded}" />
-
     <aura:handler name='change' value="{!v.value}" action="{!c.onValueChange}" />
 
     <ul aura:id='ratingArea' class="{!v.readonly ? 'readonly c-rating' : 'c-rating' }" />

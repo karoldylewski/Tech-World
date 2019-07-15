@@ -22,6 +22,4 @@
         helper.loadReviews(component);
         helper.onCheckIfUserCanReview(component);
     }
-
-
 })
