@@ -1,5 +1,13 @@
 public with sharing class TW_ProductService {
 
+    public static TW_Utils.TW_ProductList getProductList(List<String> parameters){
+        List<PricebookEntry> pricebookEntries = TW_ProductHandler.getPricebookEntries(TW_ProductServiceHelper.prepareParametersForQuery(parameters));
+        List< TW_Utils.TW_ProductWrapper> wrapList = TW_ProductServiceHelper.addItemsToWrappers(pricebookEntries);
+        String orgBaseUrl = TW_ProductServiceHelper.getOrgBaseUrl();
+        TW_Utils.TW_ProductList products = new TW_Utils.TW_ProductList(orgBaseUrl,wrapList);
+        return products;
+    }
+
     public static String addProductsToOrder(List<String> productIds) {
         Map<String, Integer> sortedIds = TW_ProductServiceHelper.segregateIdsToArrays(productIds);
         List<String> idList = TW_ProductServiceHelper.getUniqueIdsFromMap(sortedIds);

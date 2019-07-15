@@ -70,7 +70,6 @@
                     </span>
                 </div>
             </div>
-
         </div>
     </lightning:layoutItem>
 </aura:component>
