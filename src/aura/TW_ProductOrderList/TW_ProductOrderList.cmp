@@ -17,7 +17,7 @@
             </h2>
             <aura:if isTrue="{!v.items != null}">
                 <aura:set attribute="else">
-                    <div class="slds-align_absolute-center subheader-empty">
+                    <div class="slds-align_absolute-center subheader-emtpy">
                         <div class="slds-text-heading_small">
                                 {!$Label.c.TW_Your_Orders_empty}
                         </div>

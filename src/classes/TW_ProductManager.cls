@@ -5,9 +5,27 @@
 public with sharing class TW_ProductManager {
 
     @AuraEnabled
-    public static String placeOrder(List<String> productsId) {
-        String response = TW_ProductService.addProductsToOrder(productsId);
-        return response;
+    public static TW_Utils.TW_ProductList getProductList(List<String> parameters) {
+        TW_Utils.TW_ProductList searchedProducts = TW_ProductService.getProductList(parameters);
+        return searchedProducts;
+    }
+
+    @AuraEnabled
+    public static TW_Utils.TW_ProductWrapper getProductDetails(String productId) {
+        TW_Utils.TW_ProductWrapper item = TW_ProductService.getProductDetails(productId);
+        return item;
+    }
+
+    @AuraEnabled
+    public static TW_Utils.TW_ProductList getMultipleProductDetails(List<String> productsId) {
+        TW_Utils.TW_ProductList item = TW_ProductService.getProductDetailsForMultipleId(productsId);
+        return item;
+    }
+
+    @AuraEnabled
+    public static Boolean placeOrder(List<String> productsId) {
+        Boolean response = TW_ProductService.addProductsToOrder(productsId);
+        return true;
     }
 
     @AuraEnabled

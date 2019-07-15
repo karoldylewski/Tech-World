@@ -17,4 +17,5 @@
             </aura:iteration>
         </lightning:layout>
     </div>
+
 </aura:component>

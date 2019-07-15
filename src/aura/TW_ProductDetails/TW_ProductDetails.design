@@ -1,0 +1,7 @@
+<!--
+ - Created by BRITENET on 09.07.2019.
+ -->
+
+<design:component>
+    <design:attribute name="ProductId" label="Product ID" description="The Object that contains id to display." />
+</design:component>

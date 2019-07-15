@@ -9,6 +9,11 @@ public with sharing class TW_ProductHandler {
                 SELECT Product2.RecordType.DeveloperName,
                         Product2.Id,
                         Product2.Name,
+                        Product2.Camera__c,
+                        Product2.RAM__c,
+                        Product2.Battery_capacity__c,
+                        Product2.Cellular__c,
+                        Product2.Screen_size__c,
                         Product2.ImageId__c,
                         UnitPrice
                 FROM PricebookEntry
