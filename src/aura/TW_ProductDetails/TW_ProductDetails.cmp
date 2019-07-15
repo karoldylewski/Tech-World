@@ -172,7 +172,7 @@
                     <c:TW_ProductNewReview productId="{!v.item.product.Id}"/>
                 </div>
                 <aura:set attribute="else">
-                    <div class="slds-card__header-title slds-align_absolute-center">
+                    <div class="slds-card__header-title slds-align_absolute-center slds-m-top_medium">
                             {!$Label.c.TW_review_forbidden}
                     </div>
                 </aura:set>

@@ -954,6 +954,34 @@
         <value>Clear</value>
     </labels>
     <labels>
+        <fullName>TW_Complaint</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>complaint text</shortDescription>
+        <value>Complaint</value>
+    </labels>
+    <labels>
+        <fullName>TW_Complaint_desc</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>description text</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>TW_Complaint_header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>complaint header text</shortDescription>
+        <value>Want to make an complaint? Please fill a form below</value>
+    </labels>
+    <labels>
+        <fullName>TW_Complaint_subject</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>complaint subject text</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
         <fullName>TW_Delete</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -1008,6 +1036,13 @@
         <protected>true</protected>
         <shortDescription>Your cart is empty text</shortDescription>
         <value>Go to product details</value>
+    </labels>
+    <labels>
+        <fullName>TW_Make_a_complaint</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Make a complaint text</shortDescription>
+        <value>Make a complaint</value>
     </labels>
     <labels>
         <fullName>TW_Map</fullName>
@@ -1367,6 +1402,13 @@
         <value>mpx</value>
     </labels>
     <labels>
+        <fullName>TW_post_review</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>type review text</shortDescription>
+        <value>Type your review:</value>
+    </labels>
+    <labels>
         <fullName>TW_product_name</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -1379,6 +1421,20 @@
         <protected>true</protected>
         <shortDescription>Go to order details text</shortDescription>
         <value>Products in order:</value>
+    </labels>
+    <labels>
+        <fullName>TW_rate_product</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Rate product text</shortDescription>
+        <value>Rate product:</value>
+    </labels>
+    <labels>
+        <fullName>TW_review_forbidden</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>type review text</shortDescription>
+        <value>You can not comment on this product</value>
     </labels>
     <labels>
         <fullName>TW_reviews</fullName>
@@ -1400,26 +1456,5 @@
         <protected>true</protected>
         <shortDescription>unit price text</shortDescription>
         <value>Unit price</value>
-    </labels>
-    <labels>
-        <fullName>TW_rate_product</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Rate product text</shortDescription>
-        <value>Rate product:</value>
-    </labels>
-    <labels>
-        <fullName>TW_post_review</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>type review text</shortDescription>
-        <value>Type your review:</value>
-    </labels>
-    <labels>
-        <fullName>TW_review_forbidden</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>type review text</shortDescription>
-        <value>You can not comment on this product</value>
     </labels>
 </CustomLabels>

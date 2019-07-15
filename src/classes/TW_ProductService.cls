@@ -12,7 +12,6 @@ public with sharing class TW_ProductService {
             return false;
         }
         Boolean hasCommented = TW_ReviewHandler.checkIfUserHasCommented(itemId,userId);
-        Boolean access=hasPurchased && !hasCommented;
         return hasPurchased && !hasCommented;
     }
 }

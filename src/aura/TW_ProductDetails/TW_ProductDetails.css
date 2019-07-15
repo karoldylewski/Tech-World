@@ -50,21 +50,11 @@
    color:white;
 }
 .THIS .reviews-header{
-   margin-left:50px;
+   margin-left:200px;
    margin-top:15px;
-   margin-bottom:15px;
 }
 .THIS .desc-text{
     margin-left:200px;
     margin-right:200px;
 
 }
-.THIS .feed-items{
-    background-color:transparent;
-    border:none;
-
-}
-
-.THIS .comment-body{
-    background-color:rgb(240,240,240) !important;
- }

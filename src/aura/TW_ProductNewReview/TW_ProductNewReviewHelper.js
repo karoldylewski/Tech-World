@@ -49,8 +49,8 @@
         });
     },
 
-    ratingChanged: function(component,event){
+    ratingChanged: function(component, event) {
         let eventObject = event.getParam("ratingVal");
-        component.set("v.newReview.Rating__c",eventObject);
+        component.set("v.newReview.Rating__c", eventObject);
     }
 })
