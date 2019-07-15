@@ -6,6 +6,7 @@
                 implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
                 access="global"
                 controller="TW_ProductManager">
+    <aura:registerEvent name="productAddedToCart" type="c:TW_ProductAddedToCart"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:attribute name="prefixURL" type="String" default="/sfc/servlet.shepherd/version/download/"/>
     <aura:attribute name="orgUrl" type="String"/>
