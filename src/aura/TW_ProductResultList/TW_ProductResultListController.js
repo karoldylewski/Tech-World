@@ -6,4 +6,3 @@
         helper.getProducts(component);
       }
 })
-

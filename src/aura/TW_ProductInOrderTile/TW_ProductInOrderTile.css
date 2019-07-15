@@ -1,0 +1,63 @@
+/**
+ * Created by BRITENET on 10.07.2019.
+ */
+ .THIS {
+     background-color: rgb(240,240,240);
+ }
+.THIS .cart-tile-body{
+    height: 100%;
+    width:100%;
+    border: 1px solid lightgray;
+}
+.THIS .img-container{
+    height: 115px;
+}
+.THIS .cart-item-title{
+    padding-top:10px;
+    font-size:14px;
+    font-weight:500;
+}
+.THIS .cart-item-quantity{
+    padding-top:10px;
+}
+
+.THIS .icon-button{
+    background-color:rgb(245,245,245);
+}
+.THIS .count-number{
+    font-size:16px;
+    font-color:white;
+    color:white;
+}
+.THIS .total-price{
+    padding-top:25px;
+    font-size:18px;
+    font-weight:500;
+    font-color:darkgreen;
+}
+
+.THIS .total-price-color{
+    color:darkgreen;
+}
+.THIS .btn-cart-go-to-details{
+    color:black;
+    padding-top:25px;
+}
+.THIS .order-id-value{
+    font-weight:600;
+    font-size:13px;
+}
+.THIS .complaint-subject{
+    width:50%;
+}
+
+.THIS .btn-make-complaint{
+    margin-top:20px;
+}
+.THIS .complaint-form{
+    background-color:white;
+    padding:15px;
+    margin-top:10px;
+    margin-right:10px;
+    border: 1px solid black;
+}

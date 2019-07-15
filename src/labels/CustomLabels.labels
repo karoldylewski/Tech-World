@@ -954,6 +954,34 @@
         <value>Clear</value>
     </labels>
     <labels>
+        <fullName>TW_Complaint</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>complaint text</shortDescription>
+        <value>Complaint</value>
+    </labels>
+    <labels>
+        <fullName>TW_Complaint_desc</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>description text</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>TW_Complaint_header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>complaint header text</shortDescription>
+        <value>Want to make an complaint? Please fill a form below</value>
+    </labels>
+    <labels>
+        <fullName>TW_Complaint_subject</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>complaint subject text</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
         <fullName>TW_Delete</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -1001,13 +1029,6 @@
         <protected>true</protected>
         <shortDescription>Text Edit</shortDescription>
         <value>Edit</value>
-    </labels>
-    <labels>
-        <fullName>TW_Go_to_prod_details</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Your cart is empty text</shortDescription>
-        <value>Go to product details</value>
     </labels>
     <labels>
         <fullName>TW_Map</fullName>
@@ -1248,157 +1269,17 @@
         <value>Your Phone Number</value>
     </labels>
     <labels>
-        <fullName>TW_TechWorld_form_submit</fullName>
+        <fullName>TW_Price</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>Text tech world Contact Form submit</shortDescription>
-        <value>Submit</value>
+        <shortDescription>price text</shortDescription>
+        <value>Price:</value>
     </labels>
     <labels>
-        <fullName>TW_Thank_you</fullName>
+        <fullName>TW_New_Price</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>Text Thank you</shortDescription>
-        <value>Thank you</value>
-    </labels>
-    <labels>
-        <fullName>TW_Total_price</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>total price text</shortDescription>
-        <value>Total Price:</value>
-    </labels>
-    <labels>
-        <fullName>TW_Total_pricetab</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>total price text</shortDescription>
-        <value>Total Price</value>
-    </labels>
-    <labels>
-        <fullName>TW_Your_Orders</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>reviews text</shortDescription>
-        <value>Your Orders</value>
-    </labels>
-    <labels>
-        <fullName>TW_Your_Orders_empty</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>reviews text</shortDescription>
-        <value>You do not have any orders yet</value>
-    </labels>
-    <labels>
-        <fullName>TW_Your_cart</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Your cart text</shortDescription>
-        <value>Your cart</value>
-    </labels>
-    <labels>
-        <fullName>TW_add_to_cart</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>add to cart text</shortDescription>
-        <value>Add to cart</value>
-    </labels>
-    <labels>
-        <fullName>TW_cart_empty</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Your cart is empty text</shortDescription>
-        <value>Your cart is empty</value>
-    </labels>
-    <labels>
-        <fullName>TW_cart_total_value</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Your cart total value: text</shortDescription>
-        <value>Your cart total value:</value>
-    </labels>
-    <labels>
-        <fullName>TW_delete_cart</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Remove all items text</shortDescription>
-        <value>Remove all items</value>
-    </labels>
-    <labels>
-        <fullName>TW_gb</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>gb text</shortDescription>
-        <value>GB</value>
-    </labels>
-    <labels>
-        <fullName>TW_go_to_cart</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>go to cart text</shortDescription>
-        <value>Go to cart</value>
-    </labels>
-    <labels>
-        <fullName>TW_inch</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>inch text</shortDescription>
-        <value>inches</value>
-    </labels>
-    <labels>
-        <fullName>TW_mAh</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>mAh text</shortDescription>
-        <value>mAh</value>
-    </labels>
-    <labels>
-        <fullName>TW_make_order</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>make an order text</shortDescription>
-        <value>Order items from my cart</value>
-    </labels>
-    <labels>
-        <fullName>TW_mpx</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>mpx text</shortDescription>
-        <value>mpx</value>
-    </labels>
-    <labels>
-        <fullName>TW_product_name</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>product name text</shortDescription>
-        <value>Product Name</value>
-    </labels>
-    <labels>
-        <fullName>TW_products_in_order</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Go to order details text</shortDescription>
-        <value>Products in order:</value>
-    </labels>
-    <labels>
-        <fullName>TW_reviews</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>reviews text</shortDescription>
-        <value>Reviews</value>
-    </labels>
-    <labels>
-        <fullName>TW_show_order_items</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Show order items text</shortDescription>
-        <value>Show order items</value>
-    </labels>
-    <labels>
-        <fullName>TW_unit_price</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>unit price text</shortDescription>
-        <value>Unit price</value>
+        <shortDescription>new price text</shortDescription>
+        <value>Sale:</value>
     </labels>
 </CustomLabels>

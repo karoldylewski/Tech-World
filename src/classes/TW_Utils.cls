@@ -13,6 +13,10 @@ public with sharing class TW_Utils {
         public Integer currentPrice {get; set;}
         @AuraEnabled
         public String imageId {get; set;}
+        @AuraEnabled
+        public String orgId {get; set;}
+        @AuraEnabled
+        public Integer count {get; set;}
         public TW_ProductWrapper(Product2 product, Integer orgPrice, Integer currPrice){
             this.product = product;
             this.originalPrice = orgPrice;
