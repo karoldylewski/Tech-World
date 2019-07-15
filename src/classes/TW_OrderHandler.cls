@@ -17,7 +17,7 @@ public with sharing class TW_OrderHandler {
         try {
             insert items;
         } catch (Exception e) {
-            return e.getMessage();
+            return false;
         }
         return null;
     }
