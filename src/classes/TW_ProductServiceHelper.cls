@@ -118,4 +118,13 @@ public with sharing class TW_ProductServiceHelper {
         return UserInfo.getUserId();
     }
 
+    public static  List<OrderItem> creteOrderItemsObjects(Map<String, PricebookEntry> sortedPbs,List<String> idList, Order newOrder){
+        List<OrderItem> orderItems = new List<OrderItem>();
+        for(String productId : idList){
+            PricebookEntry pb = sortedPbs.get(productId);
+            orderItems.add(TW_ProductServiceHelper.prepareOrderItem(newOrder.Id,productId,sortedIds.get(productId),pb.Id,pb.UnitPrice));
+        }
+        return orderItems;
+    }
+
 }

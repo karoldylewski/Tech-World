@@ -10,6 +10,7 @@
                 let responseItem = response.getReturnValue();
                 component.set('v.items', responseItem);
             } else {
+                console.log(JSON.stringify(response.getReturnValue()));
                 let toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({
                     "title": "Error",
