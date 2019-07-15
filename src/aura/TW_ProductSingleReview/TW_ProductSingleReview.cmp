@@ -1,0 +1,43 @@
+<!--
+ - Created by BRITENET on 12.07.2019.
+ -->
+
+<aura:component description="TW_ProductSingleReview">
+    <aura:attribute name="review" type="Object"/>
+
+    <article class="slds-comment slds-media slds-hint-parent slds-box comment-body">
+        <div class="slds-media__figure">
+        </div>
+        <div class="slds-media__body">
+            <header class="slds-media slds-media_center">
+                <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+
+                    <p class="slds-truncate" title="{!v.review.CreatedBy.Name}">
+                    <div class="comment-author">
+                        <lightning:icon iconName="action:user" size="x-small"/>
+                        <span class="user-avatar">
+                             {!v.review.CreatedBy.Name}
+                                 <span>
+                            <c:TW_StarRating value="{!v.review.Rating__c}" readonly="true"/>
+                         </span>
+                        </span>
+                    </div>
+                    </p>
+                </div>
+            </header>
+            <div class="slds-comment__content slds-text-longform comment-content">
+                <ui:outputRichText value="{!v.review.Content__c}"/>
+            </div>
+            <footer>
+                <ul class="slds-list_horizontal slds-has-dividers_right slds-text-body_small">
+                    <li class="slds-item">
+                        <lightning:formattedDateTime
+                                value="{!v.review.CreatedDate}" year="numeric"
+                                day="2-digit" month="short" weekday="short"
+                                hour="2-digit" minute="2-digit"/>
+                    </li>
+                </ul>
+            </footer>
+        </div>
+    </article>
+</aura:component>

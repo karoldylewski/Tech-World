@@ -55,9 +55,9 @@
             localStorage.removeItem(storedKeysArray[iterator]);
             localStorage.removeItem('productList');
         }
+        this.onInit(component);
         let appEvent = $A.get("e.c:TW_ProductAddedToCart");
         appEvent.fire();
-        this.onInit(component);
     },
 
     onOrderItems: function(component) {
