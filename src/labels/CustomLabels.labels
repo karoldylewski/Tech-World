@@ -1422,4 +1422,39 @@
         <shortDescription>unit price text</shortDescription>
         <value>Unit price</value>
     </labels>
+    <labels>
+        <fullName>TW_Complaint</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>complaint text</shortDescription>
+        <value>Complaint</value>
+    </labels>
+    <labels>
+        <fullName>TW_Complaint_subject</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>complaint subject text</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
+        <fullName>TW_Complaint_desc</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>description text</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>TW_Complaint_header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>complaint header text</shortDescription>
+        <value>Want to make an complaint? Please fill a form below</value>
+    </labels>
+    <labels>
+        <fullName>TW_Make_a_complaint</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Make a complaint text</shortDescription>
+        <value>Make a complaint</value>
+    </labels>
 </CustomLabels>

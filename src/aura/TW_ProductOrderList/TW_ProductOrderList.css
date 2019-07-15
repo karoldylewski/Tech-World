@@ -2,6 +2,7 @@
  * Created by BRITENET on 10.07.2019.
  */
 .THIS .cart-item{
+    padding-left:10px;
     min-height: 80px;
     font-size:14px;
     border: 1px solid lightgray;

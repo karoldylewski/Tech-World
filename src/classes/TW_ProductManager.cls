@@ -50,4 +50,14 @@ public with sharing class TW_ProductManager {
         return TW_ProductService.checkIfUserCanReview(productId);
     }
 
+    @AuraEnabled
+    public static Boolean makeAComplaint(List<String> productsId) {
+
+        return true;
+    }
+
+    @AuraEnabled
+    public static Boolean getItemForComplaint(String orderId) {
+        return true;
+    }
 }
