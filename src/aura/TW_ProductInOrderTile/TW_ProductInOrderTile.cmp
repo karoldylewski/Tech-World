@@ -5,28 +5,29 @@
 <aura:component description="TW_ProductInOrderTile"
                 access="global"
                 controller="TW_ProductManager">
+    <aura:registerEvent name="TW_ProductComplaintPageEvent" type="c:TW_ProductComplaintPageEvent"/>
     <aura:attribute name="item" type="Object"/>
     <aura:attribute name="orderItems" type="Object[]"/>
+    <aura:attribute name="complaintOrderItems" type="Object[]"/>
+    <aura:attribute name="showComplaintForm" type="Boolean" default="false"/>
     <div class="cart-item">
         <div class="slds-col slds-size_12-of-12">
             <div class="slds-grid">
-                <div class="slds-col slds-size_1-of-12">
-                </div>
-                <div class="slds-col slds-size_4-of-12">
+                <div class="slds-col slds-size_3-of-12">
                     <div class="slds-text-heading_medium cart-item-title slds-text-body_regular">
-                        {!$Label.c.TW_Order_number}
+                    {!$Label.c.TW_Order_number}
                         <span class="slds-m-left_x-small order-id-value">
                                 {!v.item.OrderNumber}
                         </span>
                     </div>
                     <div class="slds-text-heading_small slds-text-body_regular">
-                        {!$Label.c.TW_Order_date}
+                    {!$Label.c.TW_Order_date}
                         <span class="slds-m-left_x-small  order-id-value">
                                 {!v.item.EffectiveDate}
                         </span>
                     </div>
                 </div>
-                <div class="slds-col slds-size_4-of-12">
+                <div class="slds-col slds-size_3-of-12">
                     <div class="slds-text-heading_medium total-price">
                     {!$Label.c.TW_Order_status}
                         <span class="slds-m-left_x-small  order-id-value">
@@ -42,9 +43,18 @@
                     </span>
                     </div>
                 </div>
+                <div class="slds-col slds-size_3-of-12">
+                    <lightning:button label="{!$Label.c.TW_Make_a_complaint}" title="{!$Label.c.TW_Make_a_complaint}"
+                                      onclick="{! c.makeComplaint }" class="btn-make-complaint"/>
+                </div>
 
             </div>
         </div>
+        <aura:if isTrue="{!v.showComplaintForm}">
+            <div class="slds-col slds-size_12-of-12">
+                <c:TW_OrderItemsForComplaint orderItems="{!v.complaintOrderItems}"/>
+            </div>
+        </aura:if>
         <div class="slds-col slds-size_12-of-12">
             <lightning:accordion allowMultipleSectionsOpen="true">
                     <span onclick="{!c.seeDetails}">
@@ -54,16 +64,24 @@
                                 <thead>
                                 <tr class="slds-line-height_reset">
                                     <th class="" scope="col">
-                                        <div class="slds-truncate" title="{!$Label.c.TW_product_name}">{!$Label.c.TW_product_name}</div>
+                                        <div class="slds-truncate"
+                                             title="{!$Label.c.TW_Complaint}">{!$Label.c.TW_Complaint}</div>
                                     </th>
                                     <th class="" scope="col">
-                                        <div class="slds-truncate" title="{!$Label.c.TW_Quantitytab}">{!$Label.c.TW_Quantitytab}</div>
+                                        <div class="slds-truncate"
+                                             title="{!$Label.c.TW_product_name}">{!$Label.c.TW_product_name}</div>
                                     </th>
                                     <th class="" scope="col">
-                                        <div class="slds-truncate" title="{!$Label.c.TW_unit_price}">{!$Label.c.TW_unit_price}</div>
+                                        <div class="slds-truncate"
+                                             title="{!$Label.c.TW_Quantitytab}">{!$Label.c.TW_Quantitytab}</div>
                                     </th>
                                     <th class="" scope="col">
-                                        <div class="slds-truncate" title="{!$Label.c.TW_Total_pricetab}">{!$Label.c.TW_Total_pricetab}</div>
+                                        <div class="slds-truncate"
+                                             title="{!$Label.c.TW_unit_price}">{!$Label.c.TW_unit_price}</div>
+                                    </th>
+                                    <th class="" scope="col">
+                                        <div class="slds-truncate"
+                                             title="{!$Label.c.TW_Total_pricetab}">{!$Label.c.TW_Total_pricetab}</div>
                                     </th>
                                 </tr>
                                 </thead>
@@ -71,10 +89,16 @@
                                     <aura:iteration items="{!v.orderItems}" var="ordItem">
                                         <tr class="slds-hint-parent">
                                             <th data-label="{!$Label.c.TW_product_name}" scope="row">
-                                                <div class="slds-truncate" title="{!ordItem.Product2.Name}">{!ordItem.Product2.Name}</div>
+                                                <ui:inputCheckbox aura:id="comp-checkbox"
+                                                                  change="{!c.manageIdInComplaintList}"/>
+                                            </th>
+                                            <th data-label="{!$Label.c.TW_product_name}" scope="row">
+                                                <div class="slds-truncate"
+                                                     title="{!ordItem.Product2.Name}">{!ordItem.Product2.Name}</div>
                                             </th>
                                             <td data-label="{!$Label.c.TW_Quantitytab}">
-                                                <div class="slds-truncate" title="{!ordItem.Quantity}">{!ordItem.Quantity}</div>
+                                                <div class="slds-truncate"
+                                                     title="{!ordItem.Quantity}">{!ordItem.Quantity}</div>
                                             </td>
                                             <td data-label="{!$Label.c.TW_unit_price}">
                                                 <div class="slds-truncate" title="{!ordItem.UnitPrice}">

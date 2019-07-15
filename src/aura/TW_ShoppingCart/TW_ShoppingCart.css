@@ -2,10 +2,9 @@
  * Created by BRITENET on 10.07.2019.
  */
 .THIS .cart-item{
-    padding-left:10px;
-    min-height: 80px;
+    height: 120px;
     font-size:14px;
-    border: 1px solid lightgray;
+    border: 1px solid gray;
     width:60%;
     margin:auto;
     margin-top:10px;
@@ -23,6 +22,6 @@
 .THIS .btn-cart-text{
     font-size:16px;
 }
-.THIS .subheader-empty{
+.THIS .subheader-emtpy{
     margin-top:40px;
 }

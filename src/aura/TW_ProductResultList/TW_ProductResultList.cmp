@@ -1,0 +1,21 @@
+<!--
+ - Created by BRITENET on 09.07.2019.
+ -->
+
+<aura:component description="TW_ProductResultList"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global" controller="TW_ProductManager">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="items" type="Object[]"/>
+    <aura:attribute name="orgUrl" type="String"/>
+    <aura:attribute name="searchQuery" type="String"/>
+
+    <div class="c-container">
+        <lightning:layout multipleRows="true" horizontalAlign="center" verticalAlign="center">
+            <aura:iteration items="{!v.items}" var="singleItem">
+                <c:TW_ProductTile item="{!singleItem}" orgUrl="{!v.orgUrl}"/>
+            </aura:iteration>
+        </lightning:layout>
+    </div>
+
+</aura:component>
