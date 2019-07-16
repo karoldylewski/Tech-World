@@ -972,7 +972,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>complaint header text</shortDescription>
-        <value>Want to make an complaint? Please fill a form below</value>
+        <value>Want to make a complaint? Please select a product and fill a form below</value>
     </labels>
     <labels>
         <fullName>TW_Complaint_subject</fullName>
@@ -980,6 +980,13 @@
         <protected>true</protected>
         <shortDescription>complaint subject text</shortDescription>
         <value>Subject</value>
+    </labels>
+    <labels>
+        <fullName>TW_Created_date</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>created on text</shortDescription>
+        <value>Created on</value>
     </labels>
     <labels>
         <fullName>TW_Delete</fullName>
@@ -1311,6 +1318,13 @@
         <value>Total Price</value>
     </labels>
     <labels>
+        <fullName>TW_Your_Complaints_empty</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>complaints list empty text</shortDescription>
+        <value>You did not make any complaints yet</value>
+    </labels>
+    <labels>
         <fullName>TW_Your_Orders</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -1330,6 +1344,13 @@
         <protected>true</protected>
         <shortDescription>Your cart text</shortDescription>
         <value>Your cart</value>
+    </labels>
+    <labels>
+        <fullName>TW_Your_complaints</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Your complaints text</shortDescription>
+        <value>Your complaints</value>
     </labels>
     <labels>
         <fullName>TW_add_to_cart</fullName>
@@ -1449,6 +1470,13 @@
         <protected>true</protected>
         <shortDescription>Show order items text</shortDescription>
         <value>Show order items</value>
+    </labels>
+    <labels>
+        <fullName>TW_show_products</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Show order items text</shortDescription>
+        <value>Show products</value>
     </labels>
     <labels>
         <fullName>TW_unit_price</fullName>

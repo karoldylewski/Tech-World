@@ -16,10 +16,5 @@
            "url": "/cart/"
          });
          urlEvent.fire();
-    },
-
-    refreshReviews: function(component, event, helper) {
-        helper.loadReviews(component);
-        helper.onCheckIfUserCanReview(component);
     }
 })

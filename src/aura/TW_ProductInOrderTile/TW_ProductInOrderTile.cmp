@@ -8,12 +8,15 @@
     <aura:registerEvent name="TW_ProductComplaintPageEvent" type="c:TW_ProductComplaintPageEvent"/>
     <aura:attribute name="item" type="Object"/>
     <aura:attribute name="orderItems" type="Object[]"/>
-    <aura:attribute name="complaintOrderItems" type="Object[]"/>
-    <aura:attribute name="showComplaintForm" type="Boolean" default="false"/>
+    <aura:attribute name="complaintSubject" type="String"/>
+    <aura:attribute name="complaintDesc" type="String"/>
+
     <div class="cart-item">
         <div class="slds-col slds-size_12-of-12">
             <div class="slds-grid">
-                <div class="slds-col slds-size_3-of-12">
+                <div class="slds-col slds-size_1-of-12">
+                </div>
+                <div class="slds-col slds-size_4-of-12">
                     <div class="slds-text-heading_medium cart-item-title slds-text-body_regular">
                     {!$Label.c.TW_Order_number}
                         <span class="slds-m-left_x-small order-id-value">
@@ -35,7 +38,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="slds-col slds-size_3-of-12">
+                <div class="slds-col slds-size_4-of-12">
                     <div class="slds-text-heading_medium total-price">
                     {!$Label.c.TW_Total_price}
                         <span class="slds-m-left_x-small total-price-color">
@@ -43,23 +46,14 @@
                     </span>
                     </div>
                 </div>
-                <div class="slds-col slds-size_3-of-12">
-                    <lightning:button label="{!$Label.c.TW_Make_a_complaint}" title="{!$Label.c.TW_Make_a_complaint}"
-                                      onclick="{! c.makeComplaint }" class="btn-make-complaint"/>
-                </div>
-
             </div>
         </div>
-        <aura:if isTrue="{!v.showComplaintForm}">
-            <div class="slds-col slds-size_12-of-12">
-                <c:TW_OrderItemsForComplaint orderItems="{!v.complaintOrderItems}"/>
-            </div>
-        </aura:if>
         <div class="slds-col slds-size_12-of-12">
             <lightning:accordion allowMultipleSectionsOpen="true">
                     <span onclick="{!c.seeDetails}">
                     <lightning:accordionSection name="a" label="{!$Label.c.TW_show_order_items}">
                         <aura:set attribute="body">
+                            <div class="complaint-form">
                             <table class="slds-table slds-table_cell-buffer slds-table_bordered">
                                 <thead>
                                 <tr class="slds-line-height_reset">
@@ -89,12 +83,21 @@
                                     <aura:iteration items="{!v.orderItems}" var="ordItem">
                                         <tr class="slds-hint-parent">
                                             <th data-label="{!$Label.c.TW_product_name}" scope="row">
-                                                <ui:inputCheckbox aura:id="comp-checkbox"
-                                                                  change="{!c.manageIdInComplaintList}"/>
+                                                <div class="slds-form-element">
+                                                    <div class="slds-form-element__control">
+                                                        <div class="slds-checkbox">
+                                                            <input type="checkbox" name="options" id="{!ordItem.Id}" value="checkbox-44" checked="" />
+                                                            <label class="slds-checkbox__label" for="{!ordItem.Id}">
+                                                                <span class="slds-checkbox_faux"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </th>
                                             <th data-label="{!$Label.c.TW_product_name}" scope="row">
                                                 <div class="slds-truncate"
-                                                     title="{!ordItem.Product2.Name}">{!ordItem.Product2.Name}</div>
+                                                     title="{!ordItem.Product2.Name}">
+                                                        <span class="product-name">{!ordItem.Product2.Name}</span></div>
                                             </th>
                                             <td data-label="{!$Label.c.TW_Quantitytab}">
                                                 <div class="slds-truncate"
@@ -113,10 +116,38 @@
                                     </aura:iteration>
                                 </tbody>
                             </table>
+
+                                <div class="slds-m-top_xx-small">
+                                    <div class="slds-grid slds-wrap">
+                                        <div class="slds-col slds-size_12-of-12">
+                                            <div class="slds-text-heading_small slds-align_absolute-center slds-m-top_medium"> {!$Label.c.TW_Complaint_header}</div>
+                                         </div>
+                                         <div class="slds-col slds-size_12-of-12">
+                                            <span class="complaint-subject">
+                                                <ui:inputText label="{!$Label.c.TW_Complaint_subject}"
+                                                              value="{!v.complaintSubject}"/>
+                                            </span>
+                                        </div>
+                                        <div class="slds-col slds-size_12-of-12">
+                                            <ui:inputTextArea aura:id="comments" label="{!$Label.c.TW_Complaint_desc}"  value="{!v.complaintDesc}" rows="3"/>
+                                        </div>
+                                        <div class="slds-col slds-size_12-of-12 slds-m-top_x-small">
+                                            <div class="slds-align_absolute-center">
+                                            <lightning:button label="{!$Label.c.TW_Make_a_complaint}"
+                                                              title="{!$Label.c.TW_Make_a_complaint}"
+                                                              onclick="{!c.makeComplaint}"
+                                                              variant="brand"
+                                            />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </aura:set>
                     </lightning:accordionSection>
                     </span>
             </lightning:accordion>
         </div>
+
     </div>
 </aura:component>

@@ -13,6 +13,7 @@
             if (state === "SUCCESS") {
                 let responseItem = response.getReturnValue();
                 component.set('v.orderItems', responseItem);
+                console.log(JSON.stringify(responseItem));
             } else {
                 let toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({
@@ -27,54 +28,45 @@
     },
 
     onMakeComplaint: function(component) {
-        let action = component.get('c.getOrderItems');
+            let checkedItemsArray = [];
+            let checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+            for (let i = 0; i < checkboxes.length; i++) {
+              checkedItemsArray.push(checkboxes[i].id);
+            }
+            console.log('array: '+checkedItemsArray);
+            let action = component.get('c.makeAComplaint');
         action.setParams({
-            orderId: component.get("v.item.Id")
+            productsId: checkedItemsArray,
+            subject: component.get("v.complaintSubject"),
+            description: component.get("v.complaintDesc"),
         });
         action.setCallback(this, function(response) {
             let state = response.getState();
             if (state === "SUCCESS") {
                 let responseItem = response.getReturnValue();
-                component.set('v.orderItems', responseItem);
-                    let orderItemsList = [];
-                        for (let iterator = 0; iterator < responseItem.length; iterator++) {
-                            for (let iterator2 = 0; iterator2 < responseItem[iterator].Quantity; iterator2++) {
-                                let object = new Object();
-                                object.name =responseItem[iterator].Product2.Name;
-                                orderItemsList.push(object);
-                            }
-                        }
-                        console.log('complaintOrderItems: '+JSON.stringify(orderItemsList));
-                        component.set("v.complaintOrderItems",orderItemsList);
+                let toastEvent = $A.get("e.force:showToast");
+                toastEvent.setParams({
+                    "title": "Submitted",
+                    "message": "Your complaint has been submitted",
+                    type: "success",
+                });
+                toastEvent.fire();
+                component.set("v.complaintSubject",'');
+                component.set("v.complaintDesc",'');
+                for (let i = 0; i < checkboxes.length; i++) {
+                     checkboxes[i].checked = false;
+                }
             } else {
+                console.log(JSON.stringify(response.getReturnValue()));
                 let toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({
                     "title": "Error",
-                    "message": "Could not load order items",
+                    "message": "Could not submit complaint",
                     type: "error",
                 });
                 toastEvent.fire();
             }
         });
         $A.enqueueAction(action);
-        let complaintForm = component.get("v.showComplaintForm");
-        if (complaintForm){
-            component.set("v.showComplaintForm",false);
-        }else{
-            component.set("v.showComplaintForm",true);
-        }
     },
-
-    onManageIdInComplaintList: function(component) {
-        let complaintIds = component.get("v.complaintIds");
-//        if (complaintIds != null){
-//             for (let iterator = 0; iterator < complaintIds.length; iterator++) {
-//                if (complaintIds[iterator] == targetItemId) {
-//
-//                }
-//             }
-//        }
-
-
-    }
 })
