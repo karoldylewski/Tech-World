@@ -65,4 +65,19 @@ public with sharing class TW_ProductManager {
     public static List<Products__c> getCaseItems(String caseId) {
         return TW_ProductService.getCaseItems(caseId);
     }
+
+    @AuraEnabled
+    public static List<Pricebook2> getAllPricebooks(){
+        return TW_ProductService.getAllPricebooks();
+    }
+
+    @AuraEnabled
+    public static List<PricebookEntry> getPricebookAllEntries(String pricebookId){
+        return TW_ProductService.getPricebookAllEntries(pricebookId);
+    }
+
+    @AuraEnabled
+    public static List<PricebookEntry> getAllProducts(){
+        return TW_ProductService.getAllProducts();
+    }
 }

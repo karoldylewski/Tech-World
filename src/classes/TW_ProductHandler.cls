@@ -75,4 +75,24 @@ public with sharing class TW_ProductHandler {
         ];
         return resultList;
     }
+
+    public static List<PricebookEntry> getPricebookEntriesForPricebook(String pricebookId) {
+        List<PricebookEntry> resultList = [
+                SELECT Product2.Name,UnitPrice, Pricebook2Id
+                FROM PricebookEntry
+                WHERE Product2.RecordType.DeveloperName = 'TW_Product'
+                AND Pricebook2Id =: pricebookId
+        ];
+        return resultList;
+    }
+
+    public static List<PricebookEntry> getAllProducts(String standardPriceBookId){
+        List<PricebookEntry> products = [
+                SELECT Id, Name, UnitPrice
+                FROM PricebookEntry
+                WHERE Pricebook2Id = :standardPriceBookId
+                AND Product2.RecordType.DeveloperName = 'TW_Product'
+        ];
+        return products;
+    }
 }
