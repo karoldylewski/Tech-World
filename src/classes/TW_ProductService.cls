@@ -1,8 +1,7 @@
 public with sharing class TW_ProductService {
 
     public static List<TW_Product_Review__c> getProductReviews(String itemId){
-        List<TW_Product_Review__c> reviews = TW_ReviewHandler.getReviewsForProduct(itemId);
-        return reviews;
+        return TW_ReviewHandler.getReviewsForProduct(itemId);
     }
 
     public static Boolean checkIfUserCanReview(String itemId){

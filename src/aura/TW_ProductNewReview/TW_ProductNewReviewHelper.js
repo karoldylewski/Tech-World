@@ -24,7 +24,7 @@
         obj.Product__c = component.get("v.productId").toString();
         component.find("service").saveRecord(function(saveResult) {
             if (saveResult.state === "SUCCESS" || saveResult.state === "DRAFT") {
-                var resultsToast = $A.get("e.force:showToast");
+                let resultsToast = $A.get("e.force:showToast");
                 if ($A.util.isUndefined(resultsToast)) {
                     alert('Review Saved successfully.');
                 } else {

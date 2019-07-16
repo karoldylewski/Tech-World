@@ -5,8 +5,7 @@
 public with sharing class TW_ProductManager {
     @AuraEnabled
     public static List<TW_Product_Review__c> getReviewItems(String productId) {
-        List<TW_Product_Review__c> reviewItems = TW_ProductService.getProductReviews(productId);
-        return reviewItems;
+        return TW_ProductService.getProductReviews(productId);
     }
     @AuraEnabled
     public static Boolean checkIfUserCanReview(String productId) {
