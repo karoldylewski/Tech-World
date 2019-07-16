@@ -1485,4 +1485,123 @@
         <shortDescription>unit price text</shortDescription>
         <value>Unit price</value>
     </labels>
+    <labels>
+        <fullName>TW_pricebook_manager</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Pricebooks manager text</shortDescription>
+        <value>Pricebooks manager</value>
+    </labels>
+    <labels>
+        <fullName>TW_existing_pricebooks</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Pricebooks manager text</shortDescription>
+        <value>Existing pricebooks</value>
+    </labels>
+    <labels>
+        <fullName>TW_new_pricebooks</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Pricebooks manager text</shortDescription>
+        <value>New pricebook</value>
+    </labels>
+    <labels>
+        <fullName>TW_pricebook_name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Pricebook Name text</shortDescription>
+        <value>Pricebook Name</value>
+    </labels>
+    <labels>
+        <fullName>TW_is_active</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>is active text</shortDescription>
+        <value>Is active</value>
+    </labels>
+    <labels>
+        <fullName>TW_start_date</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>start date text</shortDescription>
+        <value>Start Date</value>
+    </labels>
+    <labels>
+        <fullName>TW_end_date</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>End Date</value>
+    </labels>
+    <labels>
+        <fullName>TW_set_new_sale</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>Set new sale</value>
+    </labels>
+    <labels>
+        <fullName>TW_sale_name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>Sale name</value>
+    </labels>
+    <labels>
+        <fullName>TW_sale_sd</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>Sale start date</value>
+    </labels>
+    <labels>
+        <fullName>TW_sale_ed</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>Sale end date</value>
+    </labels>
+    <labels>
+        <fullName>TW_sale_active</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>Is active</value>
+    </labels>
+    <labels>
+        <fullName>TW_select_type</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>Select discount type</value>
+    </labels>
+    <labels>
+        <fullName>TW_percentage_discount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>Set percentage discount</value>
+    </labels>
+    <labels>
+        <fullName>TW_value_discount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>Set discount value</value>
+    </labels>
+    <labels>
+        <fullName>TW_sale_new_price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>New price</value>
+    </labels>
+    <labels>
+        <fullName>TW_standard_price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>Standard price</value>
+    </labels>
 </CustomLabels>

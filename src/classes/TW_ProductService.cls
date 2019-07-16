@@ -90,4 +90,16 @@ public with sharing class TW_ProductService {
     public static List<Products__c> getCaseItems(String caseId){
         return TW_CaseHandler.getCaseItems(caseId);
     }
+
+    public static List<Pricebook2> getAllPricebooks(){
+        return TW_PricebookHandler.getAllPricebooks();
+    }
+
+    public static List<PricebookEntry> getPricebookAllEntries(String pricebookId){
+        return TW_ProductHandler.getPricebookEntriesForPricebook(pricebookId);
+    }
+
+    public static List<PricebookEntry> getAllProducts(){
+        return TW_ProductHandler.getAllProducts(TW_PricebookHandler.getStandardPricebook());
+    }
 }

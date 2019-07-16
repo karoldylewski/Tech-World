@@ -1,0 +1,30 @@
+<!--
+ - Created by BRITENET on 16.07.2019.
+ -->
+
+<aura:component description="TW_ProductInAddPricebookTile">
+    <aura:method name="recalculatePrice" action="{!c.recalculate}"
+                 access="public">
+        <aura:attribute name="data" type="Object"/>
+    </aura:method>
+    <aura:attribute name="item" type="Object"/>
+    <aura:attribute name="isChecked" type="Boolean" default="false"/>
+    <aura:attribute name="recalculatedPrice" type="Integer"/>
+
+    <lightning:layout>
+        <lightning:layoutItem size="1">
+                <ui:inputCheckbox value="{!v.isChecked}" class="checkbox-pos"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="3">
+                {!v.item.Name}
+        </lightning:layoutItem>
+        <lightning:layoutItem size="3">
+            <ui:outputCurrency value="{!v.item.UnitPrice}"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="3">
+            <ui:outputCurrency value="{!v.recalculatedPrice}"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="2">
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

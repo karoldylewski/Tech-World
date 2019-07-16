@@ -1,0 +1,88 @@
+<!--
+ - Created by BRITENET on 16.07.2019.
+ -->
+
+<aura:component description="TW_PricebookNew"
+                implements="flexipage:availableForAllPageTypes"
+                access="global"
+                controller="TW_ProductManager">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="options" type="List" default="[
+    {'label': 'Percentage', 'value': 'perc'},
+    {'label': 'Value', 'value': 'val'}
+    ]"/>
+    <aura:attribute name="saleTypeRadioValue" type="String" default="Percentage"/>
+    <aura:attribute name="discountValueSlider" type="Integer" default="4"/>
+    <aura:attribute name="discountValueInput" type="Integer"/>
+    <aura:attribute name="saleName" type="String"/>
+    <aura:attribute name="saleStartDate" type="Date"/>
+    <aura:attribute name="saleEndDate" type="Date"/>
+    <aura:attribute name="saleIsActive" type="Boolean"/>
+    <aura:attribute name="products" type="Object[]"/>
+
+    <article class="slds-card">
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="c-container">
+                <lightning:layout>
+                    <lightning:layoutItem size="4">
+                        <ui:inputText label="{!$Label.c.TW_sale_name}" class="field" value="{!v.saleName}"/>
+                        <lightning:input type="date" name="input1" label="{!$Label.c.TW_sale_sd}"
+                                         value="{!v.saleStartDate}"/>
+                        <lightning:input type="date" name="input1" label="{!$Label.c.TW_sale_ed}"
+                                         value="{!v.saleEndDate}"/>
+                        <ui:inputCheckbox label="{!$Label.c.TW_sale_active}" class="field" value="{!v.saleIsActive}"/>
+
+                        <div>
+                            <lightning:radioGroup name="radioGroup"
+                                                  label="{!$Label.c.TW_select_type}"
+                                                  options="{! v.options }"
+                                                  value="{! v.saleTypeRadioValue }"
+                                                  type="radio"/>
+                        </div>
+                        <div>
+                            <aura:if isTrue="{!v.saleTypeRadioValue == 'perc'}">
+                                <lightning:slider label="{!$Label.c.TW_percentage_discount}"
+                                                  value="{!v.discountValueSlider}" min="0" max="99"
+                                                  onchange="{!c.sliderChanged}"/>
+                            </aura:if>
+                            <aura:if isTrue="{!v.saleTypeRadioValue == 'val'}">
+                                <lightning:input type="Number" name="input1" label="{!$Label.c.TW_value_discount}"
+                                                 value="{!v.discountValueInput}" onchange="{!c.valueChanged}"/>
+                            </aura:if>
+                        </div>
+                        <div class="slds-m-top_x-small">
+                            <lightning:button variant="brand" label="{!$Label.c.TW_Save}" title="{!$Label.c.TW_Save}"
+                                              onclick="{!c.savePricebook}"/>
+                        </div>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="8" padding="around-small">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                            <thead>
+                            <lightning:layout>
+                                <lightning:layoutItem size="1"/>
+                                <lightning:layoutItem size="3">
+                                        {!$Label.c.TW_product_name}
+                                </lightning:layoutItem>
+                                <lightning:layoutItem size="3">
+                                        {!$Label.c.TW_standard_price}
+                                </lightning:layoutItem>
+                                <lightning:layoutItem size="3">
+                                        {!$Label.c.TW_unit_price}
+                                </lightning:layoutItem>
+                                <lightning:layoutItem size="2">
+                                        {!$Label.c.TW_New_Price}
+                                </lightning:layoutItem>
+                            </lightning:layout>
+                            </thead>
+                            <tbody>
+                            <aura:iteration items="{!v.products}" var="item">
+                                <c:TW_ProductInAddPricebookTile item="{!item}" aura:id="childItem"/>
+                            </aura:iteration>
+                            </tbody>
+                        </table>
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </div>
+        </div>
+    </article>
+</aura:component>
