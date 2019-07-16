@@ -63,8 +63,6 @@ public with sharing class TW_ProductHandler {
                 WHERE Product2.Id IN : itemId
                 ORDER BY Product2.Id, UnitPrice DESC
         ];
-        System.debug('parameters for soql: '+itemId);
-        System.debug('Result for multiple ids: '+resultList.size());
         return resultList;
     }
 

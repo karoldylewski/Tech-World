@@ -1,0 +1,84 @@
+<!--
+ - Created by BRITENET on 15.07.2019.
+ -->
+
+<aura:component description="TW_OrderItemInCaseTile"
+                access="global"
+                controller="TW_ProductManager">
+    <aura:attribute name="item" type="Object"/>
+    <aura:attribute name="complaintItems" type="Object[]"/>
+    <div class="cart-item">
+        <div class="slds-grid">
+            <div class="slds-col slds-size_12-of-12">
+                <div class="item-subject">
+                {!$Label.c.TW_Complaint_subject}
+                    <span class="slds-m-left_small order-item-value">
+                        <ui:outputText value="{!v.item.Subject}"/>
+                    </span>
+                </div>
+                <div>
+                {!$Label.c.TW_Complaint_desc}
+                    <span class="slds-m-left_small order-item-value">
+                        <ui:outputTextArea value="{!v.item.Description}"/>
+                    </span>
+                </div>
+                <div>
+                {!$Label.c.TW_Created_date}
+                    <span class="slds-m-left_small order-item-value">
+                        <ui:outputDateTime value="{!v.item.CreatedDate}"/>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="slds-col slds-size_12-of-12">
+            <lightning:accordion allowMultipleSectionsOpen="true">
+                    <span onclick="{!c.seeDetails}">
+                    <lightning:accordionSection name="a" label="{!$Label.c.TW_show_products}">
+                        <aura:set attribute="body">
+                            <div class="complaint-form">
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                <thead>
+                                <tr class="slds-line-height_reset">
+                                    <th class="" scope="col">
+                                        <div class="slds-truncate"
+                                             title="{!$Label.c.TW_product_name}">{!$Label.c.TW_product_name}</div>
+                                    </th>
+                                    <th class="" scope="col">
+                                        <div class="slds-truncate"
+                                             title="{!$Label.c.TW_Quantitytab}">{!$Label.c.TW_Quantitytab}</div>
+                                    </th>
+                                    <th class="" scope="col">
+                                        <div class="slds-truncate"
+                                             title="{!$Label.c.TW_unit_price}">{!$Label.c.TW_unit_price}</div>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <aura:iteration items="{!v.complaintItems}" var="ordItem">
+                                        <tr class="slds-hint-parent table-body-values">
+                                            <th data-label="{!$Label.c.TW_product_name}" scope="row">
+                                                <div class="slds-truncate"
+                                                     title="{!ordItem.Product_Name__c}">
+                                                        <span class="product-name">{!ordItem.Product_Name__c}</span></div>
+                                            </th>
+                                            <td data-label="{!$Label.c.TW_Quantitytab}">
+                                                <div class="slds-truncate"
+                                                     title="{!ordItem.Order_Product__r.Quantity}">{!ordItem.Order_Product__r.Quantity}</div>
+                                            </td>
+                                            <td data-label="{!$Label.c.TW_unit_price}">
+                                                <div class="slds-truncate" title="{!ordItem.Order_Product__r.UnitPrice}">
+                                                <ui:outputCurrency value="{!ordItem.Order_Product__r.UnitPrice}"/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </aura:iteration>
+                                </tbody>
+                            </table>
+                            </div>
+                        </aura:set>
+                    </lightning:accordionSection>
+                    </span>
+            </lightning:accordion>
+        </div>
+    </div>
+</aura:component>

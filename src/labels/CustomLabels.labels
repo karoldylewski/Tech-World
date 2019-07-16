@@ -1448,7 +1448,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>complaint header text</shortDescription>
-        <value>Want to make an complaint? Please fill a form below</value>
+        <value>Want to make a complaint? Please select a product and fill a form below</value>
     </labels>
     <labels>
         <fullName>TW_Make_a_complaint</fullName>
@@ -1456,5 +1456,33 @@
         <protected>true</protected>
         <shortDescription>Make a complaint text</shortDescription>
         <value>Make a complaint</value>
+    </labels>
+    <labels>
+        <fullName>TW_Your_complaints</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Your complaints text</shortDescription>
+        <value>Your complaints</value>
+    </labels>
+    <labels>
+        <fullName>TW_Your_Complaints_empty</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>complaints list empty text</shortDescription>
+        <value>You did not make any complaints yet</value>
+    </labels>
+    <labels>
+        <fullName>TW_Created_date</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>created on text</shortDescription>
+        <value>Created on</value>
+    </labels>
+    <labels>
+        <fullName>TW_show_products</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Show order items text</shortDescription>
+        <value>Show products</value>
     </labels>
 </CustomLabels>

@@ -57,10 +57,20 @@
 .THIS .complaint-form{
     background-color:white;
     padding-left:10px;
+    padding-top:5px;
     padding-right:10px;
     padding-bottom:10px;
-    border: 1px solid black;
+    border: 1px solid lightgray;
 }
 .THIS .product-name{
     font-weight:600;
+}
+.THIS .order-item-value{
+    font-weight:600;
+}
+.THIS .item-subject{
+    margin-top:10px;
+}
+.THIS .table-body-values{
+    font-size:12px;
 }

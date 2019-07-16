@@ -118,4 +118,26 @@ public with sharing class TW_ProductServiceHelper {
         return UserInfo.getUserId();
     }
 
+    public static String crateCase(String contactId,String subject, String description){
+        Case newCase= new Case();
+        newCase.Origin = 'Web';
+        newCase.ContactId = contactId;
+        newCase.Subject=subject;
+        newCase.Description = description;
+        newCase.Status = 'New';
+        return TW_CaseHandler.insertCase(newCase);
+    }
+
+    public static Boolean crateOrderItemsInCase(String caseId, List<OrderItem> items){
+        List<Products__c> orderItemInCaseList = new List<Products__c>();
+        for(OrderItem orderItem : items){
+            Products__c orderItemInCase = new Products__c();
+            orderItemInCase.Complaint_Case__c = caseId;
+            orderItemInCase.Order_Product__c = orderItem.Id;
+            orderItemInCase.Product_Name__c = orderItem.Product2.Name;
+            orderItemInCaseList.add(orderItemInCase);
+        }
+        return TW_CaseHandler.crateOrderItemsInCase(orderItemInCaseList);
+    }
+
 }
