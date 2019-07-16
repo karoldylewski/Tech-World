@@ -1,6 +1,3 @@
-/**
- * Created by BRITENET on 10.07.2019.
- */
 ({
     doInit: function(component, event, helper) {
         helper.onInit(component);
@@ -16,5 +13,10 @@
            "url": "/cart/"
          });
          urlEvent.fire();
+    },
+
+    refreshReviews: function(component, event, helper) {
+        helper.loadReviews(component);
+        helper.onCheckIfUserCanReview(component);
     }
 })
