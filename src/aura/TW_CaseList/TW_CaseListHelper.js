@@ -9,8 +9,8 @@
             if (state === "SUCCESS") {
                 let responseItem = response.getReturnValue();
                 component.set('v.items', responseItem);
-                console.log(JSON.stringify(responseItem));
             } else {
+                console.log(JSON.stringify(responseItem));
                 let toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({
                     "title": "Error",
