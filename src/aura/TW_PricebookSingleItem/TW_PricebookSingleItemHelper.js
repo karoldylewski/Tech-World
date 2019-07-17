@@ -3,6 +3,7 @@
  */
 ({
     onShowProducts: function(component) {
+<<<<<<< HEAD
         let pricebookNode = component.get("v.itemId");
         console.log('pricebookNode: ' + pricebookNode);
 
@@ -31,5 +32,18 @@
             }
         });
         $A.enqueueAction(pricebooksCallout);
+=======
+        console.log('item name: '+JSON.stringify(component.get("v.itemName")));
+        let pricebookNode = component.get("v.itemId");
+        let compEvent = component.getEvent("pricebookItemsEvent");
+        compEvent.setParams({
+                "itemId": pricebookNode,
+                "itemName" : component.get("v.itemName"),
+                "itemSd" : component.get("v.itemSd"),
+                "itemEd" : component.get("v.itemEd"),
+                "isActive" : component.get("v.isActive"),
+        });
+        compEvent.fire();
+>>>>>>> feature/TW-14_Product-discount
     }
 })

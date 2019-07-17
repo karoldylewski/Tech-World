@@ -6,7 +6,15 @@
                 implements="flexipage:availableForAllPageTypes"
                 access="global"
                 controller="TW_ProductManager">
+<<<<<<< HEAD
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+=======
+    <aura:registerEvent name="pricebookAdded" type="c:TW_PricebookAdded"/>
+    <aura:handler name="addProductToList" event="c:TW_ProductsSelectedForPricebook"
+                  action="{!c.addProductsFromEvent}"/>
+    <aura:handler name="removeProductFromList" event="c:TW_ProductRemoveFromSelectedList"
+                  action="{!c.removeProductFromEvent}"/>
+>>>>>>> feature/TW-14_Product-discount
     <aura:attribute name="options" type="List" default="[
     {'label': 'Percentage', 'value': 'perc'},
     {'label': 'Value', 'value': 'val'}
@@ -17,19 +25,36 @@
     <aura:attribute name="saleName" type="String"/>
     <aura:attribute name="saleStartDate" type="Date"/>
     <aura:attribute name="saleEndDate" type="Date"/>
+<<<<<<< HEAD
     <aura:attribute name="saleIsActive" type="Boolean"/>
     <aura:attribute name="products" type="Object[]"/>
+=======
+    <aura:attribute name="saleIsActive" type="Boolean" default="false"/>
+    <aura:attribute name="products" type="Object[]"/>
+    <aura:attribute name="searchedPhrase" type="String"/>
+    <aura:attribute name="searchingResultList" type="Object[]"/>
+    <aura:attribute name="pricebookColumnHeader" type="String" default="{!$Label.c.TW_current_lowest_price}"/>
+>>>>>>> feature/TW-14_Product-discount
 
     <article class="slds-card">
         <div class="slds-card__body slds-card__body_inner">
             <div class="c-container">
                 <lightning:layout>
+<<<<<<< HEAD
                     <lightning:layoutItem size="4">
                         <ui:inputText label="{!$Label.c.TW_sale_name}" class="field" value="{!v.saleName}"/>
                         <lightning:input type="date" name="input1" label="{!$Label.c.TW_sale_sd}"
                                          value="{!v.saleStartDate}"/>
                         <lightning:input type="date" name="input1" label="{!$Label.c.TW_sale_ed}"
                                          value="{!v.saleEndDate}"/>
+=======
+                    <lightning:layoutItem size="4"  padding="around-small">
+                        <lightning:input type="text" label="{!$Label.c.TW_sale_name}" value="{!v.saleName}" required="true" aura:id="fieldId"/>
+                        <lightning:input type="date" name="input1" label="{!$Label.c.TW_sale_sd}"
+                                         value="{!v.saleStartDate}" required="true" aura:id="fieldId"/>
+                        <lightning:input type="date" name="input1" label="{!$Label.c.TW_sale_ed}"
+                                         value="{!v.saleEndDate}" required="true" aura:id="fieldId"/>
+>>>>>>> feature/TW-14_Product-discount
                         <ui:inputCheckbox label="{!$Label.c.TW_sale_active}" class="field" value="{!v.saleIsActive}"/>
 
                         <div>
@@ -56,6 +81,7 @@
                         </div>
                     </lightning:layoutItem>
                     <lightning:layoutItem size="8" padding="around-small">
+<<<<<<< HEAD
                         <table class="slds-table slds-table_cell-buffer slds-table_bordered">
                             <thead>
                             <lightning:layout>
@@ -80,9 +106,100 @@
                             </aura:iteration>
                             </tbody>
                         </table>
+=======
+                        <div>
+                            <lightning:layout>
+                                <lightning:layoutItem size="8">
+                                    <lightning:input name="input2" label="{!$Label.c.TW_search_for_products}"
+                                                     value="{!v.searchedPhrase}"/>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem size="4">
+                                    <lightning:button variant="brand" label="{!$Label.c.TW_search_for_products}"
+                                                      title="{!$Label.c.TW_Save}"
+                                                      onclick="{!c.searchProducts}" class="btn-search"/>
+                                </lightning:layoutItem>
+                            </lightning:layout>
+                        </div>
+                        <aura:if isTrue="{!not(empty(v.searchingResultList))}">
+                            <div class="search-form">
+                                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                    <thead class="table-header">
+                                    <lightning:layout>
+                                        <lightning:layoutItem size="1"/>
+                                        <lightning:layoutItem size="3">
+                                                {!$Label.c.TW_product_name}
+                                        </lightning:layoutItem>
+                                        <lightning:layoutItem size="3">
+                                                {!$Label.c.TW_standard_price}
+                                        </lightning:layoutItem>
+                                        <lightning:layoutItem size="3">
+                                                {!$Label.c.TW_current_lowest_price}
+                                        </lightning:layoutItem>
+                                        <lightning:layoutItem size="1">
+                                            <a onclick="{!c.addAllItemToList}">{!$Label.c.TW_add_all}</a>
+                                        </lightning:layoutItem>
+                                    </lightning:layout>
+                                    </thead>
+                                    <tbody>
+                                    <aura:iteration items="{!v.searchingResultList}" var="item">
+                                        <c:TW_ProductSearchInPricebookResultTile item="{!item}"/>
+                                    </aura:iteration>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </aura:if>
+                    </lightning:layoutItem>
+                </lightning:layout>
+                <lightning:layout>
+                    <lightning:layoutItem size="2"/>
+                    <lightning:layoutItem size="8">
+                        <aura:if isTrue="{!not(empty(v.products))}">
+                            <div class="slds-grid slds-grid_vertical">
+                                <div class="slds-col">
+                                    <span class="slds-text-heading_medium slds-align_absolute-center slds-m-bottom--medium">{!$Label.c.TW_items_for_discount}</span>
+                                </div>
+                                <div class="slds-col">
+                                <span class="slds-align_absolute-center">
+
+                                    <table class="slds-table slds-table_cell-buffer slds-table_bordered selected-table">
+                                        <thead class="table-header slds-m-top_medium">
+                                            <lightning:layout>
+                                            <lightning:layoutItem size="1"/>
+                                            <lightning:layoutItem size="3">
+                                                     <span class="slds-align_absolute-center"> {!$Label.c.TW_product_name}</span>
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem size="3">
+                                                   <span class="slds-align_absolute-center">   {!$Label.c.TW_standard_price}</span>
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem size="3">
+                                                     <span class="slds-align_absolute-center">
+                                                         {!v.pricebookColumnHeader}
+                                                            </span>
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem size="2">
+                                                   <span class="slds-align_absolute-center"> {!$Label.c.TW_New_Price}</span>
+                                            </lightning:layoutItem>
+                                            </lightning:layout>
+                                         </thead>
+                                         <tbody>
+                                            <aura:iteration items="{!v.products}" var="item">
+                                                <c:TW_ProductInAddPricebookTile item="{!item}" aura:id="childItem"/>
+                                            </aura:iteration>
+                                        </tbody>
+                                    </table>
+
+                                </span>
+                                </div>
+                            </div>
+                        </aura:if>
+>>>>>>> feature/TW-14_Product-discount
                     </lightning:layoutItem>
                 </lightning:layout>
             </div>
         </div>
     </article>
+<<<<<<< HEAD
 </aura:component>
+=======
+</aura:component>
+>>>>>>> feature/TW-14_Product-discount

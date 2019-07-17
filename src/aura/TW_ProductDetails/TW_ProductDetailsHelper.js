@@ -64,7 +64,6 @@
             if (state === "SUCCESS") {
                 let responseItem = response.getReturnValue();
                 component.set("v.canReview", responseItem);
-                console.log('check if user can review: ' + responseItem);
             } else {
                 let toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({

@@ -1,0 +1,6 @@
+<!--
+ - Created by BRITENET on 17.07.2019.
+ -->
+
+<aura:event type="COMPONENT" description="TW_PricebookAdded">
+</aura:event>

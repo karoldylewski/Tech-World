@@ -3,4 +3,17 @@
  */
 .THIS .checkbox-pos{
     margin-left:20px;
+<<<<<<< HEAD
 }
+=======
+}
+.THIS .cell-value{
+    padding-top:12px;
+}
+
+.THIS .cell-value-discount{
+    padding-top:12px;
+    color: blue;
+    font-weight: bold;
+}
+>>>>>>> feature/TW-14_Product-discount
