@@ -101,8 +101,6 @@ public with sharing class TW_ProductHandler {
         ];
         return products;
     }
-<<<<<<< HEAD
-=======
 
     public static List<PricebookEntry> getPricebookEntriesForPricebook(List<String> pricebookIds) {
         List<PricebookEntry> resultList = [
@@ -117,5 +115,4 @@ public with sharing class TW_ProductHandler {
         ];
         return resultList;
     }
->>>>>>> feature/TW-14_Product-discount
 }

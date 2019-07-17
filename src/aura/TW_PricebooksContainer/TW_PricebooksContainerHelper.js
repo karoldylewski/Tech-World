@@ -27,8 +27,6 @@
     onNewPricebook: function(component) {
         component.set("v.toDisplay", 'new');
     },
-<<<<<<< HEAD
-=======
 
     onLoadPricebookToEdit: function(component, event) {
         let eventAttributes = event.getParams("attributes");
@@ -60,5 +58,4 @@
         $A.enqueueAction(pricebooksCallout);
         component.set("v.toDisplay", 'edit');
     },
->>>>>>> feature/TW-14_Product-discount
 })

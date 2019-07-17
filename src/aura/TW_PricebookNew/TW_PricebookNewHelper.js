@@ -24,30 +24,6 @@
         }
     },
 
-<<<<<<< HEAD
-    onSavePricebook: function(component) {
-                let data = {
-                    discountValue: component.get("v.discountValueSlider"),
-                    discountType: component.get("v.saleTypeRadioValue"),
-                };
-                let childCmps = component.find("childItem");
-                for (let i = 0; i < childCmps.length; i++) {
-                    childCmps[i].recalculatePrice(data);
-                }
-        console.log('save pricebook!');
-    },
-
-
-    onInit: function(component) {
-        let action = component.get('c.getAllProducts');
-        action.setCallback(this, function(response) {
-            let state = response.getState();
-            if (state === "SUCCESS") {
-                let responseItem = response.getReturnValue();
-                component.set("v.products", responseItem);
-                console.log(JSON.stringify(responseItem));
-            } else {
-=======
     validateFields: function(component) {
         //        var validExpense = component.find('fieldId').reduce(function(validSoFar, inputCmp) {
         //            inputCmp.showHelpMessageIfInvalid();
@@ -123,7 +99,6 @@
                 component.set("v.searchingResultList", searchingResult.products);
             } else {
                 console.log(JSON.stringify(response.getReturnValue()));
->>>>>>> feature/TW-14_Product-discount
                 let toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({
                     "title": "Error",
@@ -131,16 +106,10 @@
                     type: "error",
                 });
                 toastEvent.fire();
-<<<<<<< HEAD
-                console.log(JSON.stringify(response.getReturnValue()));
-=======
->>>>>>> feature/TW-14_Product-discount
             }
         });
         $A.enqueueAction(action);
     },
-<<<<<<< HEAD
-=======
 
     onAddProductsFromEvent: function(component, event) {
         let listToMerge = event.getParam("products");
@@ -199,5 +168,4 @@
             toastEvent.fire();
         }
     }
->>>>>>> feature/TW-14_Product-discount
 })

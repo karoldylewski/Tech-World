@@ -21,7 +21,7 @@ public with sharing class TW_ContentVersionTriggerHandler implements TW_ITrigger
             }
             List<Product2> product = [SELECT Id, ImageId__c FROM Product2 WHERE Id IN :ownerIds];
             if (product.size() > 0){
-                product[0].ImageId__c = itemsList[0].Id;
+                product[0].ImageId__c = itemsList[0].ContentDocumentId;
                 update product;
             }
         }

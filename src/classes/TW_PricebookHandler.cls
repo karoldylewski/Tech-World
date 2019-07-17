@@ -20,8 +20,6 @@ public with sharing class TW_PricebookHandler {
         ];
         return pbs;
     }
-<<<<<<< HEAD
-=======
 
     public static String createPricebook(Pricebook2 item) {
         try {
@@ -40,5 +38,4 @@ public with sharing class TW_PricebookHandler {
         }
         return item.Id;
     }
->>>>>>> feature/TW-14_Product-discount
 }

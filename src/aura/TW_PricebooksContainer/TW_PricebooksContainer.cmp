@@ -6,10 +6,6 @@
                 implements="flexipage:availableForAllPageTypes"
                 access="global"
                 controller="TW_ProductManager">
-<<<<<<< HEAD
-    <aura:attribute name="toDisplay" type="String"/>
-    <aura:attribute name="pricebooks" type="Object[]"/>
-=======
     <aura:handler name="pricebookItemsEvent" event="c:TW_PricebookItemsEvent"
                   action="{!c.loadPricebookToEdit}"/>
     <aura:handler name="pricebookAdded" event="c:TW_PricebookAdded"
@@ -22,7 +18,6 @@
     <aura:attribute name="toEditItemEd" type="Date"/>
     <aura:attribute name="toEditISActive" type="Date"/>
     <aura:attribute name="toEditPricebookItems" type="Object[]"/>
->>>>>>> feature/TW-14_Product-discount
     <article class="slds-card">
         <div class="slds-grid slds-grid_vertical">
             <div class="slds-col">
@@ -52,11 +47,6 @@
                         </aura:if>
                         <aura:if isTrue="{!v.toDisplay == 'new'}">
                             <c:TW_PricebookNew/>
-<<<<<<< HEAD
-                            <!--                            <c:MOV_PersonResult items="{!v.items}" currentPage="{!v.currentPersonPage}"/>-->
-                        </aura:if>
-
-=======
                         </aura:if>
                         <aura:if isTrue="{!v.toDisplay == 'edit'}">
                             <c:TW_PricebookNew saleName="{!v.toEditItemName}"
@@ -67,14 +57,9 @@
                                                pricebookColumnHeader="{!$Label.c.TW_this_pb_price}"
                             />
                         </aura:if>
->>>>>>> feature/TW-14_Product-discount
                     </div>
                 </div>
             </div>
         </div>
     </article>
-<<<<<<< HEAD
 </aura:component>
-=======
-</aura:component>
->>>>>>> feature/TW-14_Product-discount

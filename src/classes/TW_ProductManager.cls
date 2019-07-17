@@ -80,8 +80,6 @@ public with sharing class TW_ProductManager {
     public static List<PricebookEntry> getAllProducts(){
         return TW_ProductService.getAllProducts();
     }
-<<<<<<< HEAD
-=======
 
     @AuraEnabled
     public static String addNewPricebook(List<List<String>> itemsList, String pricebookName, Date sd, Date ed, Boolean isActive){
@@ -93,5 +91,4 @@ public with sharing class TW_ProductManager {
         TW_Utils.TW_ProductList searchedProducts = TW_ProductService.getProductListForPricebooks(pricebookId);
         return searchedProducts;
     }
->>>>>>> feature/TW-14_Product-discount
 }

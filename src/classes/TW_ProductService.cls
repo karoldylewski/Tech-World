@@ -102,8 +102,6 @@ public with sharing class TW_ProductService {
     public static List<PricebookEntry> getAllProducts(){
         return TW_ProductHandler.getAllProducts(TW_PricebookHandler.getStandardPricebook());
     }
-<<<<<<< HEAD
-=======
 
     public static String saveNewPricebook(List<List<String>> itemsList, String pricebookName, Date sd, Date ed, Boolean isActive){
        String pricebookId =  TW_ProductServiceHelper.createNewPricebook2(pricebookName,sd,ed,isActive);
@@ -121,5 +119,4 @@ public with sharing class TW_ProductService {
         TW_Utils.TW_ProductList products = new TW_Utils.TW_ProductList(orgBaseUrl, wrapList);
         return products;
     }
->>>>>>> feature/TW-14_Product-discount
 }

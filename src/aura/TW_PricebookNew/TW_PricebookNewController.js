@@ -17,8 +17,6 @@
     doInit: function(component, event, helper) {
          helper.onInit(component);
     },
-<<<<<<< HEAD
-=======
 
     searchProducts: function(component, event, helper) {
          helper.onSearchProducts(component);
@@ -35,5 +33,4 @@
     addAllItemToList: function(component, event, helper) {
          helper.onAddAllProducts(component,event);
     }
->>>>>>> feature/TW-14_Product-discount
 })

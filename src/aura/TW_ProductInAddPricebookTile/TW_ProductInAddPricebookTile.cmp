@@ -7,36 +7,14 @@
                  access="public">
         <aura:attribute name="data" type="Object"/>
     </aura:method>
-<<<<<<< HEAD
-=======
     <aura:method name="getRecordDetails" action="{!c.getRecordDetails}"
                  access="public">
     </aura:method>
     <aura:registerEvent name="removeProductFromList" type="c:TW_ProductRemoveFromSelectedList"/>
->>>>>>> feature/TW-14_Product-discount
     <aura:attribute name="item" type="Object"/>
     <aura:attribute name="isChecked" type="Boolean" default="false"/>
     <aura:attribute name="recalculatedPrice" type="Integer"/>
 
-<<<<<<< HEAD
-    <lightning:layout>
-        <lightning:layoutItem size="1">
-                <ui:inputCheckbox value="{!v.isChecked}" class="checkbox-pos"/>
-        </lightning:layoutItem>
-        <lightning:layoutItem size="3">
-                {!v.item.Name}
-        </lightning:layoutItem>
-        <lightning:layoutItem size="3">
-            <ui:outputCurrency value="{!v.item.UnitPrice}"/>
-        </lightning:layoutItem>
-        <lightning:layoutItem size="3">
-            <ui:outputCurrency value="{!v.recalculatedPrice}"/>
-        </lightning:layoutItem>
-        <lightning:layoutItem size="2">
-        </lightning:layoutItem>
-    </lightning:layout>
-</aura:component>
-=======
     <div class="border-bot">
         <lightning:layout>
             <lightning:layoutItem size="1">
@@ -67,4 +45,3 @@
         </lightning:layout>
     </div>
 </aura:component>
->>>>>>> feature/TW-14_Product-discount
