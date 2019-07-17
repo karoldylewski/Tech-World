@@ -1,0 +1,7 @@
+<!--
+ - Created by BRITENET on 16.07.2019.
+ -->
+
+<aura:event type="COMPONENT" description="TW_ProductRemoveFromSelectedList">
+    <aura:attribute name="productId" type="String"/>
+</aura:event>

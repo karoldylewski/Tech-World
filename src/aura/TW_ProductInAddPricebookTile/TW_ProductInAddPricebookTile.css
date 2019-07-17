@@ -4,3 +4,12 @@
 .THIS .checkbox-pos{
     margin-left:20px;
 }
+.THIS .cell-value{
+    padding-top:12px;
+}
+
+.THIS .cell-value-discount{
+    padding-top:12px;
+    color: blue;
+    font-weight: bold;
+}

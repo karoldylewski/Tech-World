@@ -9,6 +9,9 @@
     <aura:registerEvent name="pricebookItemsEvent" type="c:TW_PricebookItemsEvent"/>
     <aura:attribute name="itemId" type="String"/>
     <aura:attribute name="itemName" type="String"/>
+    <aura:attribute name="itemSd" type="Date"/>
+    <aura:attribute name="itemEd" type="Date"/>
+    <aura:attribute name="isActive" type="Boolean"/>
 
     <button class="slds-button" id="{!v.itemId}"
             onclick="{!c.showProducts}">{!$Label.c.TW_show_products}</button>

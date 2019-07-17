@@ -20,4 +20,22 @@ public with sharing class TW_PricebookHandler {
         ];
         return pbs;
     }
+
+    public static String createPricebook(Pricebook2 item) {
+        try {
+            insert item;
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+        return item.Id;
+    }
+
+    public static String createPricebookEntry(PricebookEntry item) {
+        try {
+            insert item;
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+        return item.Id;
+    }
 }

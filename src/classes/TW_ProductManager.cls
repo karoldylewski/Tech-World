@@ -80,4 +80,15 @@ public with sharing class TW_ProductManager {
     public static List<PricebookEntry> getAllProducts(){
         return TW_ProductService.getAllProducts();
     }
+
+    @AuraEnabled
+    public static String addNewPricebook(List<List<String>> itemsList, String pricebookName, Date sd, Date ed, Boolean isActive){
+        return TW_ProductService.saveNewPricebook(itemsList,pricebookName,sd,ed,isActive);
+    }
+
+    @AuraEnabled
+    public static TW_Utils.TW_ProductList getProductListForPricebook(String pricebookId) {
+        TW_Utils.TW_ProductList searchedProducts = TW_ProductService.getProductListForPricebooks(pricebookId);
+        return searchedProducts;
+    }
 }
