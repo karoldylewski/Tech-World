@@ -1,0 +1,56 @@
+<!--
+ - Created by BRITENET on 10.07.2019.
+ -->
+
+<aura:component description="TW_ProductInCartTile">
+    <aura:registerEvent name="productAddedToCart" type="c:TW_ProductAddedToCart"/>
+    <aura:registerEvent name="productRemovedFromCart" type="c:TW_ProductRemoved"/>
+    <aura:attribute name="item" type="Object"/>
+    <aura:attribute name="prefixURL" type="String" default="/sfc/servlet.shepherd/version/download/"/>
+    <aura:attribute name="orgUrl" type="String"/>
+    <div class="slds-col slds-size_12-of-12 cart-item">
+        <div class="slds-grid">
+            <div class="slds-col slds-size_2-of-12">
+                <span class="slds-align_absolute-center">
+                    <img src="{!v.orgUrl +v.prefixURL+ v.item.product.ImageId__c}" class="img-container"/>
+                </span>
+            </div>
+            <div class="slds-col slds-size_3-of-12">
+                <div class="slds-text-heading_medium cart-item-title">
+                        {!v.item.product.Name}
+                </div>
+                <div class="slds-text-heading_small cart-item-quantity">
+                {!$Label.c.TW_Quantity}
+                    <span class="slds-m-left_x-small">
+                        <button class="slds-button icon-button slds-m-left_x-small" onclick="{!c.removeItem}">
+                        <lightning:icon iconName="utility:dash" size="xx-small"/>
+                        </button>
+                        <span class="slds-badge slds-badge_inverse slds-m-left_x-small count-number">
+                                {!v.item.count}
+                        </span>
+                        <button class="slds-button icon-button slds-m-left_x-small" onclick="{!c.addItem}">
+                        <lightning:icon iconName="utility:add" size="xx-small"/>
+                        </button>
+                    </span>
+                </div>
+            </div>
+            <div class="slds-col slds-size_4-of-12">
+                <div class="slds-text-heading_medium total-price">
+                {!$Label.c.TW_Total_price}
+                    <span class="slds-m-left_x-small total-price-color">
+                         <ui:outputCurrency value="{!v.item.currentPrice * v.item.count}" class="total-price-color"/>
+                    </span>
+                </div>
+            </div>
+            <div class="slds-col slds-size_3-of-12">
+                <div class="btn-cart-go-to-details">
+                    <button class="slds-button slds-button_brand" onclick="{!c.seeDetails}">
+                    {!$Label.c.TW_Go_to_prod_details}
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</aura:component>

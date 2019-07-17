@@ -11,6 +11,7 @@
         <div class="slds-media__body">
             <header class="slds-media slds-media_center">
                 <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+
                     <p class="slds-truncate" title="{!v.review.CreatedBy.Name}">
                     <div class="comment-author">
                         <lightning:icon iconName="action:user" size="x-small"/>

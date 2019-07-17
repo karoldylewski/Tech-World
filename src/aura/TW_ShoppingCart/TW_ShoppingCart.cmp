@@ -1,0 +1,63 @@
+<!--
+ - Created by BRITENET on 10.07.2019.
+ -->
+
+<aura:component description="TW_ShoppingCart"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global"
+                controller="TW_ProductManager">
+    <aura:handler name="productRemovedFromCart" event="c:TW_ProductRemoved"
+                  action="{!c.doInit}" phase="capture"/>
+    <aura:registerEvent name="productAddedToCart" type="c:TW_ProductAddedToCart"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="items" type="Object"/>
+    <aura:attribute name="totalValue" type="Integer"/>
+
+    <div>
+        <div class="slds-grid slds-grid_vertical">
+            <h2 class="slds-card__header-title slds-align_absolute-center">
+                <div class="slds-text-heading_large slds-border_bottom">
+                        {!$Label.c.TW_Your_cart}
+                </div>
+            </h2>
+            <aura:if isTrue="{!v.items != null}">
+                <div class="slds-align_absolute-center subheader">
+                    <span class="slds-text-heading_medium cart-total-text">{!$Label.c.TW_cart_total_value} </span>
+                    <span class="slds-m-left_x-small total-price-subheader">
+                    <ui:outputCurrency value="{!v.totalValue}"/>
+                </span>
+                </div>
+                <div class="slds-align_absolute-center subheader">
+                    <button class="slds-button slds-button_brand" onclick="{!c.orderItems}">
+                    <span class="btn-cart-text">
+                            {!$Label.c.TW_make_order}
+                    </span>
+                    </button>
+                </div>
+                <aura:set attribute="else">
+                    <div class="slds-align_absolute-center subheader-emtpy">
+                        <div class="slds-text-heading_small">
+                             {!$Label.c.TW_cart_empty}
+                        </div>
+                    </div>
+                </aura:set>
+            </aura:if>
+        </div>
+    </div>
+    <div class="slds-grid slds-wrap">
+        <aura:iteration items="{!v.items.products}" var="prod">
+            <c:TW_ProductInCartTile item="{!prod}" orgUrl="{!v.items.orgBaseUrl}"/>
+        </aura:iteration>
+    </div>
+    <aura:if isTrue="{!v.items != null}">
+        <div class="slds-col">
+            <div class="slds-align_absolute-center subheader">
+                <button class="slds-button slds-button_text-destructive" onclick="{!c.deleteItems}">
+                    <span class="btn-cart-text">
+                            {!$Label.c.TW_delete_cart}
+                    </span>
+                </button>
+            </div>
+        </div>
+    </aura:if>
+</aura:component>

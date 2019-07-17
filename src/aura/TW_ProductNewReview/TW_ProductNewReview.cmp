@@ -29,7 +29,7 @@
                 <c:TW_StarRating value="0" readonly="false"/>
             </lightning:layoutItem>
             <lightning:layoutItem size="12" class="slds-align--absolute-center">
-                <lightning:button variant="brand" iconName="utility:save" label="{!$Label.c.TW_post_review}" onclick="{!c.saveReview}"/>
+                <lightning:button variant="brand" iconName="utility:save" label="Post review" onclick="{!c.saveReview}"/>
             </lightning:layoutItem>
         </lightning:layout>
     </div>

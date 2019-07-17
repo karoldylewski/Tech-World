@@ -24,7 +24,7 @@
         obj.Product__c = component.get("v.productId").toString();
         component.find("service").saveRecord(function(saveResult) {
             if (saveResult.state === "SUCCESS" || saveResult.state === "DRAFT") {
-                let resultsToast = $A.get("e.force:showToast");
+                var resultsToast = $A.get("e.force:showToast");
                 if ($A.util.isUndefined(resultsToast)) {
                     alert('Review Saved successfully.');
                 } else {
@@ -49,8 +49,8 @@
         });
     },
 
-    ratingChanged: function(component, event) {
+    ratingChanged: function(component,event){
         let eventObject = event.getParam("ratingVal");
-        component.set("v.newReview.Rating__c", eventObject);
+        component.set("v.newReview.Rating__c",eventObject);
     }
 })

@@ -109,4 +109,52 @@ public with sharing class TW_ProductServiceHelper {
         return UserInfo.getUserId();
     }
 
+    public static String crateCase(String contactId,String subject, String description){
+        Case newCase= new Case();
+        newCase.Origin = 'Web';
+        newCase.ContactId = contactId;
+        newCase.Subject=subject;
+        newCase.Description = description;
+        newCase.Status = 'New';
+        return TW_CaseHandler.insertCase(newCase);
+    }
+
+    public static Boolean crateOrderItemsInCase(String caseId, List<OrderItem> items){
+        List<Products__c> orderItemInCaseList = new List<Products__c>();
+        for(OrderItem orderItem : items){
+            Products__c orderItemInCase = new Products__c();
+            orderItemInCase.Complaint_Case__c = caseId;
+            orderItemInCase.Order_Product__c = orderItem.Id;
+            orderItemInCase.Product_Name__c = orderItem.Product2.Name;
+            orderItemInCaseList.add(orderItemInCase);
+        }
+        return TW_CaseHandler.crateOrderItemsInCase(orderItemInCaseList);
+    }
+
+    public static String createNewPricebook2(String pricebookName, Date sd, Date ed, Boolean isActive){
+        Pricebook2 newPb = new Pricebook2();
+        newPb.Name = pricebookName;
+        newPb.TW_StartDate__c = sd;
+        newPb.TW_EndDate__c = ed;
+        newPb.IsActive = isActive;
+        return TW_PricebookHandler.createPricebook(newPb);
+    }
+
+    public static List<String> createPricebookEntries(List<List<String>> itemsList, String pricebookId){
+        List<String> entriesIds = new List<String>();
+        for (List<String> entryItem : itemsList){
+            String entryId = TW_ProductServiceHelper.createPricebookEntry(entryItem,pricebookId);
+            entriesIds.add(entryId);
+        }
+        return entriesIds;
+    }
+
+    public static String createPricebookEntry(List<String> item,String pricebookId){
+        PricebookEntry newEntry = new PricebookEntry();
+        newEntry.Pricebook2Id = pricebookId;
+        newEntry.Product2Id = item[0];
+        newEntry.UnitPrice = Decimal.valueOf(item[2]);
+        newEntry.IsActive = true;
+        return TW_PricebookHandler.createPricebookEntry(newEntry);
+    }
 }
