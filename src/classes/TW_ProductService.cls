@@ -90,4 +90,33 @@ public with sharing class TW_ProductService {
     public static List<Products__c> getCaseItems(String caseId){
         return TW_CaseHandler.getCaseItems(caseId);
     }
+
+    public static List<Pricebook2> getAllPricebooks(){
+        return TW_PricebookHandler.getAllPricebooks();
+    }
+
+    public static List<PricebookEntry> getPricebookAllEntries(String pricebookId){
+        return TW_ProductHandler.getPricebookEntriesForPricebook(pricebookId);
+    }
+
+    public static List<PricebookEntry> getAllProducts(){
+        return TW_ProductHandler.getAllProducts(TW_PricebookHandler.getStandardPricebook());
+    }
+
+    public static String saveNewPricebook(List<List<String>> itemsList, String pricebookName, Date sd, Date ed, Boolean isActive){
+       String pricebookId =  TW_ProductServiceHelper.createNewPricebook2(pricebookName,sd,ed,isActive);
+        List<String> entriesIds = TW_ProductServiceHelper.createPricebookEntries(itemsList,pricebookId);
+        return pricebookId;
+    }
+
+    public static TW_Utils.TW_ProductList getProductListForPricebooks(String pricebookId) {
+        List<String> pricebooksIds = new List<String>();
+        pricebooksIds.add(pricebookId);
+        pricebooksIds.add(TW_PricebookHandler.getStandardPricebook());
+        List<PricebookEntry> pricebookEntries = TW_ProductHandler.getPricebookEntriesForPricebook(pricebooksIds);
+        List<TW_Utils.TW_ProductWrapper> wrapList = TW_ProductServiceHelper.addItemsToWrappers(pricebookEntries);
+        String orgBaseUrl = TW_ProductServiceHelper.getOrgBaseUrl();
+        TW_Utils.TW_ProductList products = new TW_Utils.TW_ProductList(orgBaseUrl, wrapList);
+        return products;
+    }
 }

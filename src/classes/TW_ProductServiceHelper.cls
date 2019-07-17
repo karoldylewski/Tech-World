@@ -140,4 +140,30 @@ public with sharing class TW_ProductServiceHelper {
         return TW_CaseHandler.crateOrderItemsInCase(orderItemInCaseList);
     }
 
+    public static String createNewPricebook2(String pricebookName, Date sd, Date ed, Boolean isActive){
+        Pricebook2 newPb = new Pricebook2();
+        newPb.Name = pricebookName;
+        newPb.TW_StartDate__c = sd;
+        newPb.TW_EndDate__c = ed;
+        newPb.IsActive = isActive;
+        return TW_PricebookHandler.createPricebook(newPb);
+    }
+
+    public static List<String> createPricebookEntries(List<List<String>> itemsList, String pricebookId){
+        List<String> entriesIds = new List<String>();
+        for (List<String> entryItem : itemsList){
+            String entryId = TW_ProductServiceHelper.createPricebookEntry(entryItem,pricebookId);
+            entriesIds.add(entryId);
+        }
+        return entriesIds;
+    }
+
+    public static String createPricebookEntry(List<String> item,String pricebookId){
+        PricebookEntry newEntry = new PricebookEntry();
+        newEntry.Pricebook2Id = pricebookId;
+        newEntry.Product2Id = item[0];
+        newEntry.UnitPrice = Decimal.valueOf(item[2]);
+        newEntry.IsActive = true;
+        return TW_PricebookHandler.createPricebookEntry(newEntry);
+    }
 }

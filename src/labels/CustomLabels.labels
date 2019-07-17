@@ -954,6 +954,41 @@
         <value>Clear</value>
     </labels>
     <labels>
+        <fullName>TW_Complaint</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>complaint text</shortDescription>
+        <value>Complaint</value>
+    </labels>
+    <labels>
+        <fullName>TW_Complaint_desc</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>description text</shortDescription>
+        <value>Description</value>
+    </labels>
+    <labels>
+        <fullName>TW_Complaint_header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>complaint header text</shortDescription>
+        <value>Want to make a complaint? Please select a product and fill a form below</value>
+    </labels>
+    <labels>
+        <fullName>TW_Complaint_subject</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>complaint subject text</shortDescription>
+        <value>Subject</value>
+    </labels>
+    <labels>
+        <fullName>TW_Created_date</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>created on text</shortDescription>
+        <value>Created on</value>
+    </labels>
+    <labels>
         <fullName>TW_Delete</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -1008,6 +1043,13 @@
         <protected>true</protected>
         <shortDescription>Your cart is empty text</shortDescription>
         <value>Go to product details</value>
+    </labels>
+    <labels>
+        <fullName>TW_Make_a_complaint</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Make a complaint text</shortDescription>
+        <value>Make a complaint</value>
     </labels>
     <labels>
         <fullName>TW_Map</fullName>
@@ -1276,6 +1318,13 @@
         <value>Total Price</value>
     </labels>
     <labels>
+        <fullName>TW_Your_Complaints_empty</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>complaints list empty text</shortDescription>
+        <value>You did not make any complaints yet</value>
+    </labels>
+    <labels>
         <fullName>TW_Your_Orders</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -1295,6 +1344,27 @@
         <protected>true</protected>
         <shortDescription>Your cart text</shortDescription>
         <value>Your cart</value>
+    </labels>
+    <labels>
+        <fullName>TW_Your_complaints</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Your complaints text</shortDescription>
+        <value>Your complaints</value>
+    </labels>
+    <labels>
+        <fullName>TW_add_all</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>Add all</value>
+    </labels>
+    <labels>
+        <fullName>TW_add_product</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>Add product</value>
     </labels>
     <labels>
         <fullName>TW_add_to_cart</fullName>
@@ -1318,11 +1388,32 @@
         <value>Your cart total value:</value>
     </labels>
     <labels>
+        <fullName>TW_current_lowest_price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>Current lowest price</value>
+    </labels>
+    <labels>
         <fullName>TW_delete_cart</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Remove all items text</shortDescription>
         <value>Remove all items</value>
+    </labels>
+    <labels>
+        <fullName>TW_end_date</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>End Date</value>
+    </labels>
+    <labels>
+        <fullName>TW_existing_pricebooks</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Pricebooks manager text</shortDescription>
+        <value>Existing pricebooks</value>
     </labels>
     <labels>
         <fullName>TW_gb</fullName>
@@ -1346,6 +1437,20 @@
         <value>inches</value>
     </labels>
     <labels>
+        <fullName>TW_is_active</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>is active text</shortDescription>
+        <value>Is active</value>
+    </labels>
+    <labels>
+        <fullName>TW_items_for_discount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>Items selected for discount</value>
+    </labels>
+    <labels>
         <fullName>TW_mAh</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -1367,11 +1472,39 @@
         <value>mpx</value>
     </labels>
     <labels>
+        <fullName>TW_new_pricebooks</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Pricebooks manager text</shortDescription>
+        <value>New pricebook</value>
+    </labels>
+    <labels>
+        <fullName>TW_percentage_discount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>Set percentage discount</value>
+    </labels>
+    <labels>
         <fullName>TW_post_review</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>type review text</shortDescription>
         <value>Type your review:</value>
+    </labels>
+    <labels>
+        <fullName>TW_pricebook_manager</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Pricebooks manager text</shortDescription>
+        <value>Pricebooks manager</value>
+    </labels>
+    <labels>
+        <fullName>TW_pricebook_name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Pricebook Name text</shortDescription>
+        <value>Pricebook Name</value>
     </labels>
     <labels>
         <fullName>TW_product_name</fullName>
@@ -1395,6 +1528,13 @@
         <value>Rate product:</value>
     </labels>
     <labels>
+        <fullName>TW_remove</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>remove text</shortDescription>
+        <value>Remove</value>
+    </labels>
+    <labels>
         <fullName>TW_review_forbidden</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -1409,11 +1549,95 @@
         <value>Reviews</value>
     </labels>
     <labels>
+        <fullName>TW_sale_active</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>Is active</value>
+    </labels>
+    <labels>
+        <fullName>TW_sale_ed</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>Sale end date</value>
+    </labels>
+    <labels>
+        <fullName>TW_sale_name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>Sale name</value>
+    </labels>
+    <labels>
+        <fullName>TW_sale_new_price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>New price</value>
+    </labels>
+    <labels>
+        <fullName>TW_sale_sd</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>Sale start date</value>
+    </labels>
+    <labels>
+        <fullName>TW_search_for_products</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>Search for products</value>
+    </labels>
+    <labels>
+        <fullName>TW_select_type</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>Select discount type</value>
+    </labels>
+    <labels>
+        <fullName>TW_set_new_sale</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>end date text</shortDescription>
+        <value>Set new sale</value>
+    </labels>
+    <labels>
         <fullName>TW_show_order_items</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Show order items text</shortDescription>
         <value>Show order items</value>
+    </labels>
+    <labels>
+        <fullName>TW_show_products</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Show order items text</shortDescription>
+        <value>Show products</value>
+    </labels>
+    <labels>
+        <fullName>TW_standard_price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>Standard price</value>
+    </labels>
+    <labels>
+        <fullName>TW_start_date</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>start date text</shortDescription>
+        <value>Start Date</value>
+    </labels>
+    <labels>
+        <fullName>TW_this_pb_price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>This pricebook price text</shortDescription>
+        <value>This pricebook price</value>
     </labels>
     <labels>
         <fullName>TW_unit_price</fullName>
@@ -1423,66 +1647,10 @@
         <value>Unit price</value>
     </labels>
     <labels>
-        <fullName>TW_Complaint</fullName>
+        <fullName>TW_value_discount</fullName>
         <language>en_US</language>
         <protected>true</protected>
-        <shortDescription>complaint text</shortDescription>
-        <value>Complaint</value>
-    </labels>
-    <labels>
-        <fullName>TW_Complaint_subject</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>complaint subject text</shortDescription>
-        <value>Subject</value>
-    </labels>
-    <labels>
-        <fullName>TW_Complaint_desc</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>description text</shortDescription>
-        <value>Description</value>
-    </labels>
-    <labels>
-        <fullName>TW_Complaint_header</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>complaint header text</shortDescription>
-        <value>Want to make a complaint? Please select a product and fill a form below</value>
-    </labels>
-    <labels>
-        <fullName>TW_Make_a_complaint</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Make a complaint text</shortDescription>
-        <value>Make a complaint</value>
-    </labels>
-    <labels>
-        <fullName>TW_Your_complaints</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Your complaints text</shortDescription>
-        <value>Your complaints</value>
-    </labels>
-    <labels>
-        <fullName>TW_Your_Complaints_empty</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>complaints list empty text</shortDescription>
-        <value>You did not make any complaints yet</value>
-    </labels>
-    <labels>
-        <fullName>TW_Created_date</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>created on text</shortDescription>
-        <value>Created on</value>
-    </labels>
-    <labels>
-        <fullName>TW_show_products</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>Show order items text</shortDescription>
-        <value>Show products</value>
+        <shortDescription>end date text</shortDescription>
+        <value>Set discount value</value>
     </labels>
 </CustomLabels>
