@@ -1604,4 +1604,53 @@
         <shortDescription>new price text</shortDescription>
         <value>Standard price</value>
     </labels>
+    <labels>
+        <fullName>TW_search_for_products</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>Search for products</value>
+    </labels>
+    <labels>
+        <fullName>TW_current_lowest_price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>Current lowest price</value>
+    </labels>
+    <labels>
+        <fullName>TW_add_product</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>Add product</value>
+    </labels>
+    <labels>
+        <fullName>TW_add_all</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>Add all</value>
+    </labels>
+    <labels>
+        <fullName>TW_items_for_discount</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>new price text</shortDescription>
+        <value>Items selected for discount</value>
+    </labels>
+    <labels>
+        <fullName>TW_remove</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>remove text</shortDescription>
+        <value>Remove</value>
+    </labels>
+    <labels>
+        <fullName>TW_this_pb_price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>This pricebook price text</shortDescription>
+        <value>This pricebook price</value>
+    </labels>
 </CustomLabels>

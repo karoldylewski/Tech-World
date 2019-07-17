@@ -3,6 +3,6 @@
  */
 ({
      showProducts: function(component, event, helper) {
-            helper.onShowProducts(component);
+          helper.onShowProducts(component);
      }
 })

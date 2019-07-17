@@ -9,4 +9,8 @@
     newPricebook: function(component, event, helper) {
         helper.onNewPricebook(component);
     },
+
+    loadPricebookToEdit: function(component, event, helper) {
+        helper.onLoadPricebookToEdit(component,event);
+    },
 })
