@@ -4,15 +4,15 @@
 
 public with sharing class TW_ProductServiceHelper {
 
-    public static Map<String, PricebookEntry> segregatePricebookEntriesToArrays(List<PricebookEntry> pricebookList){
+    public static Map<String, PricebookEntry> segregatePricebookEntriesToArrays(List<PricebookEntry> pricebookList) {
         Map<String, PricebookEntry> pricebookMap = new Map<String, PricebookEntry>();
-        for(PricebookEntry pb : pricebookList){
-            pricebookMap.put(pb.Product2Id,pb);
+        for (PricebookEntry pb : pricebookList) {
+            pricebookMap.put(pb.Product2Id, pb);
         }
         return pricebookMap;
     }
 
-    public static OrderItem prepareOrderItem(String orderId, String productId, Integer quantity, String pricebookId, Decimal unitPrice){
+    public static OrderItem prepareOrderItem(String orderId, String productId, Integer quantity, String pricebookId, Decimal unitPrice) {
         OrderItem item = new OrderItem();
         item.OrderId = orderId;
         item.Product2Id = productId;
@@ -82,32 +82,32 @@ public with sharing class TW_ProductServiceHelper {
     }
 
 
-    public static Map<String,Integer> segregateIdsToArrays(List<String> parameters){
-        Map<String,Integer> itemMap = new Map<String,Integer>();
-        for (String str : parameters){
+    public static Map<String, Integer> segregateIdsToArrays(List<String> parameters) {
+        Map<String, Integer> itemMap = new Map<String, Integer>();
+        for (String str : parameters) {
             Integer currentNumber = itemMap.get(str);
-            if (currentNumber == null){
-                itemMap.put(str,1);
-            }else{
-                currentNumber +=1;
-                itemMap.put(str,currentNumber);
+            if (currentNumber == null) {
+                itemMap.put(str, 1);
+            } else {
+                currentNumber += 1;
+                itemMap.put(str, currentNumber);
             }
         }
         return itemMap;
     }
 
-    public static List<String> getUniqueIdsFromMap(Map<String,Integer> parameters){
+    public static List<String> getUniqueIdsFromMap(Map<String, Integer> parameters) {
         Set<String> idSet = new Set<String>();
-        for (String key : parameters.keySet()){
+        for (String key : parameters.keySet()) {
             idSet.add(key);
         }
         List<String> idList = new List<String>(idSet);
         return idList;
     }
 
-    public static List<Id> convertStringToId(List<String> parameters){
+    public static List<Id> convertStringToId(List<String> parameters) {
         List<Id> returnIdList = new List<Id>();
-        for (String param : parameters){
+        for (String param : parameters) {
             Id recordId = Id.valueOf(param);
             returnIdList.add(recordId);
         }
@@ -118,19 +118,19 @@ public with sharing class TW_ProductServiceHelper {
         return UserInfo.getUserId();
     }
 
-    public static String crateCase(String contactId,String subject, String description){
-        Case newCase= new Case();
+    public static String crateCase(String contactId, String subject, String description) {
+        Case newCase = new Case();
         newCase.Origin = 'Web';
         newCase.ContactId = contactId;
-        newCase.Subject=subject;
+        newCase.Subject = subject;
         newCase.Description = description;
         newCase.Status = 'New';
         return TW_CaseHandler.insertCase(newCase);
     }
 
-    public static Boolean crateOrderItemsInCase(String caseId, List<OrderItem> items){
+    public static Boolean crateOrderItemsInCase(String caseId, List<OrderItem> items) {
         List<Products__c> orderItemInCaseList = new List<Products__c>();
-        for(OrderItem orderItem : items){
+        for (OrderItem orderItem : items) {
             Products__c orderItemInCase = new Products__c();
             orderItemInCase.Complaint_Case__c = caseId;
             orderItemInCase.Order_Product__c = orderItem.Id;
@@ -140,30 +140,97 @@ public with sharing class TW_ProductServiceHelper {
         return TW_CaseHandler.crateOrderItemsInCase(orderItemInCaseList);
     }
 
-    public static String createNewPricebook2(String pricebookName, Date sd, Date ed, Boolean isActive){
+    public static String createNewPricebook2(String pricebookName, Date sd, Date ed, Boolean isActive, String pbId) {
         Pricebook2 newPb = new Pricebook2();
         newPb.Name = pricebookName;
         newPb.TW_StartDate__c = sd;
         newPb.TW_EndDate__c = ed;
         newPb.IsActive = isActive;
+        if (pbId != null) {
+            newPb.Id = pbId;
+        }
         return TW_PricebookHandler.createPricebook(newPb);
     }
 
-    public static List<String> createPricebookEntries(List<List<String>> itemsList, String pricebookId){
-        List<String> entriesIds = new List<String>();
-        for (List<String> entryItem : itemsList){
-            String entryId = TW_ProductServiceHelper.createPricebookEntry(entryItem,pricebookId);
-            entriesIds.add(entryId);
+    public static List<PricebookEntry> createPricebookEntries(List<List<String>> itemsList, String pricebookId) {
+        List<PricebookEntry> entriesObject = new List<PricebookEntry>();
+        for (List<String> entryItem : itemsList) {
+            PricebookEntry entry = TW_ProductServiceHelper.createPricebookEntry(entryItem, pricebookId);
+            entriesObject.add(entry);
         }
-        return entriesIds;
+        return entriesObject;
     }
 
-    public static String createPricebookEntry(List<String> item,String pricebookId){
+
+    public static PricebookEntry createPricebookEntry(List<String> item, String pricebookId) {
         PricebookEntry newEntry = new PricebookEntry();
         newEntry.Pricebook2Id = pricebookId;
         newEntry.Product2Id = item[0];
         newEntry.UnitPrice = Decimal.valueOf(item[2]);
         newEntry.IsActive = true;
-        return TW_PricebookHandler.createPricebookEntry(newEntry);
+        return newEntry;
+    }
+
+    public static List<String> getIdsFromList(List<PricebookEntry> items) {
+        List<String> ids = new List<String>();
+        for (PricebookEntry entry : items) {
+            ids.add(entry.Product2Id);
+        }
+        return ids;
+    }
+
+
+    public static String prepareParameter(String param) {
+        if (param.startsWith('[')) {
+            param = param.substring(1, param.length());
+        }
+        if (param.startsWith('"')) {
+            param = param.substring(1, param.length());
+        }
+        if (param.endsWith(']')) {
+            param = param.substring(0, param.length() - 1);
+        }
+        if (param.endsWith('"')) {
+            param = param.substring(0, param.length() - 1);
+        }
+        return param;
+    }
+
+    public static Map<String, PricebookEntry> selectEntriesToUpsert(List<PricebookEntry> newEntries,Map<String,PricebookEntry> existingEntriesMap) {
+        Map<String,PricebookEntry> mapToUpsert = new Map<String,PricebookEntry>();
+        for (PricebookEntry newEntry : newEntries) {
+            if (existingEntriesMap.containsKey(newEntry.Product2Id)) {
+                newEntry.Id = existingEntriesMap.get(newEntry.Product2Id).Id;
+                mapToUpsert.put(newEntry.Product2Id, newEntry);
+            } else {
+                mapToUpsert.put(newEntry.Product2Id, newEntry);
+            }
+        }
+        return mapToUpsert;
+    }
+
+    public static List<PricebookEntry> selectEntriesToDelete(Map<String,PricebookEntry> existingEntriesMap,Map<String,PricebookEntry> mapToUpsert) {
+        List<PricebookEntry> entriesToDelete = new List<PricebookEntry>();
+        for(String key : existingEntriesMap.keySet()){
+            if (!mapToUpsert.containsKey(key)){
+                entriesToDelete.add(existingEntriesMap.get(key));
+            }
+        }
+        return entriesToDelete;
+    }
+
+    public static List<PricebookEntry> getEntriesListToUpsert(Map<String,PricebookEntry> mapToUpsert) {
+        List<PricebookEntry> entriesToUpsert = new List<PricebookEntry>();
+        for(String key : mapToUpsert.keySet()){
+            entriesToUpsert.add(mapToUpsert.get(key));
+        }
+        return entriesToUpsert;
+    }
+
+    public static List<String> createIdListForPricebook(String pricebookId){
+        List<String> pricebooksIds = new List<String>();
+        pricebooksIds.add(pricebookId);
+        pricebooksIds.add(TW_PricebookHandler.getStandardPricebook());
+        return pricebooksIds;
     }
 }

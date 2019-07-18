@@ -1,0 +1,86 @@
+<!--
+ - Created by BRITENET on 16.07.2019.
+ -->
+
+<aura:component description="TW_Pricebooks">
+    <aura:attribute name="items" type="Object[]"/>
+    <aura:attribute name="pricebookProducts" type="Object[]"/>
+    <article class="slds-card">
+        <div class="c-container">
+            <lightning:layout>
+                <lightning:layoutItem size="12">
+                    <div class="slds-card__body slds-card__body_inner">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                            <thead>
+                            <tr class="slds-line-height_reset">
+                                <th class="" scope="col">
+                                    <div class="slds-truncate"
+                                         title="{!$Label.c.TW_pricebook_name}">{!$Label.c.TW_pricebook_name}</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate"
+                                         title="{!$Label.c.TW_is_active}">{!$Label.c.TW_is_active}</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate"
+                                         title="{!$Label.c.TW_start_date}">{!$Label.c.TW_start_date}</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate"
+                                         title="{!$Label.c.TW_end_date}">{!$Label.c.TW_end_date}</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate"
+                                         title="{!$Label.c.TW_show_products}">
+                                    </div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <aura:iteration items="{!v.items}" var="item">
+                                <tr class="slds-hint-parent">
+                                    <th data-label="{!$Label.c.TW_pricebook_name}" scope="row">
+                                        <div class="slds-truncate"
+                                             title="{!item.Name}">
+                                            <span class="product-name">{!item.Name}</span></div>
+                                    </th>
+                                    <td data-label="{!$Label.c.TW_is_active}">
+                                        <div class="slds-truncate"
+                                             title="{!item.IsActive}">
+                                            <aura:if isTrue="{!item.IsActive}">
+                                                <lightning:icon iconName="action:approval" alternativeText="Approved" size="xx-small"/>
+                                                <aura:set attribute="else">
+                                                    <lightning:icon iconName="action:close" alternativeText="Approved" size="xx-small"/>
+                                                </aura:set>
+                                            </aura:if>
+                                        </div>
+                                    </td>
+                                    <td data-label="{!$Label.c.TW_start_date}">
+                                        <div class="slds-truncate" title="{!item.TW_StartDate__c}">
+                                            <ui:outputDate value="{!item.TW_StartDate__c}"/>
+                                        </div>
+                                    </td>
+                                    <td data-label="{!$Label.c.TW_end_date}">
+                                        <div class="slds-truncate" title="{!item.TW_EndDate__c}">
+                                            <ui:outputDate value="{!item.TW_EndDate__c}"/>
+                                        </div>
+                                    </td>
+                                    <td data-label="{!$Label.c.TW_show_products}">
+                                        <div class="slds-truncate" title="{!item.TW_EndDate__c}">
+                                            <c:TW_PricebookSingleItem itemId="{!item.Id}" itemName="{!item.Name}"
+                                                                      itemSd="{!item.TW_StartDate__c}"
+                                                                      itemEd="{!item.TW_EndDate__c}"
+                                                                      isActive="{!item.IsActive}"
+                                            />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                            </tbody>
+                        </table>
+                    </div>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+    </article>
+</aura:component>

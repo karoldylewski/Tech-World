@@ -1,7 +1,7 @@
 ({
     onSeeDetails: function(component) {
         let existingItems = component.get("v.orderItems");
-        if (existingItems.length != 0) {
+        if (existingItems.length != 0){
             return;
         }
         let action = component.get('c.getOrderItems');
@@ -28,12 +28,13 @@
     },
 
     onMakeComplaint: function(component) {
-        let checkedItemsArray = [];
-        let checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
-        for (let i = 0; i < checkboxes.length; i++) {
-            checkedItemsArray.push(checkboxes[i].id);
-        }
-        let action = component.get('c.makeAComplaint');
+            let checkedItemsArray = [];
+            let checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+            for (let i = 0; i < checkboxes.length; i++) {
+              checkedItemsArray.push(checkboxes[i].id);
+            }
+            console.log('array: '+checkedItemsArray);
+            let action = component.get('c.makeAComplaint');
         action.setParams({
             productsId: checkedItemsArray,
             subject: component.get("v.complaintSubject"),
@@ -50,10 +51,10 @@
                     type: "success",
                 });
                 toastEvent.fire();
-                component.set("v.complaintSubject", '');
-                component.set("v.complaintDesc", '');
+                component.set("v.complaintSubject",'');
+                component.set("v.complaintDesc",'');
                 for (let i = 0; i < checkboxes.length; i++) {
-                    checkboxes[i].checked = false;
+                     checkboxes[i].checked = false;
                 }
             } else {
                 console.log(JSON.stringify(response.getReturnValue()));

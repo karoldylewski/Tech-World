@@ -116,6 +116,7 @@
                                     </aura:iteration>
                                 </tbody>
                             </table>
+
                                 <div class="slds-m-top_xx-small">
                                     <div class="slds-grid slds-wrap">
                                         <div class="slds-col slds-size_12-of-12">
