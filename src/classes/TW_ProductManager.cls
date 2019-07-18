@@ -96,4 +96,9 @@ public with sharing class TW_ProductManager {
     public static Boolean deletePricebook(String pricebookId) {
         return TW_ProductService.deletePricebook(pricebookId);
     }
+
+    @AuraEnabled
+    public static TW_Utils.TW_ProductWrapper getHighlightProduct() {
+        return  TW_ProductService.getHighlightProduct();
+    }
 }

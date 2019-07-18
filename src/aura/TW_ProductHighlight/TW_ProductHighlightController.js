@@ -5,4 +5,8 @@
     doInit: function(component, event, helper) {
        helper.onInit(component);
     },
+
+    addToCart: function(component, event, helper){
+        helper.onAddToCart(component);
+    },
 })

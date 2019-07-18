@@ -133,4 +133,12 @@ public with sharing class TW_ProductService {
     public static Boolean deletePricebook(String pricebookId) {
         return TW_PricebookHandler.deletePricebook(pricebookId);
     }
+
+    public static TW_Utils.TW_ProductWrapper getHighlightProduct() {
+        String productId = TW_ProductHandler.getLatestProduct();
+        List<PricebookEntry> pricebookEntries = TW_ProductHandler.getPricebookEntriesForId(productId);
+        List<TW_Utils.TW_ProductWrapper> wrapList = TW_ProductServiceHelper.addItemsToWrappers(pricebookEntries);
+        wrapList[0].orgId = TW_ProductServiceHelper.getOrgBaseUrl();
+        return wrapList[0];
+    }
 }

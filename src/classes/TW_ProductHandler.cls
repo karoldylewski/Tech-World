@@ -126,4 +126,15 @@ public with sharing class TW_ProductHandler {
         ];
         return resultList;
     }
+
+    public static String getLatestProduct() {
+        List<Product2> resultList = [
+                SELECT Id
+                FROM Product2
+                WHERE RecordType.DeveloperName = 'TW_Product'
+                ORDER BY CreatedDate DESC
+                LIMIT 1
+        ];
+        return resultList[0].Id;
+    }
 }

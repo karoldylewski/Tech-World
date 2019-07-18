@@ -1,0 +1,43 @@
+/**
+ * Created by BRITENET on 18.07.2019.
+ */
+ .THIS {
+     margin-right:20px;
+ }
+
+
+.THIS .img-container{
+    width:80px;
+}
+.THIS .device-header-text{
+    margin-top:10px;
+}
+.THIS .device-info{
+    margin-top:10px;
+    margin-left:15px;
+}
+
+.THIS .unit-text{
+    padding-left:5px;
+    font-size: 14px;
+}
+
+.THIS .sale-text{
+    font-size: 18px;
+    color:red;
+    letter-spacing:2px;
+}
+.THIS .tile-container{
+    padding: 5px;
+    border: 1px solid lightgray;
+}
+.THIS .hot-sale-header{
+    margin-top:5px;
+    margin-bottom:5px;
+    color: darkred;
+    font-weight:650;
+    font-size:25px;
+}
+.THIS .sale-col{
+
+}

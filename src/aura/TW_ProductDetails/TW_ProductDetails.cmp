@@ -60,6 +60,8 @@
                                 <div class="slds-col slds-size_4-of-12">
                                     <span class="slds-text-title_caps">
                                             {!$Label.c.TW_Camera}
+                                    </span> <span class="slds-text-title_caps">
+                                            {!$Label.c.TW_Camera}
                                     </span>
                                 </div>
                                 <div class="slds-col slds-size_4-of-12">
