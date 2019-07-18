@@ -23,7 +23,7 @@ public with sharing class TW_PricebookHandler {
 
     public static String createPricebook(Pricebook2 item) {
         try {
-            insert item;
+            upsert item;
         } catch (Exception e) {
             return e.getMessage();
         }
@@ -37,5 +37,48 @@ public with sharing class TW_PricebookHandler {
             return e.getMessage();
         }
         return item.Id;
+    }
+
+    public static Boolean createPricebookEntry(List<PricebookEntry> items) {
+        try {
+            upsert items;
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+
+    public static Boolean deletePricebookEntry(List<PricebookEntry> items) {
+        try {
+            delete items;
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+
+    public static Pricebook2 checkIfPriceBookExists(String pricebookName){
+        List<Pricebook2> pbs = [
+                SELECT Id
+                FROM Pricebook2
+                WHERE Name=:pricebookName
+        ];
+        if (pbs.isEmpty()){
+            return null;
+        }
+        return pbs[0];
+    }
+
+    public static Boolean deletePricebook(String pricebookId){
+        List<Pricebook2> pbs = [
+                SELECT Id
+                FROM Pricebook2
+                WHERE Id=:pricebookId
+        ];
+        if (!pbs.isEmpty()){
+            delete pbs;
+            return true;
+        }
+        return false;
     }
 }

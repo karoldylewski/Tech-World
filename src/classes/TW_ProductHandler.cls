@@ -102,7 +102,7 @@ public with sharing class TW_ProductHandler {
         return products;
     }
 
-    public static List<PricebookEntry> getPricebookEntriesForPricebook(List<String> pricebookIds) {
+    public static List<PricebookEntry> getPricebookEntriesForPricebook(List<String> pricebookIds,List<String> productsIds) {
         List<PricebookEntry> resultList = [
                 SELECT Product2.RecordType.DeveloperName,
                         Product2.Id,
@@ -110,8 +110,19 @@ public with sharing class TW_ProductHandler {
                         UnitPrice
                 FROM PricebookEntry
                 WHERE Product2.RecordType.DeveloperName = 'TW_Product'
-                AND Pricebook2Id IN :pricebookIds
+                AND Pricebook2Id IN : pricebookIds
+                AND Product2Id IN : productsIds
                 ORDER BY Product2.Id, UnitPrice DESC
+        ];
+        return resultList;
+    }
+
+    public static List<PricebookEntry> getPricebookEntriesForCustomPricebook(String customPricebookId) {
+        List<PricebookEntry> resultList = [
+                SELECT Product2.Id
+                FROM PricebookEntry
+                WHERE Product2.RecordType.DeveloperName = 'TW_Product'
+                AND Pricebook2Id =: customPricebookId
         ];
         return resultList;
     }

@@ -4,5 +4,9 @@
 ({
      showProducts: function(component, event, helper) {
           helper.onShowProducts(component);
-     }
+     },
+
+     removePricebook: function(component, event, helper) {
+          helper.onRemovePricebook(component);
+     },
 })

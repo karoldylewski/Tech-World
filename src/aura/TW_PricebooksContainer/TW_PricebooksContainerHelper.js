@@ -34,7 +34,7 @@
         component.set('v.toEditItemSd', eventAttributes.itemSd);
         component.set('v.toEditItemEd', eventAttributes.itemEd);
         component.set('v.toEditISActive', eventAttributes.isActive);
-
+        component.set('v.toEditPricebookId', eventAttributes.itemId);
         let pricebooksCallout = component.get('c.getProductListForPricebook');
         pricebooksCallout.setParams({
             pricebookId: eventAttributes.itemId

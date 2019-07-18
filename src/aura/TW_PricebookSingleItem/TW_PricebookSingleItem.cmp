@@ -7,6 +7,7 @@
                 access="global"
                 controller="TW_ProductManager">
     <aura:registerEvent name="pricebookItemsEvent" type="c:TW_PricebookItemsEvent"/>
+    <aura:registerEvent name="pricebookRemoved" type="c:TW_PricebookRemoved"/>
     <aura:attribute name="itemId" type="String"/>
     <aura:attribute name="itemName" type="String"/>
     <aura:attribute name="itemSd" type="Date"/>
@@ -15,4 +16,8 @@
 
     <button class="slds-button" id="{!v.itemId}"
             onclick="{!c.showProducts}">{!$Label.c.TW_show_products}</button>
+    <span class="slds-m-left_medium">
+        <button class="slds-button slds-button_text-destructive" id="{!v.itemId}"
+                onclick="{!c.removePricebook}">{!$Label.c.TW_Delete}</button>
+    </span>
 </aura:component>

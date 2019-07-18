@@ -3,11 +3,8 @@
  -->
 
 <aura:component description="TW_Pricebooks">
-
     <aura:attribute name="items" type="Object[]"/>
     <aura:attribute name="pricebookProducts" type="Object[]"/>
-<!--    <aura:handler name="pricebookItemsEvent" event="c:TW_PricebookItemsEvent"-->
-<!--                  action="{!c.loadPricebookItems}"/>-->
     <article class="slds-card">
         <div class="c-container">
             <lightning:layout>
@@ -83,41 +80,6 @@
                         </table>
                     </div>
                 </lightning:layoutItem>
-<!--                <lightning:layoutItem size="4">-->
-<!--                    <div class="slds-card__body slds-card__body_inner">-->
-<!--                        <table class="slds-table slds-table_cell-buffer slds-table_bordered">-->
-<!--                            <thead>-->
-<!--                            <tr class="slds-line-height_reset">-->
-<!--                                <th class="" scope="col">-->
-<!--                                    <div class="slds-truncate"-->
-<!--                                         title="{!$Label.c.TW_pricebook_name}">{!$Label.c.TW_product_name}</div>-->
-<!--                                </th>-->
-<!--                                <th class="" scope="col">-->
-<!--                                    <div class="slds-truncate"-->
-<!--                                         title="{!$Label.c.TW_is_active}">{!$Label.c.TW_unit_price}</div>-->
-<!--                                </th>-->
-<!--                            </tr>-->
-<!--                            </thead>-->
-<!--                            <tbody>-->
-<!--                            <aura:iteration items="{!v.pricebookProducts}" var="item">-->
-<!--                                <tr class="slds-hint-parent">-->
-<!--                                    <th data-label="{!$Label.c.TW_pricebook_name}" scope="row">-->
-<!--                                        <div class="slds-truncate"-->
-<!--                                             title="{!item.Name}">-->
-<!--                                            <span class="product-name">{!item.Product2.Name}</span></div>-->
-<!--                                    </th>-->
-<!--                                    <td data-label="{!$Label.c.TW_is_active}">-->
-<!--                                        <div class="slds-truncate"-->
-<!--                                             title="{!item.IsActive}">-->
-<!--                                            <ui:inputCurrency value="{!item.UnitPrice}"/>-->
-<!--                                        </div>-->
-<!--                                    </td>-->
-<!--                                </tr>-->
-<!--                            </aura:iteration>-->
-<!--                            </tbody>-->
-<!--                        </table>-->
-<!--                    </div>-->
-<!--                </lightning:layoutItem>-->
             </lightning:layout>
         </div>
     </article>

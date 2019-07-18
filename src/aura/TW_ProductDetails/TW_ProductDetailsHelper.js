@@ -102,6 +102,8 @@
             type: "success",
         });
         toastEvent.fire();
+        let appEvent = $A.get("e.c:TW_ProductAddedToCart");
+        appEvent.fire();
     },
 
 })

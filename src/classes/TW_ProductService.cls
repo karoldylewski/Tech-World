@@ -59,20 +59,34 @@ public with sharing class TW_ProductService {
         return TW_ProductHandler.getAllProducts(TW_PricebookHandler.getStandardPricebook());
     }
 
-    public static String saveNewPricebook(List<List<String>> itemsList, String pricebookName, Date sd, Date ed, Boolean isActive){
-       String pricebookId =  TW_ProductServiceHelper.createNewPricebook2(pricebookName,sd,ed,isActive);
-        List<String> entriesIds = TW_ProductServiceHelper.createPricebookEntries(itemsList,pricebookId);
+    public static String saveNewPricebook(List<List<String>> itemsList, String pricebookName, Date sd, Date ed, Boolean isActive, String pricebookId){
+        pricebookId = TW_ProductServiceHelper.prepareParameter(pricebookId);
+        if (pricebookId == TW_Utils.TW_NEW_PRICEBOOK){
+            pricebookId =  TW_ProductServiceHelper.createNewPricebook2(pricebookName,sd,ed,isActive,null);
+            List<PricebookEntry> entriesToInsert = TW_ProductServiceHelper.createPricebookEntries(itemsList,pricebookId);
+            Boolean entriesInsertResult = TW_PricebookHandler.createPricebookEntry(entriesToInsert);
+        }else{
+            pricebookId = TW_ProductServiceHelper.createNewPricebook2(pricebookName,sd,ed,isActive,pricebookId);
+            List<PricebookEntry> existingEntries = TW_ProductHandler.getPricebookEntriesForPricebook(pricebookId);
+            Map<String,PricebookEntry> existingEntriesMap = TW_ProductServiceHelper.segregatePricebookEntriesToArrays(existingEntries);
+            List<PricebookEntry> newEntries  = TW_ProductServiceHelper.createPricebookEntries(itemsList,pricebookId);
+            Map<String,PricebookEntry> mapToUpsert = TW_ProductServiceHelper.selectEntriesToUpsert(newEntries,existingEntriesMap);
+            TW_PricebookHandler.deletePricebookEntry(TW_ProductServiceHelper.selectEntriesToDelete(existingEntriesMap,mapToUpsert));
+            TW_PricebookHandler.createPricebookEntry(TW_ProductServiceHelper.getEntriesListToUpsert(mapToUpsert));
+        }
         return pricebookId;
     }
 
     public static TW_Utils.TW_ProductList getProductListForPricebooks(String pricebookId) {
-        List<String> pricebooksIds = new List<String>();
-        pricebooksIds.add(pricebookId);
-        pricebooksIds.add(TW_PricebookHandler.getStandardPricebook());
-        List<PricebookEntry> pricebookEntries = TW_ProductHandler.getPricebookEntriesForPricebook(pricebooksIds);
+        List<String> pricebooksIds = TW_ProductServiceHelper.createIdListForPricebook(pricebookId);
+        List<String> productsIds = TW_ProductServiceHelper.getIdsFromList(TW_ProductHandler.getPricebookEntriesForCustomPricebook(pricebookId));
+        List<PricebookEntry> pricebookEntries = TW_ProductHandler.getPricebookEntriesForPricebook(pricebooksIds,productsIds);
         List<TW_Utils.TW_ProductWrapper> wrapList = TW_ProductServiceHelper.addItemsToWrappers(pricebookEntries);
         String orgBaseUrl = TW_ProductServiceHelper.getOrgBaseUrl();
-        TW_Utils.TW_ProductList products = new TW_Utils.TW_ProductList(orgBaseUrl, wrapList);
-        return products;
+        return new TW_Utils.TW_ProductList(orgBaseUrl, wrapList);
+    }
+
+    public static Boolean deletePricebook(String pricebookId) {
+        return TW_PricebookHandler.deletePricebook(pricebookId);
     }
 }
