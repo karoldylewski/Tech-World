@@ -1,3 +1,6 @@
+/**
+ * Created by BRITENET on 10.07.2019.
+ */
 ({
     onInit: function(component) {
         let itemId = component.get("v.ProductId");
@@ -99,6 +102,8 @@
             type: "success",
         });
         toastEvent.fire();
+        let appEvent = $A.get("e.c:TW_ProductAddedToCart");
+        appEvent.fire();
     },
 
 })

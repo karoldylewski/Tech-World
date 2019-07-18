@@ -1,0 +1,68 @@
+<!--
+ - Created by BRITENET on 16.07.2019.
+ -->
+<aura:component description="TW_PricebooksContainer"
+                implements="flexipage:availableForAllPageTypes"
+                access="global"
+                controller="TW_ProductManager">
+    <aura:handler name="pricebookItemsEvent" event="c:TW_PricebookItemsEvent"
+                  action="{!c.loadPricebookToEdit}"/>
+    <aura:handler name="pricebookAdded" event="c:TW_PricebookAdded"
+                  action="{!c.showPricebooks}"/>
+    <aura:handler name="pricebookRemoved" event="c:TW_PricebookRemoved"
+                  action="{!c.showPricebooks}"/>
+    <aura:attribute name="toDisplay" type="String"/>
+    <aura:attribute name="pricebooks" type="Object[]"/>
+    <aura:attribute name="toEditItemId" type="String"/>
+    <aura:attribute name="toEditItemName" type="String"/>
+    <aura:attribute name="toEditItemSd" type="Date"/>
+    <aura:attribute name="toEditItemEd" type="Date"/>
+    <aura:attribute name="toEditISActive" type="Date"/>
+    <aura:attribute name="toEditPricebookItems" type="Object[]"/>
+    <aura:attribute name="toEditPricebookId" type="Object[]"/>
+    <article class="slds-card">
+        <div class="slds-grid slds-grid_vertical">
+            <div class="slds-col">
+                <div class="slds-align_absolute-center slds-m-top_small">
+                    <div class="slds-text-heading_medium slds-border_bottom">
+                        {!$Label.c.TW_pricebook_manager}
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col">
+                <div class="slds-align_absolute-center slds-m-top_small">
+                    <div class="slds-button-group" role="group">
+                        <button class="slds-button slds-button_neutral" onclick="{!c.showPricebooks}">{!$Label.c.TW_existing_pricebooks}</button>
+                        <button class="slds-button slds-button_neutral" onclick="{!c.newPricebook}">{!$Label.c.TW_new_pricebooks}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col">
+            </div>
+        </div>
+        <div class="slds-card__body slds-card__body_inner">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_12-of-12">
+                    <div class="slds-m-top_x-small">
+                        <aura:if isTrue="{!v.toDisplay == 'pricebooks'}">
+                            <c:TW_Pricebooks items="{!v.pricebooks}"/>
+                        </aura:if>
+                        <aura:if isTrue="{!v.toDisplay == 'new'}">
+                            <c:TW_PricebookNew/>
+                        </aura:if>
+                        <aura:if isTrue="{!v.toDisplay == 'edit'}">
+                            <c:TW_PricebookNew saleName="{!v.toEditItemName}"
+                                               saleStartDate="{!v.toEditItemSd}"
+                                               saleEndDate="{!v.toEditItemEd}"
+                                               saleIsActive="{!v.toEditISActive}"
+                                               products="{!v.toEditPricebookItems}"
+                                               pricebookColumnHeader="{!$Label.c.TW_this_pb_price}"
+                                               saleId="{!v.toEditPricebookId}"
+                            />
+                        </aura:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</aura:component>

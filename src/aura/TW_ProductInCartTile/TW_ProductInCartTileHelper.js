@@ -28,8 +28,8 @@
                     }
                     let compEvent = component.getEvent("productRemovedFromCart");
                     compEvent.fire();
-                    let appEvent = $A.get("e.c:TW_ProductAddedToCart");
-                    appEvent.fire();
+                     let appEvent = $A.get("e.c:TW_ProductAddedToCart");
+                     appEvent.fire();
                     return;
                 }
             }

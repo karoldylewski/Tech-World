@@ -41,16 +41,17 @@ public with sharing class TW_OrderHandler {
         ];
         if (resultList.isEmpty()) {
             return false;
+        } else {
+            return true;
         }
-        return true;
     }
 
-    public static Boolean insertOrderItemItems(List<OrderItem> items) {
-        Database.SaveResult[] saveResultList = Database.insert(items, false);
-        for (Database.SaveResult sr : saveResultList) {
-            if (!sr.isSuccess()) {
-                return false;
-            }
-        }
-        return true;
+    public static List<OrderItem> getOrderItemsByMultipleId(List<String> ordersId) {
+        List<OrderItem> orderItems = [
+                SELECT Id,UnitPrice,TotalPrice,Quantity,Product2.Name
+                FROM OrderItem
+                WHERE Id IN :ordersId
+        ];
+        return orderItems;
     }
+}

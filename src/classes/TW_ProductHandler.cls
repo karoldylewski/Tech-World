@@ -18,6 +18,8 @@ public with sharing class TW_ProductHandler {
                         UnitPrice
                 FROM PricebookEntry
                 WHERE Product2.RecordType.DeveloperName = 'TW_Product'
+                AND Pricebook2.TW_StartDate__c <= TODAY
+                AND Pricebook2.TW_EndDate__c >= TODAY
                 AND Name
                         LIKE :parameters
                 ORDER BY Product2.Id, UnitPrice DESC
@@ -41,6 +43,8 @@ public with sharing class TW_ProductHandler {
                 FROM PricebookEntry
                 WHERE Product2.RecordType.DeveloperName = 'TW_Product'
                 AND Product2.Id =: itemId
+                AND Pricebook2.TW_StartDate__c <= TODAY
+                AND Pricebook2.TW_EndDate__c >= TODAY
                 ORDER BY Product2.Id, UnitPrice DESC
         ];
         return resultList;
@@ -61,10 +65,10 @@ public with sharing class TW_ProductHandler {
                         UnitPrice
                 FROM PricebookEntry
                 WHERE Product2.Id IN : itemId
+                AND Pricebook2.TW_StartDate__c <= TODAY
+                AND Pricebook2.TW_EndDate__c >= TODAY
                 ORDER BY Product2.Id, UnitPrice DESC
         ];
-        System.debug('parameters for soql: '+itemId);
-        System.debug('Result for multiple ids: '+resultList.size());
         return resultList;
     }
 
@@ -74,6 +78,51 @@ public with sharing class TW_ProductHandler {
                 FROM PricebookEntry
                 WHERE Product2.Id IN : itemId
                 ORDER BY Product2.Id, UnitPrice DESC
+        ];
+        return resultList;
+    }
+
+    public static List<PricebookEntry> getPricebookEntriesForPricebook(String pricebookId) {
+        List<PricebookEntry> resultList = [
+                SELECT Product2.Name,UnitPrice, Pricebook2Id
+                FROM PricebookEntry
+                WHERE Product2.RecordType.DeveloperName = 'TW_Product'
+                AND Pricebook2Id =: pricebookId
+        ];
+        return resultList;
+    }
+
+    public static List<PricebookEntry> getAllProducts(String standardPriceBookId){
+        List<PricebookEntry> products = [
+                SELECT Id, Name, UnitPrice
+                FROM PricebookEntry
+                WHERE Pricebook2Id = :standardPriceBookId
+                AND Product2.RecordType.DeveloperName = 'TW_Product'
+        ];
+        return products;
+    }
+
+    public static List<PricebookEntry> getPricebookEntriesForPricebook(List<String> pricebookIds,List<String> productsIds) {
+        List<PricebookEntry> resultList = [
+                SELECT Product2.RecordType.DeveloperName,
+                        Product2.Id,
+                        Product2.Name,
+                        UnitPrice
+                FROM PricebookEntry
+                WHERE Product2.RecordType.DeveloperName = 'TW_Product'
+                AND Pricebook2Id IN : pricebookIds
+                AND Product2Id IN : productsIds
+                ORDER BY Product2.Id, UnitPrice DESC
+        ];
+        return resultList;
+    }
+
+    public static List<PricebookEntry> getPricebookEntriesForCustomPricebook(String customPricebookId) {
+        List<PricebookEntry> resultList = [
+                SELECT Product2.Id
+                FROM PricebookEntry
+                WHERE Product2.RecordType.DeveloperName = 'TW_Product'
+                AND Pricebook2Id =: customPricebookId
         ];
         return resultList;
     }

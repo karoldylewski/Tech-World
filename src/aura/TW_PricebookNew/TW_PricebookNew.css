@@ -1,0 +1,26 @@
+/**
+ * Created by BRITENET on 16.07.2019.
+ */
+.THIS .search-form{
+    margin:10px;
+}
+.THIS .btn-search{
+    margin-top:23px;
+    margin-left:23px;
+}
+.THIS .table-header{
+    background-color:lightgray;
+    font-size:15px;
+    font-weight:600;
+}
+.THIS .selected-table{
+    border: 1px solid lightgray;
+}
+.THIS .striped-body{
+    background-color:purple;
+    color:yellow;
+}
+.THIS .non-striped-body{
+    background-color:rgb(240,240,240);
+    color:darkgoldenrod;
+}

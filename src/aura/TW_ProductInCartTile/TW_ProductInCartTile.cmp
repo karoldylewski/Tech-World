@@ -3,6 +3,7 @@
  -->
 
 <aura:component description="TW_ProductInCartTile">
+    <aura:registerEvent name="productAddedToCart" type="c:TW_ProductAddedToCart"/>
     <aura:registerEvent name="productRemovedFromCart" type="c:TW_ProductRemoved"/>
     <aura:attribute name="item" type="Object"/>
     <aura:attribute name="prefixURL" type="String" default="/sfc/servlet.shepherd/version/download/"/>
@@ -48,6 +49,8 @@
                     </button>
                 </div>
             </div>
+
+
         </div>
     </div>
 </aura:component>

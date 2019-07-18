@@ -39,14 +39,16 @@ public with sharing class TW_ProductServiceHelper {
             if (!resultList.isEmpty()) {
                 if (entry.Product2Id != resultList.get(resultList.size() - 1).Product2Id) {
                     resultList.add(entry);
-                } else if (entry.UnitPrice < resultList.get(resultList.size() - 1).UnitPrice) {
-                    resultList.get(resultList.size() - 1).UnitPrice = entry.UnitPrice;
                 } else {
-                    resultList.add(entry);
+                    if (entry.UnitPrice < resultList.get(resultList.size() - 1).UnitPrice) {
+                        resultList.get(resultList.size() - 1).UnitPrice = entry.UnitPrice;
+                    }
                 }
+            } else {
+                resultList.add(entry);
             }
-            return resultList;
         }
+        return resultList;
     }
 
     public static List< TW_Utils.TW_ProductWrapper> addItemsToWrappers(List<PricebookEntry> entries) {
@@ -55,19 +57,30 @@ public with sharing class TW_ProductServiceHelper {
             if (!wrapList.isEmpty()) {
                 if (entry.Product2.Id != wrapList.get(wrapList.size() - 1).product.Id) {
                     wrapList.add(new TW_Utils.TW_ProductWrapper(entry.Product2, Integer.valueOf(entry.UnitPrice), Integer.valueOf(entry.UnitPrice)));
-                } else if (Integer.valueOf(entry.UnitPrice) < wrapList.get(wrapList.size() - 1).currentPrice) {
-                    wrapList.get(wrapList.size() - 1).currentPrice = Integer.valueOf(entry.UnitPrice);
                 } else {
-                    wrapList.add(new TW_Utils.TW_ProductWrapper(entry.Product2, Integer.valueOf(entry.UnitPrice), Integer.valueOf(entry.UnitPrice)));
+                    if (Integer.valueOf(entry.UnitPrice) < wrapList.get(wrapList.size() - 1).currentPrice) {
+                        wrapList.get(wrapList.size() - 1).currentPrice = Integer.valueOf(entry.UnitPrice);
+                    }
                 }
+            } else {
+                wrapList.add(new TW_Utils.TW_ProductWrapper(entry.Product2, Integer.valueOf(entry.UnitPrice), Integer.valueOf(entry.UnitPrice)));
             }
-            return wrapList;
         }
+        return wrapList;
     }
 
     public static String getOrgBaseUrl() {
         return TW_Message__c.getInstance('TW_OrgBaseUrl').Value__c;
     }
+
+    public static List<String> prepareParametersForQuery(List<String> parameters) {
+        List<String> modifiedParams = new List<String>();
+        for (String param : parameters) {
+            modifiedParams.add('%' + param + '%');
+        }
+        return modifiedParams;
+    }
+
 
     public static Map<String, Integer> segregateIdsToArrays(List<String> parameters) {
         Map<String, Integer> itemMap = new Map<String, Integer>();
@@ -105,12 +118,119 @@ public with sharing class TW_ProductServiceHelper {
         return UserInfo.getUserId();
     }
 
-    public static Boolean creteOrderItemsObjects(Map<String, PricebookEntry> sortedPbs, List<String> idList, Order newOrder) {
-        List<OrderItem> orderItems = new List<OrderItem>();
-        for (String productId : idList) {
-            PricebookEntry pb = sortedPbs.get(productId);
-            orderItems.add(TW_ProductServiceHelper.prepareOrderItem(newOrder.Id, productId, sortedIds.get(productId), pb.Id, pb.UnitPrice));
+    public static String crateCase(String contactId, String subject, String description) {
+        Case newCase = new Case();
+        newCase.Origin = 'Web';
+        newCase.ContactId = contactId;
+        newCase.Subject = subject;
+        newCase.Description = description;
+        newCase.Status = 'New';
+        return TW_CaseHandler.insertCase(newCase);
+    }
+
+    public static Boolean crateOrderItemsInCase(String caseId, List<OrderItem> items) {
+        List<Products__c> orderItemInCaseList = new List<Products__c>();
+        for (OrderItem orderItem : items) {
+            Products__c orderItemInCase = new Products__c();
+            orderItemInCase.Complaint_Case__c = caseId;
+            orderItemInCase.Order_Product__c = orderItem.Id;
+            orderItemInCase.Product_Name__c = orderItem.Product2.Name;
+            orderItemInCaseList.add(orderItemInCase);
         }
-        return orderItems;
+        return TW_CaseHandler.crateOrderItemsInCase(orderItemInCaseList);
+    }
+
+    public static String createNewPricebook2(String pricebookName, Date sd, Date ed, Boolean isActive, String pbId) {
+        Pricebook2 newPb = new Pricebook2();
+        newPb.Name = pricebookName;
+        newPb.TW_StartDate__c = sd;
+        newPb.TW_EndDate__c = ed;
+        newPb.IsActive = isActive;
+        if (pbId != null) {
+            newPb.Id = pbId;
+        }
+        return TW_PricebookHandler.createPricebook(newPb);
+    }
+
+    public static List<PricebookEntry> createPricebookEntries(List<List<String>> itemsList, String pricebookId) {
+        List<PricebookEntry> entriesObject = new List<PricebookEntry>();
+        for (List<String> entryItem : itemsList) {
+            PricebookEntry entry = TW_ProductServiceHelper.createPricebookEntry(entryItem, pricebookId);
+            entriesObject.add(entry);
+        }
+        return entriesObject;
+    }
+
+
+    public static PricebookEntry createPricebookEntry(List<String> item, String pricebookId) {
+        PricebookEntry newEntry = new PricebookEntry();
+        newEntry.Pricebook2Id = pricebookId;
+        newEntry.Product2Id = item[0];
+        newEntry.UnitPrice = Decimal.valueOf(item[2]);
+        newEntry.IsActive = true;
+        return newEntry;
+    }
+
+    public static List<String> getIdsFromList(List<PricebookEntry> items) {
+        List<String> ids = new List<String>();
+        for (PricebookEntry entry : items) {
+            ids.add(entry.Product2Id);
+        }
+        return ids;
+    }
+
+
+    public static String prepareParameter(String param) {
+        if (param.startsWith('[')) {
+            param = param.substring(1, param.length());
+        }
+        if (param.startsWith('"')) {
+            param = param.substring(1, param.length());
+        }
+        if (param.endsWith(']')) {
+            param = param.substring(0, param.length() - 1);
+        }
+        if (param.endsWith('"')) {
+            param = param.substring(0, param.length() - 1);
+        }
+        return param;
+    }
+
+    public static Map<String, PricebookEntry> selectEntriesToUpsert(List<PricebookEntry> newEntries,Map<String,PricebookEntry> existingEntriesMap) {
+        Map<String,PricebookEntry> mapToUpsert = new Map<String,PricebookEntry>();
+        for (PricebookEntry newEntry : newEntries) {
+            if (existingEntriesMap.containsKey(newEntry.Product2Id)) {
+                newEntry.Id = existingEntriesMap.get(newEntry.Product2Id).Id;
+                mapToUpsert.put(newEntry.Product2Id, newEntry);
+            } else {
+                mapToUpsert.put(newEntry.Product2Id, newEntry);
+            }
+        }
+        return mapToUpsert;
+    }
+
+    public static List<PricebookEntry> selectEntriesToDelete(Map<String,PricebookEntry> existingEntriesMap,Map<String,PricebookEntry> mapToUpsert) {
+        List<PricebookEntry> entriesToDelete = new List<PricebookEntry>();
+        for(String key : existingEntriesMap.keySet()){
+            if (!mapToUpsert.containsKey(key)){
+                entriesToDelete.add(existingEntriesMap.get(key));
+            }
+        }
+        return entriesToDelete;
+    }
+
+    public static List<PricebookEntry> getEntriesListToUpsert(Map<String,PricebookEntry> mapToUpsert) {
+        List<PricebookEntry> entriesToUpsert = new List<PricebookEntry>();
+        for(String key : mapToUpsert.keySet()){
+            entriesToUpsert.add(mapToUpsert.get(key));
+        }
+        return entriesToUpsert;
+    }
+
+    public static List<String> createIdListForPricebook(String pricebookId){
+        List<String> pricebooksIds = new List<String>();
+        pricebooksIds.add(pricebookId);
+        pricebooksIds.add(TW_PricebookHandler.getStandardPricebook());
+        return pricebooksIds;
     }
 }
