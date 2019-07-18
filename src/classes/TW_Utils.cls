@@ -4,6 +4,8 @@
 
 public with sharing class TW_Utils {
 
+    public static final String TW_NEW_PRICEBOOK = 'new';
+
     public with sharing class TW_ProductWrapper {
         @AuraEnabled
         public Product2 product {get; set;}

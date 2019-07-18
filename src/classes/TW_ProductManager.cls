@@ -82,13 +82,18 @@ public with sharing class TW_ProductManager {
     }
 
     @AuraEnabled
-    public static String addNewPricebook(List<List<String>> itemsList, String pricebookName, Date sd, Date ed, Boolean isActive){
-        return TW_ProductService.saveNewPricebook(itemsList,pricebookName,sd,ed,isActive);
+    public static String addNewPricebook(List<List<String>> itemsList, String pricebookName, Date sd, Date ed, Boolean isActive, String pbid){
+        return TW_ProductService.saveNewPricebook(itemsList,pricebookName,sd,ed,isActive,pbid);
     }
 
     @AuraEnabled
     public static TW_Utils.TW_ProductList getProductListForPricebook(String pricebookId) {
         TW_Utils.TW_ProductList searchedProducts = TW_ProductService.getProductListForPricebooks(pricebookId);
         return searchedProducts;
+    }
+
+    @AuraEnabled
+    public static Boolean deletePricebook(String pricebookId) {
+        return TW_ProductService.deletePricebook(pricebookId);
     }
 }

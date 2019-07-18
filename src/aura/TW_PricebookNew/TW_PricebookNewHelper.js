@@ -8,8 +8,12 @@
             discountType: component.get("v.saleTypeRadioValue"),
         };
         let childCmps = component.find("childItem");
-        for (let i = 0; i < childCmps.length; i++) {
-            childCmps[i].recalculatePrice(data);
+        if (Array.isArray(childCmps)) {
+            for (let i = 0; i < childCmps.length; i++) {
+                childCmps[i].recalculatePrice(data);
+            }
+        } else {
+            childCmps.recalculatePrice(data);
         }
     },
 
@@ -19,21 +23,16 @@
             discountType: component.get("v.saleTypeRadioValue"),
         };
         let childCmps = component.find("childItem");
-        for (let i = 0; i < childCmps.length; i++) {
-            childCmps[i].recalculatePrice(data);
+        if (Array.isArray(childCmps)) {
+            for (let i = 0; i < childCmps.length; i++) {
+                childCmps[i].recalculatePrice(data);
+            }
+        } else {
+            childCmps.recalculatePrice(data);
         }
     },
 
-    validateFields: function(component) {
-        //        var validExpense = component.find('fieldId').reduce(function(validSoFar, inputCmp) {
-        //            inputCmp.showHelpMessageIfInvalid();
-        //            return validSoFar && inputCmp.get('v.validity').valid;
-        //        }, true);
-
-    },
-
     onSavePricebook: function(component) {
-        //        this.validateFields(component);
         var validExpense = component.find('fieldId').reduce(function(validSoFar, inputCmp) {
             inputCmp.showHelpMessageIfInvalid();
             return validSoFar && inputCmp.get('v.validity').valid;
@@ -44,11 +43,16 @@
         }
         let returnArray = [];
         let childCmps = component.find("childItem");
-        for (let i = 0; i < childCmps.length; i++) {
-            let returnRecord = childCmps[i].getRecordDetails();
+        if (Array.isArray(childCmps)) {
+            for (let i = 0; i < childCmps.length; i++) {
+                let returnRecord = childCmps[i].getRecordDetails();
+                returnArray.push(returnRecord);
+            }
+        } else {
+            let returnRecord = childCmps.getRecordDetails();
             returnArray.push(returnRecord);
         }
-        console.log('item list to send to apex:' + JSON.stringify(returnArray));
+        let stringifiedId = JSON.stringify(component.get("v.saleId"));
         let action = component.get("c.addNewPricebook");
         action.setParams({
             itemsList: returnArray,
@@ -56,6 +60,7 @@
             sd: component.get("v.saleStartDate"),
             ed: component.get("v.saleEndDate"),
             isActive: component.get("v.saleIsActive"),
+            pbid: stringifiedId,
         });
         action.setCallback(this, function(response) {
             let state = response.getState();
@@ -71,7 +76,7 @@
                 let compEvent = component.getEvent("pricebookAdded");
                 compEvent.fire();
             } else {
-                console.log(JSON.stringify(response.getReturnValue()));
+                console.log('error: ' + JSON.stringify(response.getReturnValue()));
                 let toastEvent = $A.get("e.force:showToast");
                 toastEvent.setParams({
                     "title": "Error",

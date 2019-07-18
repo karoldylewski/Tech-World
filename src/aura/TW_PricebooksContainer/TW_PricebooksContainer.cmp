@@ -1,7 +1,6 @@
 <!--
  - Created by BRITENET on 16.07.2019.
  -->
-
 <aura:component description="TW_PricebooksContainer"
                 implements="flexipage:availableForAllPageTypes"
                 access="global"
@@ -9,6 +8,8 @@
     <aura:handler name="pricebookItemsEvent" event="c:TW_PricebookItemsEvent"
                   action="{!c.loadPricebookToEdit}"/>
     <aura:handler name="pricebookAdded" event="c:TW_PricebookAdded"
+                  action="{!c.showPricebooks}"/>
+    <aura:handler name="pricebookRemoved" event="c:TW_PricebookRemoved"
                   action="{!c.showPricebooks}"/>
     <aura:attribute name="toDisplay" type="String"/>
     <aura:attribute name="pricebooks" type="Object[]"/>
@@ -18,6 +19,7 @@
     <aura:attribute name="toEditItemEd" type="Date"/>
     <aura:attribute name="toEditISActive" type="Date"/>
     <aura:attribute name="toEditPricebookItems" type="Object[]"/>
+    <aura:attribute name="toEditPricebookId" type="Object[]"/>
     <article class="slds-card">
         <div class="slds-grid slds-grid_vertical">
             <div class="slds-col">
@@ -55,6 +57,7 @@
                                                saleIsActive="{!v.toEditISActive}"
                                                products="{!v.toEditPricebookItems}"
                                                pricebookColumnHeader="{!$Label.c.TW_this_pb_price}"
+                                               saleId="{!v.toEditPricebookId}"
                             />
                         </aura:if>
                     </div>

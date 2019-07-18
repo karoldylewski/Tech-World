@@ -26,17 +26,19 @@
     <aura:attribute name="searchedPhrase" type="String"/>
     <aura:attribute name="searchingResultList" type="Object[]"/>
     <aura:attribute name="pricebookColumnHeader" type="String" default="{!$Label.c.TW_current_lowest_price}"/>
+    <aura:attribute name="saleId" type="String" default="new"/>
 
     <article class="slds-card">
         <div class="slds-card__body slds-card__body_inner">
             <div class="c-container">
                 <lightning:layout>
-                    <lightning:layoutItem size="4"  padding="around-small">
-                        <lightning:input type="text" label="{!$Label.c.TW_sale_name}" value="{!v.saleName}" required="true" aura:id="fieldId"/>
+                    <lightning:layoutItem size="4" padding="around-small">
+                        <lightning:input type="text" label="{!$Label.c.TW_sale_name}" value="{!v.saleName}"
+                                         aura:id="fieldId" required="true"/>
                         <lightning:input type="date" name="input1" label="{!$Label.c.TW_sale_sd}"
-                                         value="{!v.saleStartDate}" required="true" aura:id="fieldId"/>
+                                         value="{!v.saleStartDate}" aura:id="fieldId" required="true"/>
                         <lightning:input type="date" name="input1" label="{!$Label.c.TW_sale_ed}"
-                                         value="{!v.saleEndDate}" required="true" aura:id="fieldId"/>
+                                         value="{!v.saleEndDate}" aura:id="fieldId" required="true"/>
                         <ui:inputCheckbox label="{!$Label.c.TW_sale_active}" class="field" value="{!v.saleIsActive}"/>
 
                         <div>
@@ -116,34 +118,70 @@
                                 </div>
                                 <div class="slds-col">
                                 <span class="slds-align_absolute-center">
-
                                     <table class="slds-table slds-table_cell-buffer slds-table_bordered selected-table">
                                         <thead class="table-header slds-m-top_medium">
-                                            <lightning:layout>
-                                            <lightning:layoutItem size="1"/>
+                                        <aura:if isTrue="{!v.saleId == 'new'}">
+                                         <lightning:layout>
+                                                <lightning:layoutItem size="1"/>
                                             <lightning:layoutItem size="3">
                                                      <span class="slds-align_absolute-center"> {!$Label.c.TW_product_name}</span>
                                             </lightning:layoutItem>
                                             <lightning:layoutItem size="3">
                                                    <span class="slds-align_absolute-center">   {!$Label.c.TW_standard_price}</span>
                                             </lightning:layoutItem>
-                                            <lightning:layoutItem size="3">
-                                                     <span class="slds-align_absolute-center">
-                                                         {!v.pricebookColumnHeader}
-                                                            </span>
-                                            </lightning:layoutItem>
+                                                <lightning:layoutItem size="3">
+                                                         <span class="slds-align_absolute-center">
+                                                                 {!v.pricebookColumnHeader}
+                                                         </span>
+                                                </lightning:layoutItem>
                                             <lightning:layoutItem size="2">
                                                    <span class="slds-align_absolute-center"> {!$Label.c.TW_New_Price}</span>
                                             </lightning:layoutItem>
+                                         </lightning:layout>
+                                     <aura:set attribute="else">
+                                            <lightning:layout>
+                                                <lightning:layoutItem size="1"/>
+                                            <lightning:layoutItem size="4">
+                                                     <span class="slds-align_absolute-center"> {!$Label.c.TW_product_name}</span>
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem size="4">
+                                                   <span class="slds-align_absolute-center">   {!$Label.c.TW_standard_price}</span>
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem size="3">
+                                                   <span class="slds-align_absolute-center"> {!$Label.c.TW_New_Price}</span>
+                                            </lightning:layoutItem>
                                             </lightning:layout>
+                                    </aura:set>
+                                        </aura:if>
+
+                                        <!--                                            <lightning:layout>-->
+                                        <!--                                                <lightning:layoutItem size="1"/>-->
+                                        <!--                                            <lightning:layoutItem size="3">-->
+                                        <!--                                                     <span class="slds-align_absolute-center"> {!$Label.c.TW_product_name}</span>-->
+                                        <!--                                            </lightning:layoutItem>-->
+                                        <!--                                            <lightning:layoutItem size="3">-->
+                                        <!--                                                   <span class="slds-align_absolute-center">   {!$Label.c.TW_standard_price}</span>-->
+                                        <!--                                            </lightning:layoutItem>-->
+                                        <!--                                                 <aura:if isTrue="{!v.saleId == 'new'}">-->
+                                        <!--                                                <lightning:layoutItem size="3">-->
+                                        <!--                                                         <span class="slds-align_absolute-center">-->
+                                        <!--                                                                 {!v.pricebookColumnHeader}-->
+                                        <!--                                                         </span>-->
+                                        <!--                                                </lightning:layoutItem>-->
+                                        <!--                                                 </aura:if>-->
+                                        <!--                                            <lightning:layoutItem size="2">-->
+                                        <!--                                                   <span class="slds-align_absolute-center"> {!$Label.c.TW_New_Price}</span>-->
+                                        <!--                                            </lightning:layoutItem>-->
+                                        <!--                                            </lightning:layout>-->
+
                                          </thead>
                                          <tbody>
                                             <aura:iteration items="{!v.products}" var="item">
-                                                <c:TW_ProductInAddPricebookTile item="{!item}" aura:id="childItem"/>
+                                                <c:TW_ProductInAddPricebookTile item="{!item}" pricebookId="{!v.saleId}"
+                                                                                aura:id="childItem"/>
                                             </aura:iteration>
                                         </tbody>
                                     </table>
-
                                 </span>
                                 </div>
                             </div>

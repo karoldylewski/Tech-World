@@ -8,7 +8,6 @@
 
     <lightning:layout>
         <lightning:layoutItem size="1">
-
         </lightning:layoutItem>
         <lightning:layoutItem size="3">
                 {!v.item.product.Name}

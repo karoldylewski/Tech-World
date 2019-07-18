@@ -10,12 +10,15 @@
     <aura:method name="getRecordDetails" action="{!c.getRecordDetails}"
                  access="public">
     </aura:method>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:registerEvent name="removeProductFromList" type="c:TW_ProductRemoveFromSelectedList"/>
     <aura:attribute name="item" type="Object"/>
     <aura:attribute name="isChecked" type="Boolean" default="false"/>
-    <aura:attribute name="recalculatedPrice" type="Integer"/>
+    <aura:attribute name="recalculatedPrice" type="Decimal" default="0"/>
+    <aura:attribute name="pricebookId" type="String"/>
 
     <div class="border-bot">
+        <aura:if isTrue="{!v.pricebookId == 'new'}">
         <lightning:layout>
             <lightning:layoutItem size="1">
                 <span class="slds-align_absolute-center cell-value"> <a
@@ -27,21 +30,39 @@
             <lightning:layoutItem size="3">
                 <span class="slds-align_absolute-center cell-value"><ui:outputCurrency value="{!v.item.originalPrice}"/></span>
             </lightning:layoutItem>
-            <lightning:layoutItem size="3">
-                <aura:if isTrue="{!v.item.currentPrice != v.item.originalPrice}">
-                <span class="slds-align_absolute-center cell-value-discount">
-                  <ui:outputCurrency value="{!v.item.currentPrice}"/>
-                </span>
-                    <aura:set attribute="else">
+                <lightning:layoutItem size="3">
+                    <aura:if isTrue="{!v.item.currentPrice != v.item.originalPrice}">
+                    <span class="slds-align_absolute-center cell-value-discount">
+                      <ui:outputCurrency value="{!v.item.currentPrice}"/>
+                    </span>
+                        <aura:set attribute="else">
                         <span class="slds-align_absolute-center cell-value">
                             <ui:outputCurrency value="{!v.item.currentPrice}"/>
                         </span>
-                    </aura:set>
-                </aura:if>
-            </lightning:layoutItem>
+                        </aura:set>
+                    </aura:if>
+                </lightning:layoutItem>
             <lightning:layoutItem size="2">
                 <span class="slds-align_absolute-center"> <ui:inputCurrency value="{!v.recalculatedPrice}"/></span>
             </lightning:layoutItem>
         </lightning:layout>
+            <aura:set attribute="else">
+                <lightning:layout>
+                    <lightning:layoutItem size="1">
+                <span class="slds-align_absolute-center cell-value"> <a
+                        onclick="{!c.removeItem}">{!$Label.c.TW_remove}</a></span>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="4">
+                        <span class="slds-align_absolute-center cell-value">{!v.item.product.Name}</span>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="4">
+                        <span class="slds-align_absolute-center cell-value"><ui:outputCurrency value="{!v.item.originalPrice}"/></span>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="3">
+                        <span class="slds-align_absolute-center"> <ui:inputCurrency value="{!v.recalculatedPrice}"/></span>
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </aura:set>
+        </aura:if>
     </div>
 </aura:component>
